@@ -1,0 +1,175 @@
+﻿@model GYF.Models.Admin
+
+@{
+    ViewBag.Title = "AdminDashBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    thead.assoicidab {
+        background-color: #00796a;
+        color: #fff;
+    }
+
+    .assdirect1 {
+        background-color: #ac5d28;
+        color: #fff;
+    }
+
+    .assdirect2 {
+        background-color: #b67916;
+        color: #fff;
+    }
+
+    .assdirect3 {
+        background-color: teal;
+        color: #fff;
+    }
+
+    .assdirect4 {
+        background-color: #5a361f;
+        color: #fff;
+    }
+
+    .assdirect5 {
+        background-color: #413838;
+        color: #fff;
+    }
+
+    .assdirect6 {
+        background-color: #6e2121;
+        color: #fff;
+    }
+
+    .assdirect7 {
+        background-color: #493411;
+        color: #fff;
+    }
+</style>
+@using (Html.BeginForm("AdminDashBoard", "Admin", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Admin DashBoard </span> </h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-6">
+                <!-- Marketing campaigns -->
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect1">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Total Associates</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.TotalAssociate</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect2">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Active Associates</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.ActiveAssociate</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect3">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>InActive Associate</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.InActiveAssociate</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect4">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Blocked Associate</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.BlockedAssociate</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect5">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Total Payout</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.TotalCrAmount</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect6">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Total Paid</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.TotalDrAmount</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    function validate() {
+        $(".errortext").removeClass('errortext');
+        if ($("#LoginId").val() == '') {
+            $("#LoginId").addClass('errortext');
+            $("#LoginId").focus();
+            return false;
+        }
+    }
+</script>
+

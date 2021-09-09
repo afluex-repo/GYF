@@ -1,0 +1,160 @@
+﻿@model CapitalMaxRetail.Models.AdminReports
+
+@{
+    ViewBag.Title = "SupportReply";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("SupportReply", "AdminReports", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+     <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Support</span>- Support Reply</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Support Reply</h6>
+
+                    </div>
+                    <div class="card-header">
+
+                        <p style="color: red">
+                            @TempData["SupportReply"]
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mx-auto">
+                                <div class="row ">
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <label> Login Id</label>
+                                            @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @placeholder = "Login Id", @readonly = "readonly" })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <label> Name</label>
+                                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Name", @readonly = "readonly" })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <label> Subject</label>
+                                            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" ,@readonly="readonly"})
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="form-group ">
+                                            <label>Message <span style="color: red">*</span></label>
+                                            @Html.TextAreaFor(m => m.Msg, new { @class = "form-control", @Placeholder = "Message", @Rows = "3", @cols = "20", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+
+                                
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group ">
+                                            <label>Reply <span style="color: red">*</span></label>
+                                            @Html.TextAreaFor(m => m.Reply, new { @class = "form-control", @Placeholder = "Reply", @Rows = "7", @cols = "20" })
+                                            @Html.HiddenFor(m => m.Fk_UserId)
+                                            @Html.HiddenFor(m => m.SupportTokenId)
+
+                                         </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer text-left">
+
+                        <input type="submit" class="btn btn-success" value="Reply" onclick="return validate();" name="btnReply" id="btnReply" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+    function validate() {
+        $(".errortext").removeClass('errortext');
+       
+        if ($("#Reply").val() == '') {
+            $("#Reply").addClass('errortext');
+            $("#Reply").focus();
+            return false;
+        }
+    }
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+
+
+    $('#DOB').datepicker({
+        dateFormat: 'dd/mm/yy',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1950:2020'
+    });
+
+    function GetstateCity() {
+
+        var value = $('#PinCode').val();
+
+        $.ajax({
+            url: '/Associate/GetStateCityByPincode', type: 'post', dataType: 'json',
+            data: { 'PinCode': value }, success: function (data) {
+
+                if (data.Result == "Yes") {
+                    $('#State').val(data.State);
+                    $('#City').val(data.City);
+
+                }
+                else {
+                    alert("Invalid Pincode");
+                    $('#PinCode').val('');
+                    $('#State').val('');
+                    $('#City').val('');
+                }
+            }
+
+        });
+
+    }
+
+
+</script>
+
+

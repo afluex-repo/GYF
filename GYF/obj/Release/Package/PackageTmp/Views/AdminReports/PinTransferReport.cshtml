@@ -1,0 +1,118 @@
+﻿@model CapitalMaxRetail.Models.AdminReports
+
+@{
+    ViewBag.Title = "PinTransferReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("PinTransferReport", "AdminReports", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pin Management </span> - Pin Transfer Report</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Pin Transfer Report</h6>
+                        <p style="color:red">
+                            @TempData["PinTransferReport"]
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mx-auto">
+                                <div class="row ">
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group">
+                                            From Login Id
+                                            @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group">
+                                            To Login Id
+                                            @Html.TextBoxFor(m => m.ToLoginId, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group">
+                                            EPin No
+                                            @Html.TextBoxFor(m => m.ePinNo, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <input type="submit" class="btn btn-info" name="GetDetails" id="GetDetails" style="margin-top:25px" value="Get Details" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example24">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>EPin No</th>
+                                    <th>From Id</th>
+                                    <th>From Name</th>
+                                    <th>To Id</th>
+                                    <th>To Name</th>
+                                    <th>Transfer Date</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.PinTransferList != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.PinTransferList)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>@Item.ePinNo</td>
+                                                <td>@Item.FromId</td>
+                                                <td>@Item.FromName</td>
+                                                <td>@Item.ToId</td>
+                                                <td>@Item.ToName</td>
+                                                <td>@Item.TransferDate</td>
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+

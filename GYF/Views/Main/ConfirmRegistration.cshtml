@@ -1,0 +1,41 @@
+﻿@model GYF.Models.Home
+@{
+    ViewBag.Title = "Confirm Registration";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+<div class="col-lg-12">
+    <div class="card-body">
+        <h6 style="color: red"></h6>
+        <div class="row">
+            <div class="card-body">
+                <section class="custom-padding about-us">
+                    <div class="container">
+
+                        <div class="row text-center" style="border:solid 1px">
+                            <div class="col-md-12 form-group">
+                                <br><br> <h2 style="color:#0fad00">Success</h2>
+                                <img src="http://dwpe.in/Softwarecss/assets/success.gif" style="height:150px" />
+
+
+                                <h3 style="color:#0a0a0a">Dear, @Session["DisplayName"]</h3>
+                                <p style="font-size:20px;color:#0a0a0a;text-align:center">
+                                    Thank you for your registration. Now you are GYF Associate.Your Details are as Below:
+                                    <br />
+                                    <span class="border-box">Login ID: @Session["LoginId"]</span>
+                                    <span class="border-box">Password:  @Session["Password"]</span>
+                                </p>
+                                @*<a href="/Main/Login" class="btn btn-primary">     Back To Login     </a>*@
+                                <a href="/Main/Registration" class="btn btn-info">    Add New    </a>
+                                <br><br>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+    

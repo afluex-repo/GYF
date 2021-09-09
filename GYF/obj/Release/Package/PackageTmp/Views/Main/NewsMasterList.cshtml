@@ -1,0 +1,25 @@
+﻿@model CapitalMaxRetail.Models.Admin
+
+@{
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    if (Model.lstNewsList != null)
+    {
+        int i = 1;
+        foreach (var Item in Model.lstNewsList)
+        {
+            <tr class="text-left">
+
+                <td>
+                    @i
+                </td>
+                <td>@Item.Description</td>
+            </tr>
+            i++;
+        }
+
+    }
+}

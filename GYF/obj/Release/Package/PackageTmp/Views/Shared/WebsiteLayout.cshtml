@@ -1,0 +1,274 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>@ViewBag.Title</title>
+    <!-- Stylesheets -->
+    <link href="../../Websitecss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../Websitecss/css/style.css" rel="stylesheet">
+    <link href="../../Websitecss/css/responsive.css" rel="stylesheet">
+    <!-- Color Switcher Mockup -->
+    <link href="../../Websitecss/css/color-switcher-design.css" rel="stylesheet">
+    <!-- Color Themes -->
+    <link id="theme-color-file" href="../../Websitecss/css/color-themes/default-theme.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../Websitecss/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../../Websitecss/images/favicon.png" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+        <!-- Main Header -->
+        <header class="main-header header-style-one">
+            <div class="header-top">
+                <div class="auto-container">
+                    <div class="clearfix">
+                        <!--Top Left-->
+                        <div class="headertop-content clearfix">
+                            <marquee direction="left" onmouseover="this.stop()" onmouseout="this.start()">
+                                <p class="marque-conten">
+
+                                    @{Html.RenderAction("NewsMasterList", "Main", new { area = "" });}
+                                </p>
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Header Lower-->
+            <div class="header-lower">
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <div class="pull-left logo-box">
+                                <div class="logo">
+                                    <a href="/Main/Index"><img src="../../Websitecss/images/logo.png" alt="" title=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            <div class="nav-outer clearfix">
+                                <!-- Main Menu -->
+                                <nav class="main-menu navbar-expand-md">
+                                    <div class="navbar-header">
+                                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                                aria-expanded="false" aria-label="Toggle navigation">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                        <ul class="navigation clearfix">
+                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
+                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
+                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
+                                            <li><a href="../../Websitecss/images/CapitalMaxRetail.pdf" target="_blank">Business Plan</a></li>
+                                            @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
+                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
+                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
+                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
+                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
+
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <!-- Main Menu End-->
+                                <!-- Options Box -->
+                                <div class="options-box clearfix">
+                                    <!--Search Box-->
+                                    <div class="search-box-outer">
+                                        <div class="dropdown">
+                                            <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Header-Upper-->
+                            <div class="header-upper">
+                                <div class="auto-container">
+                                    <div class="clearfix">
+                                        <div class="pull-left upper-right clearfix">
+
+                                            <!--Info Box-->
+                                            <div class="upper-column info-box">
+                                                <a href="/Main/Registration" class="theme-btn btn-style-one">
+                                                    <span class="txt">
+                                                        Free Registration
+                                                        Now
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Header Upper-->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Lower-->
+            <!--Sticky Header-->
+            <div class="sticky-header">
+                <div class="auto-container clearfix">
+                    <!--Logo-->
+                    <div class="logo pull-left sticky">
+                        <a href="/Main/Index" class="img-responsive">
+                            <img src="../../Websitecss/images/logo-small.png" alt=""
+                                 title="">
+                        </a>
+                    </div>
+                    <!--Right Col-->
+                    <div class="right-col pull-right">
+                        <!-- Main Menu -->
+                        <nav class="main-menu  navbar-expand-md">
+                            <div class="navbar-header">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
+                                <ul class="navigation clearfix">
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
+                                    <li><a href="../../Websitecss/images/CapitalMaxRetail.pdf" target="_blank">Business Plan</a></li>
+                                    @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
+
+                                </ul>
+                            </div>
+                        </nav><!-- Main Menu End-->
+                    </div>
+                </div>
+            </div>
+            <!--End Sticky Header-->
+
+
+        </header>
+        @RenderBody();
+        <footer class="main-footer">
+            <!-- Pattern Layer -->
+            <div class="pattern-layer"></div>
+            <div class="auto-container">
+                <!--Widgets Section-->
+                <div class="widgets-section">
+                    <div class="row clearfix">
+                        <!-- Big Column -->
+                        <div class="big-column col-lg-2 col-md-2 col-sm-12">
+                            <div class="row clearfix">
+                                <!-- Footer Column -->
+                                <div class="footer-column">
+                                    <div class="footer-widget logo-widget">
+                                        <div class="logo">
+                                            <a href="/Main/index"><img src="../../Websitecss/images/footer-logo.png" alt="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Big Column -->
+                        <div class="big-column col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer-column">
+                                <div class="footer-widget links-widget">
+                                    <div class="footer-title">
+                                        <h4>Our Location</h4>
+                                    </div>
+                                    <p class="color-gray">
+                                        <span class="icon fa fa-map-marker color11"></span>  No 30 4th Cross CMR Road HRBR 2 Block Kalyana Nagar Post Bangalore,
+                            Karnataka, 560042
+                                    </p>
+                                    <p class="color-gray"><span class="icon fa fa-envelope color11"></span>support@capitalmaxretail.in, capitalmaxretailteam@gmail.com  </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Big Column -->
+                        <div class="big-column col-lg-4 col-md-4 col-sm-12">
+                            <div class="footer-column">
+                                <div class="footer-widget news-widget">
+                                    <div class="footer-title">
+                                        <h4>Latest News &amp; Artical</h4>
+                                    </div>
+                                    <!--News Widget Block-->
+                                    <div class="news-widget-block">
+                                        <div class="widget-inner">
+                                            <div class="image">
+                                                <img src="../../Websitecss/images/news-image-1.jpg" alt="">
+                                            </div>
+                                            <h3>
+                                                <a href="#">
+                                                    We are Best for Industrial and Business
+                                                    Solution.
+                                                </a>
+                                            </h3>
+                                            <div class="post-date">August 1, 2018</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="inner-container">
+                        <div class="row clearfix">
+                            <!-- Column -->
+                            <div class="column col-lg-12 col-md-12 col-sm-12 text-center">
+                                <div class="copyright">Copyright © 2020 CapitalMax Retail ‐ All Rights Reserved</div>
+                            </div>
+                            <!-- Column -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Main Footer -->
+    </div>
+    <!--End pagewrapper-->
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-long-arrow-up"></span></div>
+
+    <script src="../../Websitecss/js/jquery.js"></script>
+    <script src="../../Websitecss/js/popper.min.js"></script>
+    <script src="../../Websitecss/js/bootstrap.min.js"></script>
+    <script src="../../Websitecss/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../Websitecss/js/jquery.fancybox.js"></script>
+    <script src="../../Websitecss/js/appear.js"></script>
+    <script src="../../Websitecss/js/nav-tool.js"></script>
+    <script src="../../Websitecss/js/mixitup.js"></script>
+    <script src="../../Websitecss/js/owl.js"></script>
+    <script src="../../Websitecss/js/wow.js"></script>
+    <script src="../../Websitecss/js/jquery-ui.js"></script>
+    <script src="../../Websitecss/js/script.js"></script>
+    <script src="../../Websitecss/js/color-settings.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\ApplicationInsights.config
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\csc.exe
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\System.Collections.Immutable.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\System.Reflection.Metadata.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\vbc.exe
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\VBCSCompiler.exe
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\VBCSCompiler.exe.config
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.Agent.Intercept.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.DependencyCollector.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.Web.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.WindowsServer.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.ApplicationInsights.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.Web.Infrastructure.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Newtonsoft.Json.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Net.Http.Formatting.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Helpers.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Http.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Http.WebHost.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Mvc.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Razor.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.Deployment.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.Razor.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.DependencyCollector.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.Web.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.WindowsServer.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.ApplicationInsights.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Razor.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.Deployment.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.Razor.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Helpers.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Mvc.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Newtonsoft.Json.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Net.Http.Formatting.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Http.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Http.WebHost.xml
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\CapitalMaxRetail.dll.config
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\CapitalMaxRetail.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\CapitalMaxRetail.pdb
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\obj\Debug\CapitalMaxRetail.dll
+D:\SachinMishraProject\repository\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\obj\Debug\CapitalMaxRetail.pdb
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\ApplicationInsights.config
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\csc.exe
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\System.Collections.Immutable.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\System.Reflection.Metadata.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\vbc.exe
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\VBCSCompiler.exe
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\roslyn\VBCSCompiler.exe.config
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\CapitalMaxRetail.dll.config
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\CapitalMaxRetail.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\CapitalMaxRetail.pdb
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.DependencyCollector.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.Web.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.WindowsServer.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.ApplicationInsights.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.Web.Infrastructure.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Newtonsoft.Json.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Net.Http.Formatting.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Helpers.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Http.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Http.WebHost.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Mvc.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Razor.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.Deployment.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.Razor.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.DependencyCollector.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.Web.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.AI.WindowsServer.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.ApplicationInsights.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Razor.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.Deployment.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Webpages.Razor.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Helpers.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Mvc.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\Newtonsoft.Json.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Net.Http.Formatting.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Http.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\bin\System.Web.Http.WebHost.xml
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\obj\Debug\CapitalMaxRetail.csprojResolveAssemblyReference.cache
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\obj\Debug\CapitalMaxRetail.dll
+D:\Mona Afluex\Repositories\CapitalMaxRetail\CapitalMaxRetail\CapitalMaxRetail\obj\Debug\CapitalMaxRetail.pdb

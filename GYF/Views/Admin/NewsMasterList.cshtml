@@ -1,0 +1,91 @@
+﻿@model GYF.Models.Admin
+
+@{
+    ViewBag.Title = "NewsMasterList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("NewsMasterList", "Admin", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">News Master </span> - News Master List</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">News Master List</h6>
+                        <p style="color:red">
+                            @TempData["NewsMasterList"]
+                        </p>
+                    </div>
+              
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example24">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.lstNewsList != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.lstNewsList)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>@Item.Title</td>
+                                                <td>@Item.Description</td>
+                                                <td>
+                                                    <a href="/Admin/NewsMaster?PK_NewsID=@Item.PK_NewsID" class="btn btn-info btn-sm">Edit</a>
+                                                  
+                                                    <a href="/Admin/DeleteNewsMasterList?PK_NewsID=@Item.PK_NewsID" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                                </td>
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    function validate() {
+        $(".errortext").removeClass('errortext');
+        if ($("#LoginId").val() == '') {
+            $("#LoginId").addClass('errortext');
+            $("#LoginId").focus();
+            return false;
+        }
+    }
+</script>
+

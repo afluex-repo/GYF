@@ -1,0 +1,122 @@
+﻿@model CapitalMaxRetail.Models.AdminReports
+
+@{
+    ViewBag.Title = "Downline";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Downline", "AdminReports", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Team </span> - Downline</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Downline</h6>
+                        <p style="color:red">
+                            @TempData["Downline"]
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mx-auto">
+                                <div class="row ">
+
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <label> Login Id <span style="color: red">*</span></label>
+                                            @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control"})
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <input type="submit" class="btn btn-info" name="GetDownline" id="GetDownline" onclick="return validate();" style="margin-top:25px" value="Get Downline" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered w-100 mb-0" id="example24">
+                    <thead>
+                        <tr>
+
+                            <th>Sr No.</th>
+                            <th>Login Id</th>
+                            <th>Associate Name</th>
+                            <th>Joining Date</th>
+                            <th>Mobile</th>
+                            <th>Parent Login Id</th>
+                            <th>Parent Name</th>
+                            <th>Refer By</th>
+                            <th>Refer By Name</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            if (Model.DownlineList != null)
+                            {
+                                int i = 1;
+                                foreach (var Item in Model.DownlineList)
+                                {
+                                    <tr class="text-left">
+
+                                        <td>
+                                            @i
+                                        </td>
+                                        <td>@Item.LoginId</td>
+                                        <td>@Item.AssociateName</td>
+                                        <td>@Item.JoiningDate</td>
+                                        <td>@Item.Mobile</td>
+                                        <td>@Item.ParentLoginId</td>
+                                        <td>@Item.ParentName</td>
+                                        <td>@Item.RefferBy</td>
+                                        <td>@Item.RefferByName</td>
+                                        <td>@Item.Status</td>
+                                    </tr>
+                                    i++;
+                                }
+
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    function validate() {
+        $(".errortext").removeClass('errortext');
+        if ($("#LoginId").val() == '') {
+            $("#LoginId").addClass('errortext');
+            $("#LoginId").focus();
+            return false;
+        }
+    }
+    </script>
+

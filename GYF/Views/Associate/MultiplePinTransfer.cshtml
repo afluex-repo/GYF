@@ -1,0 +1,189 @@
+﻿@model GYF.Models.Associate
+
+@{
+    ViewBag.Title = "MultiplePinTransfer";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+@using (Html.BeginForm("MultiplePinTransfer", "Associate", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+
+<!-- Page header -->
+<div class="page-header page-header-light">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pin Management </span> - Multiple Transfer Pin</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+</div>
+<!-- /page header -->
+
+<div class="content">
+
+    <div class="row">
+        <div class="col-xl-12">
+            <!-- Marketing campaigns -->
+            <div class="card">
+                <div class="card-header header-elements-sm-inline">
+                    <h6 class="card-title">Multiple Transfer Pin</h6>
+
+                </div>
+                <div class="card-header">
+
+                    <p style="color: red">
+                        @TempData["MultiplePinTransfer"]
+                    </p>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered w-100 mb-0"id="example25">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="ckbCheckAll" /></th>
+                                <th>Sr No.</th>
+                                <th>Owner</th>
+                                <th>Epin No</th>
+                                <th>PinAmount</th>
+                                <th>Created On</th>
+
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                if (Model.MultiplePinList != null)
+                                {
+                                    int i = 1;
+                                    foreach (var Item in Model.MultiplePinList)
+                                    {
+                                        <tr class="text-left">
+
+                                            <td>
+                                                <input class="checkBoxClass" name="chkSelect_ @i" id="chkSelect_ @i" type="checkbox" />
+                                               
+                                                <input type="hidden" name="ePinNo_ @i" id="ePinNo_ @i" value="@Item.ePinNo" />
+                                               
+
+                                            </td>
+                                            <td>
+                                                @i
+
+                                            </td>
+                                            <td>@Item.tOwner</td>
+                                            <td>@Item.ePinNo</td>
+                                            <td>@Item.PinAmount</td>
+                                            <td>@Item.AddedOn</td>
+
+
+
+                                        </tr>
+                                        i++;
+                                    }
+                                    <input type="hidden" id="hdRows" name="hdRows" value="@i" />
+                                }
+                            }
+                        </tbody>
+                    </table>
+                    <br/>
+                  
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3" style="margin-left:10px">
+                        <div class="form-group">
+                            <label>
+                                Login Id <span style="color: red">*</span>
+                            </label>
+                            @Html.TextBoxFor(m => m.ToLoginId, new { @class = "form-control", @Placeholder = "Login Id", @onchange = "getLoggerName();" })
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="form-group">
+                            <label> Name</label>
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @Placeholder = "Name", @readonly = "readonly" })
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3" style="margin-top:28px">
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success" value="Transfer" name="btnMutipleTranser" onclick="return validate();" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+   
+    function getLoggerName() {
+        var LoginId = $('#ToLoginId');
+        $.ajax({
+            url: '/Associate/getLoggerName',
+            data: {
+                'LoginId': $('#ToLoginId').val()
+            },
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.Name == null) {
+                    alert('Invalid Login ID')
+                    $("#ToLoginId").val('');
+                    $("#Name").val('');
+                    return;
+                }
+                $("#Name").val(data.Name);
+
+            }
+        });
+    }
+
+
+    function validate() {
+        $(".errortext").removeClass('errortext');
+
+        if (($("input[name*='chkSelect_']:checked").length) <= 0) {
+            alert("You must check at least 1 box");
+            return false;
+        }
+        if ($("#ToLoginId").val() == '') {
+            $("#ToLoginId").addClass('errortext');
+            $("#ToLoginId").focus();
+            return false;
+        }
+       
+    }
+    
+    $(document).ready(function () {
+        $('#ckbCheckAll').on('click', function () {
+            if (this.checked) {
+                $('.checkBoxClass').each(function () {
+                    this.checked = true;
+                });
+            } else {
+                $('.checkBoxClass').each(function () {
+                    this.checked = false;
+                });
+            }
+        });
+
+        $('.checkBoxClass').on('click', function () {
+            if ($('.checkBoxClass:checked').length == $('.checkBoxClass').length) {
+                $('#ckbCheckAll').prop('checked', true);
+            } else {
+                $('#ckbCheckAll').prop('checked', false);
+            }
+        });
+    });
+
+</script>
+
+
+
+
+
+
