@@ -1,0 +1,88 @@
+﻿@model GYF.Models.Admin
+
+@{
+    ViewBag.Title = "UnusedPin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UnusedPin", "Admin", FormMethod.Post, new { id = "formid" }))
+{
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pin Management </span> - Unused Pins</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Unused Pins</h6>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example24">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Epin No</th>
+                                    <th>PinAmount</th>
+                                    <th>Created On</th>
+
+                                    <th>Top Up</th>
+
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.lstdetails != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.lstdetails)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+
+                                                </td>
+                                                <td>@Item.ePinNo</td>
+                                                <td>@Item.PinAmount</td>
+                                                <td>@Item.AddedOn</td>
+
+                                                <td>
+
+                                                    <a href="#" class="btn btn-sm btn-success">Top Up</a>
+
+
+                                                </td>
+
+
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}

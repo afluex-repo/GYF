@@ -1,0 +1,83 @@
+﻿@model CapitalMaxRetail.Models.Associate
+
+@{
+    ViewBag.Title = "Reward";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+@using (Html.BeginForm("Reward", "Associate", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Reward </span> </h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Reward</h6>
+                        <p style="color:red">
+                            @TempData["Reward"]
+                        </p>
+                    </div>
+                   
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example25">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Target Level</th>
+                                    <th>Target Direct</th>
+                                    <th>Target Days</th>
+                                    <th>Reward Amount</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+                            @*<tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.Rewardlist != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.Rewardlist)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>@Item.TargetLevel</td>
+                                                <td>@Item.TargetDirect</td>
+                                                <td>@Item.TargetDays</td>
+                                                <td>@Item.RewardAmount</td>
+                                                <td>@Item.Status</td>
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>*@
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+

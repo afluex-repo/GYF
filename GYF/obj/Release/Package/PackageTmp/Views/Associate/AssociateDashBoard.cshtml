@@ -1,0 +1,447 @@
+﻿@model CapitalMaxRetail.Models.DashBoard
+
+@{
+    ViewBag.Title = "AssociateDashBoard";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+
+<style>
+    thead.assoicidab {
+        background-color: #00796a;
+        color: #fff;
+    }
+
+    .assdirect1 {
+        background-color: #ac5d28;
+        color: #fff;
+    }
+
+    .assdirect2 {
+        background-color: #b67916;
+        color: #fff;
+    }
+
+    .assdirect3 {
+        background-color: #1d7b50;
+        color: #fff;
+    }
+
+    .assdirect4 {
+        background-color: #5a361f;
+        color: #fff;
+    }
+
+    .assdirect5 {
+        background-color: #413838;
+        color: #fff;
+    }
+
+    .assdirect6 {
+        background-color: #6e2121;
+        color: #fff;
+    }
+
+    .assdirect7 {
+        background-color: #493411;
+        color: #fff;
+    }
+</style>
+@using (Html.BeginForm("AssociateDashBoard", "Associate", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Associate DashBoard </span> </h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-6">
+                <!-- Marketing campaigns -->
+                <div class="card">
+
+                    <div class="card-header">
+                        <div class="row ">
+
+                            <div class="col-auto">
+                                <h4 class="mt-0 mb-1">My Details</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0">
+                            <thead class="assoicidab">
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Login Id</th>
+                                    <th>Name</th>
+                                    <th>Joining Date</th>
+                                    <th>Join Package</th>
+                                    <th>Status</th>
+                                    <th>Activation Date</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.DashboardList != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.DashboardList)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.Name</td>
+                                                <td>@Item.JoiningDate</td>
+                                                <td>@Item.Package</td>
+                                                <td>@Item.Status</td>
+                                                <td>@Item.PermanentDate</td>
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+
+                    <div class="card-header">
+                        <div class="row ">
+
+                            <div class="col-auto">
+                                <h4 class="mt-0 mb-1">Referal Link</h4>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a target="_blank" href="/Main/Registration?Pid=@Session["LoginId"]">http://CapitalMaxRetail.in/Main/Registration?Pid=@Session["LoginId"]</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect1">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Total Active Direct Id</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.TotalActiveDirect</h4>
+                                    </div>
+                                    <div class="col-auto  text-white py-2" style="background:#f46405">
+                                        <a class="mb-0" href="/Associate/DirectReport"><span style="margin-top:35px;color:white" class="text-mute d-block">View Details</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect2">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Level Wise Income</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.TotalLevelIncome</h4>
+                                    </div>
+                                    <div class="col-auto  text-white py-2" style="background:#F39C11">
+                                        <a class="mb-0" href="~/Associate/LevelIncome"><span style="margin-top:35px;color:white" class="text-mute d-block">View Details</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect3">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>RY Income</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.TotalSingleLegIncome</h4>
+                                    </div>
+                                    <div class="col-auto  text-white py-2" style="background:#00A65A">
+                                        <a class="mb-0" href="~/Associate/RY"><span style="margin-top:35px;color:white" class="text-mute d-block">View Details</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                            <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                                <div class="card-body py-0">
+                                    <div class="row">
+                                        <div class="col py-2 pr-0">
+                                            <p>Single Leg Team Income</p><br>
+                                            <h4 class="font-weight-light mb-0">@ViewBag.TotalSingleLegIncome</h4>
+                                        </div>
+                                        <div class="col-auto  text-white py-2" style="background:#00A65A">
+                                            <a class="mb-0" href="~/Associate/SingleLegIncome"><span style="margin-top:35px;color:white" class="text-mute d-block">View Details</span></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+                @*<div class="row">
+
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Direct Referral Income</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.TotalDirectIncome</h4>
+                                    </div>
+                                    <div class="col-auto  text-white py-2" style="background:#f46405">
+                                        <a class="mb-0" href="~/Associate/DirectIncome"><span style="margin-top:35px;color:white" class="text-mute d-block">View Details</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Pool Income</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.TotalPoolIncome</h4>
+                                    </div>
+                                    <div class="col-auto  text-white py-2" style="background:#00A65A">
+                                        <a class="mb-0" href="~/Associate/AutoPoolIncome"><span style="margin-top:35px;color:white" class="text-mute d-block">View Details</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>My Reward</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.MyReward</h4>
+                                    </div>
+                                    <div class="col-auto text-white py-2" style="background:#7C188C">
+                                        <a class="mb-0" href="~/Associate/Reward"><span style="margin-top:35px;color:white" class="text-mute d-block">View Details</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>*@
+
+
+
+
+                <div class="row">
+
+
+                    @*<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                            <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                                <div class="card-body py-0">
+                                    <div class="row">
+                                        <div class="col py-2 pr-0">
+                                            <p>Active Single Leg Team</p><br>
+                                            <h4 class="font-weight-light mb-0">@ViewBag.TotalActiveSingleLegTeam</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                            <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                                <div class="card-body py-0">
+                                    <div class="row">
+                                        <div class="col py-2 pr-0">
+                                            <p>Total Team</p><br>
+                                            <h4 class="font-weight-light mb-0">@ViewBag.TotalTeam</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+
+
+
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect4">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Single Leg Rank</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.SingleLegRank</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect5">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Current Income</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.CurrentIncome</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect6">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Grand Total Income</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.GrandTotalIncome</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card border-0 shadow-sm overflow-hidden mb-4">
+                            <div class="card-body py-0 assdirect7">
+                                <div class="row">
+                                    <div class="col py-2 pr-0">
+                                        <p>Bank Withdrawal</p><br>
+                                        <h4 class="font-weight-light mb-0">@ViewBag.BankWithdrawal</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="card" style="display:none">
+                    @*<div class="card-header header-elements-sm-inline">
+                            <h6 class="card-title">Downline</h6>
+                            <p style="color:red">
+                                @TempData["Downline"]
+                            </p>
+                        </div>*@
+                    <div class="card-header">
+                        <div class="row ">
+
+                            <div class="col-auto">
+                                <h4 class="mt-0 mb-1">Single Leg Chart</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0">
+                            <thead>
+                                <tr>
+
+                                    <th style="background-color:lightblue">Sr No.</th>
+                                    <th style="background-color:burlywood">Rank</th>
+                                    <th style="background-color:darkgray">SL Team</th>
+                                    <th style="background-color:cornflowerblue">My Team</th>
+                                    <th style="background-color:darksalmon">Direct Sponsor</th>
+                                    <th style="background-color:darkseagreen">Amount</th>
+                                    <th style="background-color:lightseagreen">For Days</th>
+                                    <th style="background-color:pink">Status</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.SingleLegDashboardList != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.SingleLegDashboardList)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td style="background-color:lightblue">
+                                                    @i
+                                                </td>
+                                                <td style="background-color:burlywood">@Item.Rank</td>
+                                                <td style="background-color:darkgray">@Item.TargetTeam</td>
+                                                <td style="background-color:cornflowerblue">@Item.MyTeam</td>
+                                                <td style="background-color:darksalmon">@Item.DirectSponsor</td>
+                                                <td style="background-color:darkseagreen">@Item.Amount</td>
+                                                <td style="background-color:lightseagreen">@Item.ForDays</td>
+                                                <td style="background-color:pink">@Item.SingleLegStatus</td>
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    function validate() {
+        $(".errortext").removeClass('errortext');
+        if ($("#LoginId").val() == '') {
+            $("#LoginId").addClass('errortext');
+            $("#LoginId").focus();
+            return false;
+        }
+    }
+</script>
+

@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+<section class="page-title" style="background-image:url(../../Websitecss/images/background/2.1.jpg)">
+    <div class="auto-container">
+        <div class="inner-container clearfix">
+            <div class="pull-left">
+                <h1>Product</h1>
+            </div>
+            <div class="pull-right">
+                <ul class="bread-crumb clearfix">
+                    <li><a href="/Main/Index">Home</a></li>
+                    <li>Product</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Section -->
+<section class="services-section-five">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <h2>Our Best Product</h2>
+            <div class="seperater style-two"></div>
+        </div>
+        <!-- Services Carousel -->
+    
+            <!-- Service Block -->
+            <div class="services-carousel owl-carousel owl-theme">
+                <!-- Service Block -->
+                @if (Model != null)
+            {
+                if (Model.lstProduct != null)
+                {
+                    int i = 1;
+                    foreach (var Item in Model.lstProduct)
+                    {
+                            <div class="service-block-two">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image"><a href="#"><img src="@Item.ProductImage" width="390" alt=""></a></figure>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h3><a href="#">@Item.ProductName</a></h3>
+                                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i>@Item.ProductPrice</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }
+                }
+
+            </div>
+           
+      
+    </div>
+</section>
+<!--End Product Section -->

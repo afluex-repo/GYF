@@ -1,0 +1,146 @@
+﻿@model GYF.Models.Associate
+
+@{
+    ViewBag.Title = "AutoPoolStructure";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("AutoPoolStructure", "Associate", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Team </span> - Auto Pool Structure</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Auto Pool Structure</h6>
+                        <p style="color:red">
+                            @TempData["AutoPoolStructure"]
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mx-auto">
+                                <div class="row ">
+
+                                   
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <label> Step <span style="color: red"> *</span></label>
+                                            @Html.DropDownListFor(m => m.step, new SelectList(ViewBag.ddlStep, "Value", "Text"), new { @class = "form-control" })
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <input type="submit" class="btn btn-info" name="btnDetails" id="btnDetails" onclick="return validate();" style="margin-top:25px" value="Get Details" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example25">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Login Id</th>
+                                    <th>Associate Name</th>
+                                    <th>Joining Date</th>
+                                    <th>Active Date</th>
+                                    <th>Entry Date</th>
+                                    <th>Amount</th>
+                                    <th>Step</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.ListAutopool != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.ListAutopool)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.Name</td>
+                                                <td>@Item.JoiningDate</td>
+                                                <td>@Item.PermanentDate</td>
+                                                <td>@Item.entrydate</td>
+                                                <td>@Item.EntryAmount</td>
+                                                <td>@Item.step</td>
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    function validate() {
+        $(".errortext").removeClass('errortext');
+   
+        if ($("#step").val() == 0) {
+            $("#step").addClass('errortext');
+            $("#step").focus();
+            return false;
+        }
+    }
+
+
+    function getLoggerName() {
+        var LoginId = $('#LoginId');
+        $.ajax({
+            url: '/Admin/getLoggerName',
+            data: {
+                'LoginId': $('#LoginId').val()
+            },
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.Name == null) {
+                    alert('Invalid Login ID')
+                    $("#LoginId").val('');
+                    $("#Name").val('');
+                    return;
+                }
+                $("#Name").val(data.Name);
+
+            }
+        });
+    }
+</script>
+

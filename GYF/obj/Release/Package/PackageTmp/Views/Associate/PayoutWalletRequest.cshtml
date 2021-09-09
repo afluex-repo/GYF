@@ -1,0 +1,160 @@
+﻿@model CapitalMaxRetail.Models.Associate
+
+@{
+    ViewBag.Title = "PayoutWalletRequest";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+@using (Html.BeginForm("PayoutWalletRequest", "Associate", FormMethod.Post, new { id = "form" }))
+{
+
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Payout Wallet</span> - Payout Request</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Payout Request</h6>
+
+                    </div>
+                    <div class="card-header">
+
+                        <p style="color: red">
+                            @TempData["PayoutWalletRequest"]
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mx-auto">
+                                <div class="row ">
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            Balance
+                                            @Html.TextBoxFor(m => m.Balance, new { @class = "form-control", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            Login Id
+                                            @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            Amount<span style="color: red"> *</span>
+                                            @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "Amount", @onchange = "return getAmountValidate()", @onkeypress = "return isNumberKey(event);" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+
+                                            <input type="submit" class="btn btn-success" value="Request" name="btnRequest" onclick="return validate();" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example25">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Login Id</th>
+                                    <th>Associate Name</th>
+                                    <th>Amount</th>
+                                    <th>Requested Date</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.PayoutRequestlist != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.PayoutRequestlist)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.Name</td>
+                                                <td>@Item.Amount</td>
+                                                <td>@Item.RequestedDate</td>
+
+                                                <td>@Item.Status</td>
+
+                                               
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+    function getAmountValidate() {
+        var Amount = $('#Amount').val();
+        var Balance = $('#Balance').val();
+        if (Number(Amount) > Number(Balance)) {
+            alert('Amount is always less than Balance');
+            var Amount = $('#Amount').val('');
+            return false;
+        }
+    }
+    function validate() {
+        $(".errortext").removeClass('errortext');
+        if ($("#Amount").val() == '') {
+            $("#Amount").addClass('errortext');
+            $("#Amount").focus();
+            return false;
+        }
+    }
+</script>
+
+

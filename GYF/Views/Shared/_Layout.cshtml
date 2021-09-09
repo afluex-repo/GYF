@@ -1,0 +1,434 @@
+﻿
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title</title>
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="../../AssociateAssets/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="../../AssociateAssets/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../AssociateAssets/assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
+    <link href="../../AssociateAssets/assets/css/layout.min.css" rel="stylesheet" type="text/css">
+    <link href="../../AssociateAssets/assets/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="../../AssociateAssets/assets/css/colors.min.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../../Websitecss/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../../Websitecss/images/favicon.png" type="image/x-icon">
+    <link href="../../AssociateAssets/global_assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .dataTables_wrapper {
+            padding-top: 10px;
+        }
+
+        * {
+            outline: none;
+        }
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        user agent stylesheet div {
+            display: block;
+        }
+
+        .card {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+        }
+
+        .dt-buttons {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding-top: 5px;
+        }
+
+        * {
+            outline: none;
+        }
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        user agent stylesheet div {
+            display: block;
+        }
+
+        .card {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+        }
+
+        .dt-buttons .dt-button {
+            background: #ffffff none repeat scroll 0 0;
+            border-radius: 4px;
+            color: black;
+            margin-right: 3px;
+            padding: 3px 15px;
+            border: 1px solid;
+        }
+
+        a {
+            color: #0c0c0c;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects;
+        }
+
+        * {
+            outline: none;
+        }
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        user agent stylesheet a:-webkit-any-link {
+            color: -webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .dataTables_filter {
+            float: right;
+            margin-right: 16px;
+        }
+
+        * {
+            outline: none;
+        }
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        user agent stylesheet div {
+            display: block;
+        }
+
+        .dataTables_info, .dataTables_length {
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        * {
+            outline: none;
+        }
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        user agent stylesheet div {
+            display: block;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+            background: transparent none repeat scroll 0 0;
+            border: 1px solid rgba(120,130,140,.13);
+            box-shadow: none;
+            color: #67757c;
+            cursor: default;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            border: 1px solid rgba(120,130,140,.13);
+            box-sizing: border-box;
+            color: #67757c;
+            cursor: pointer;
+            display: inline-block;
+            min-width: 1.5em;
+            padding: .5em 1em;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        a {
+            color: #0c0c0c;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects;
+        }
+
+        * {
+            outline: none;
+        }
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        .dataTables_wrapper .dataTables_paginate {
+            float: right;
+            padding-top: .25em;
+            text-align: right;
+            margin-right: 13px;
+        }
+
+        .dt-buttons {
+            margin-left: 9px !important;
+            float: left;
+        }
+    </style>
+
+    <!-- /theme JS files -->
+</head>
+<body>
+    <!-- Main navbar -->
+    <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
+        <div class="navbar-brand">
+            <a href="/Admin/AdminDashboard" class="d-inline-block">
+                <img src="../../AssociateAssets/global_assets/images/logo.png" alt="" style="width: 184px;height: 49px;">
+            </a>
+        </div>
+        <div class="d-md-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                <i class="icon-tree5"></i>
+            </button>
+            <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                <i class="icon-paragraph-justify3"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+                        @*<i class="icon-paragraph-justify3"></i>*@
+                        <img src="../../AssociateAssets/global_assets/images/list-icon.png" height="20" width="20" />
+                    </a>
+                </li>
+            </ul>
+            <span class="navbar-text col-md-9">
+
+            </span>
+           
+            <span class="navbar-text ml-md-3">
+                <span class="badge badge-mark border-orange-300 mr-2"></span>
+                Welcome, @Session["Name"],@Session["FullName"]
+            </span>
+        </div>
+    </div>
+    <!-- /main navbar -->
+    <!-- Page content -->
+    <div class="page-content">
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-light sidebar-main sidebar-expand-md">
+            <!-- Sidebar mobile toggler -->
+            <div class="sidebar-mobile-toggler text-center">
+                <a href="#" class="sidebar-mobile-main-toggle">
+                    <i class="icon-arrow-left8"></i>
+                </a>
+                <span class="font-weight-semibold">Navigation</span>
+                <a href="#" class="sidebar-mobile-expand">
+                    <i class="icon-screen-full"></i>
+                    <i class="icon-screen-normal"></i>
+                </a>
+            </div>
+            <!-- /sidebar mobile toggler -->
+            <!-- Sidebar content -->
+            <div class="sidebar-content">
+                <!-- User menu -->
+                
+                <!-- /user menu -->
+                <!-- Main navigation -->
+                <div class="card card-sidebar-mobile">
+                    <ul class="nav nav-sidebar" data-nav-type="accordion">
+                        <!-- Main -->
+                        @*<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>*@
+                        <li class="nav-item">
+                            <a href="/Admin/AdminDashboard" class="nav-link active">
+                                <i class="icon-home4"></i>
+                                <span>
+                                    Dashboard
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-list"></i> <span>KYC</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/Admin/Uploadkyclist" class="nav-link">Approve KYC</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-print"></i> <span>Product Master</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/Admin/ProductMaster" class="nav-link">Add Product</a></li>
+                                <li class="nav-item"><a href="/Admin/ProductList" class="nav-link">Product List</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-users"></i> <span>News Master</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/Admin/NewsMaster" class="nav-link">Add News</a></li>
+
+                                <li class="nav-item"><a href="/Admin/NewsMasterList" class="nav-link">News List</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-users"></i> <span>Team</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/AdminReports/Downline" class="nav-link">My Downline Team</a></li>
+                                <li class="nav-item"><a href="/AdminReports/DirectReport" class="nav-link">Direct</a></li>
+
+                                <li class="nav-item"><a href="/AdminReports/LevelWiseTeam" class="nav-link">Level Wise Team</a></li>
+                                @*<li class="nav-item"><a href="/AdminReports/AutoPoolStructure" class="nav-link">Auto Pool Structure</a></li>*@
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fa fa-thumbtack"></i> <span>Pin Management</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/Admin/CreatePin" class="nav-link">Create Pin</a></li>
+
+                                @* <li class="nav-item"><a href="/Admin/UnusedPin" class="nav-link">Unused Pins</a></li>*@
+                                <li class="nav-item"><a href="/Admin/UsedPins" class="nav-link">Used-Unused Pins</a></li>
+                                <li class="nav-item"><a href="/AdminReports/PinTransferReport" class="nav-link">Pin Transfer Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="far fa-credit-card"></i> <span>Income Reports</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                                @*<li class="nav-item"><a href="/AdminReports/DirectIncome" class="nav-link">Direct Income</a></li>*@
+                                <li class="nav-item"><a href="/AdminReports/ROI" class="nav-link">ROI</a></li>
+                                @*<li class="nav-item"><a href="/AdminReports/SingleLegIncome" class="nav-link">Single Leg Income</a></li>*@
+                                <li class="nav-item"><a href="/AdminReports/LevelIncome" class="nav-link">Level Income</a></li>
+                                @*<li class="nav-item"><a href="/AdminReports/AutoPoolIncome" class="nav-link">Auto Pool Income</a></li>*@
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fab fa-cc-visa"></i> <span>Payout Reports</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                                <li class="nav-item"><a href="/AdminReports/PayoutDetails" class="nav-link">Payout Details</a></li>
+                                <li class="nav-item"><a href="/AdminReports/PaidPayoutDetails" class="nav-link">Paid Payout Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="far fa-money-bill-alt"></i> <span>Payout Wallet</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                                <li class="nav-item"><a href="/AdminReports/PayoutLedger" class="nav-link">Payout Ledger</a></li>
+                                <li class="nav-item"><a href="/AdminReports/PayoutWalletRequest" class="nav-link">Payout Request</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-list"></i> <span>Admin Report</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/AdminReports/AssociateList" class="nav-link">Associate List</a></li>
+                                <li class="nav-item"><a href="/AdminReports/TopupReport" class="nav-link">Topup Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/AdminReports/Support" class="nav-link">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span>
+                                    Support
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Main/Login" class="nav-link">
+                                <i class="icon-switch2"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                        <!-- /main -->
+
+                    </ul>
+                </div>
+                <!-- /main navigation -->
+            </div>
+            <!-- /sidebar content -->
+
+        </div>
+        <!-- /main sidebar -->
+        <!-- Main content -->
+        <div class="content-wrapper">
+
+            <!-- Content area -->
+            @RenderBody()
+            <!-- /content area -->
+            <!-- Footer -->
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Footer
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+                        &copy; 2020. <a href="#" target="_blank">GYF</a>
+                    </span>
+
+                </div>
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script src="../../AssociateAssets/global_assets/js/main/jquery.min.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/plugins/ui/ripple.min.js"></script>
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script src="../../AssociateAssets/global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script src="../../AssociateAssets/assets/js/app.js"></script>
+    <script src="../../AssociateAssets/global_assets/js/demo_pages/dashboard.js"></script>
+
+
+    <script src="./../Datatablecss/datatables/datatables.min.js"></script>
+    <script src="./../Datatablecss/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="./../Datatablecss/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="./../Datatablecss/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="./../Datatablecss/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="./../Datatablecss/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="./../Datatablecss/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="./../Datatablecss/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="./../Datatablecss/datatables/datatables-init.js"></script>
+</body>
+<!-- Mirrored from demo.interface.club/limitless/demo/bs4/Template/layout_1/LTR/material/full/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jul 2019 07:58:23 GMT -->
+</html>
+

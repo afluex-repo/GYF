@@ -1,0 +1,84 @@
+﻿@model GYF.Models.Associate
+
+@{
+    ViewBag.Title = "DirectReport";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+
+@using (Html.BeginForm("DirectReport", "Associate", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Team </span> - Direct</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Direct</h6>
+                        <p style="color:red">
+                            @TempData["DirectReport"]
+                        </p>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example25">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Login Id</th>
+                                    <th>Name</th>
+                                    <th>Joining Date</th>
+                                    <th>Active Date</th>
+                                    <th>Mobile</th>
+
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.DirectReportList != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.DirectReportList)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.Name</td>
+                                                <td>@Item.JoiningDate</td>
+                                                <td>@Item.PermanentDate</td>
+                                                <td>@Item.Mobile</td>
+
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+

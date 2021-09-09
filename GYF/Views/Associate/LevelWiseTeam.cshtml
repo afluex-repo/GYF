@@ -1,0 +1,170 @@
+﻿@model GYF.Models.Associate
+
+@{
+    ViewBag.Title = "LevelWiseTeam";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+
+@using (Html.BeginForm("LevelWiseTeam", "Associate", FormMethod.Post, new { id = "form" }))
+{
+
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Team </span> - Level Wise Team</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Level Wise Team</h6>
+
+                    </div>
+                    <div class="card-header">
+
+                        <p style="color: red">
+                            @TempData["LevelWiseTeam"]
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mx-auto">
+                                <div class="row ">
+
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            Level <span style="color: red">*</span>
+                                            @Html.DropDownListFor(m => m.levelId, new SelectList(ViewBag.ddlLevel, "Value", "Text"), new { @class = "form-control" })
+
+
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <input type="submit" class="btn btn-info" name="btnDetails" onclick="return validate();" id="btnDetails" style="margin-top:25px" value="Get Details" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example25">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Login Id</th>
+                                    <th>Name</th>
+                                    <th>Joining Date</th>
+                                    <th>Active Date</th>
+                                    <th>Level</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.LevelWiselist != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.LevelWiselist)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+
+                                                </td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.Name</td>
+                                                <td>@Item.JoiningDate</td>
+                                                <td>@Item.PermanentDate</td>
+                                                <td>@Item.level</td>
+
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+    function validate() {
+        $(".errortext").removeClass("errortext");
+      
+        if ($('#levelId').val() == 0) {
+            $("#levelId").addClass('errortext');
+            $('#levelId').focus();
+            return false;
+        }
+
+        return true;
+    }
+
+    function getLoggerName() {
+        var LoginId = $('#LoginId');
+        $.ajax({
+            url: '/Admin/getLoggerName',
+            data: {
+                'LoginId': $('#LoginId').val()
+            },
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.Name == null) {
+                    alert('Invalid Login ID')
+                    $("#LoginId").val('');
+                    $("#Name").val('');
+                    return;
+                }
+                $("#Name").val(data.Name);
+
+            }
+        });
+    }
+
+    $('#FromDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1950:2020'
+    });
+
+    $('#ToDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1950:2020'
+    });
+</script>
+

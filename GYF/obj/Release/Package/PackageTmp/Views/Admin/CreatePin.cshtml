@@ -1,0 +1,269 @@
+﻿@model CapitalMaxRetail.Models.Admin
+
+@{
+    ViewBag.Title = "CreatePin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("CreatePin", "Admin", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Admin </span> Create Pin</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+    <div class="card-header header-elements-sm-inline">
+
+        <p style="color:red">
+            @TempData["CreatePin"]
+        </p>
+    </div>
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Create Pin</h6>
+
+                    </div>
+
+                    <div class="row" style="margin-left:10px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="x_panel">
+
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        Login Id<span style="color: red">*</span>
+                                                        @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @Placeholder = "Login Id", @onchange = "getLoggerName();" })
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        Name
+                                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @Placeholder = "Name", @readonly = "readonly" })
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        Package <span style="color: red">*</span>
+                                                        @Html.DropDownListFor(m => m.Fk_PackageId, new SelectList(ViewBag.ddlPackageName, "Value", "Text"), new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        No of Pins<span style="color: red">*</span>
+                                                        @Html.TextBoxFor(m => m.NoofPins, new { @class = "form-control", @onkeypress = "return isNumberKey(event);", @Placeholder = "No of Pins" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="form-group">
+                                                        Payment Mode <span style="color:red">*</span>
+
+
+                                                        @Html.DropDownListFor(m => m.PaymentMode, new SelectList(ViewBag.ddlpaymentmode, "Value", "Text"), new { @class = "form-control", @onchange = "getpaymentdetails();" })
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4" id="divtransactiono" style="display: none">
+                                                    <div class="form-group">
+                                                        <span id="txnNo"></span> <span style="color: red">*</span>
+                                                        @Html.TextBoxFor(m => m.TransactionNo, new { @class = "form-control", @Placeholder = "Transaction No", @maxlength = "50" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4" id="divPaymentMode" style="display: none">
+                                                    <div class="form-group">
+                                                        <span id="txndt"></span><span style="color: red">*</span>
+                                                        @Html.TextBoxFor(m => m.TransactionDate, new { @class = "form-control", @Placeholder = "Date", @Readonly = "readonly" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-lg-4" id="divbankname" style="display: none">
+                                                    <div class="form-group">
+                                                        Bank Name <span style="color: red">*</span>
+                                                        @Html.TextBoxFor(m => m.BankName, new { @class = "form-control", @maxlength = "100", @Placeholder = "Bank Name" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4" id="divbankbranch" style="display: none">
+                                                    <div class="form-group">
+                                                        Bank Branch <span style="color: red">*</span>
+                                                        @Html.TextBoxFor(m => m.BankBranch, new { @class = "form-control", @maxlength = "100", @Placeholder = "Bank Branch" })
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <div class="card-footer text-left">
+
+                                <input type="submit" class="btn btn-success" value="Create" name="btnCreatePin" onclick="return validate();" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+    function validate() {
+        $(".errortext").removeClass('errortext');
+        if ($("#LoginId").val() == '') {
+            $("#LoginId").addClass('errortext');
+            $("#LoginId").focus();
+            return false;
+        }
+        if ($("#Fk_PackageId").val() == 0) {
+            $("#Fk_PackageId").addClass('errortext');
+            $("#Fk_PackageId").focus();
+            return false;
+        }
+        if ($("#NoofPins").val() == '') {
+            $("#NoofPins").addClass('errortext');
+            $("#NoofPins").focus();
+            return false;
+        }
+        if ($("#PaymentMode").val() == 0) {
+            $("#PaymentMode").addClass('errortext');
+            $("#PaymentMode").focus();
+            return false;
+        }
+
+        if ($('#PaymentMode').val() != '1') {
+            if ($('#TransactionNo').val() == '') {
+                $("#TransactionNo").addClass('errortext');
+                $('#TransactionNo').focus();
+                $("#divload").css({ 'display': 'none' });
+                return false;
+            }
+            if ($('#TransactionDate').val() == '') {
+                $("#TransactionDate").addClass('errortext');
+                $('#TransactionDate').focus();
+                $("#divload").css({ 'display': 'none' });
+                return false;
+            }
+            if ($('#BankName').val() == '') {
+                $("#BankName").addClass('errortext');
+                $('#BankName').focus();
+                $("#divload").css({ 'display': 'none' });
+                return false;
+            }
+            if ($('#BankBranch').val() == '') {
+                $("#BankBranch").addClass('errortext');
+                $('#BankBranch').focus();
+                $("#divload").css({ 'display': 'none' });
+                return false;
+            }
+        }
+    }
+
+    $('#TransactionDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1950:2030'
+    });
+
+
+    function getLoggerName() {
+        var LoginId = $('#LoginId');
+        $.ajax({
+            url: '/Admin/getLoggerName',
+            data: {
+                'LoginId': $('#LoginId').val()
+            },
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.Name == null) {
+                    alert('Invalid Login ID')
+                    $("#LoginId").val('');
+                    $("#Name").val('');
+                    return;
+                }
+                $("#Name").val(data.Name);
+
+            }
+        });
+    }
+
+
+    function getpaymentdetails() {
+        if ($('#PaymentMode').val() == '2') {
+            $('#txnNo').html('Cheque No.');
+            $('#txndt').html('Cheque Date');
+            $("#divPaymentMode").show();
+            $("#divtransactiono").show();
+            $("#divbankname").show();
+            $("#divbankbranch").show();
+            $("#TransactionNo").attr("placeholder", "Cheque No.");
+            $("#TransactionDate").attr("placeholder", "Cheque Date");
+        }
+        else if ($('#PaymentMode').val() == '3') {
+            $('#txndt').html('NEFT Date');
+            $('#txnNo').text('NEFT No.');
+            $("#divPaymentMode").show();
+            $("#divtransactiono").show();
+            $("#divbankname").show();
+            $("#divbankbranch").show();
+            $("#TransactionNo").attr("placeholder", "NEFT No.");
+            $("#TransactionDate").attr("placeholder", "NEFT Date");
+        }
+        else if ($('#PaymentMode').val() == '4') {
+            $('#txndt').html('DD Date');
+            $('#txnNo').text('DD No.');
+            $("#divPaymentMode").show();
+            $("#divtransactiono").show();
+            $("#divbankname").show();
+            $("#divbankbranch").show();
+            $("#TransactionNo").attr("placeholder", "DD No.");
+            $("#TransactionDate").attr("placeholder", "DD Date");
+        }
+        else {
+            $("#divPaymentMode").hide();
+            $("#divtransactiono").hide();
+            $("#divbankname").hide();
+            $("#divbankbranch").hide();
+        }
+    }
+
+</script>

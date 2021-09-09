@@ -1,0 +1,213 @@
+﻿@model GYF.Models.AdminReports
+
+@{
+    ViewBag.Title = "PayPayout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("PayPayout", "AdminReports", FormMethod.Post, new { id = "form" }))
+{
+
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Payout Reports</span> - Pay Payout</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Pay Payout</h6>
+
+                    </div>
+                    <div class="card-header">
+
+                        <p style="color: red">
+                            @TempData["PayPayout"]
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mx-auto">
+                                <div class="row ">
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group">
+                                            <label>
+                                                Login Id
+                                            </label>
+                                            @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @Placeholder = "Login Id", @onchange = "getLoggerName();" })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group">
+                                            <label> Name</label>
+                                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @Placeholder = "Name", @readonly = "readonly" })
+
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <input type="submit" class="btn btn-info" name="btnDetails" id="btnDetails" style="margin-top:25px" value="Get Details" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example24">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Login ID</th>
+                                    <th>Name</th>
+                                    <th>Bank Holder Name</th>
+                                    <th>Member Account No</th>
+                                    <th>IFSC</th>
+
+                                    <th>Branch</th>
+                                    <th>Bank Name</th>
+                                    <th>Amount</th>
+                                    <th>Pay Amount</th>
+                                    <th>Transaction No</th>
+                                    <th>Transaction Date</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.lstPayoutDetail != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.lstPayoutDetail)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>@i</td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.Name</td>
+                                                <td>@Item.BankHolderName</td>
+                                                <td>@Item.AccountNo</td>
+                                                <td>@Item.IFSC</td>
+
+                                                <td>@Item.BankBranch</td>
+                                                <td>@Item.BankName</td>
+                                                <td>@Item.Amount</td>
+
+                                                <td>
+                                                    <input name="chkSelect_ @i" id="chkSelect_ @i" type="hidden" @Item.SelectedValue />
+
+                                                    <input type="text" class="payamount_@i" name="payamount_ @i" id="payamount_ @i" value="@Item.Payamount" onkeypress="return isNumberKey(event);" onchange="return validatePay(@i,'@Item.Amount');" />
+                                                    <input type="hidden" name="Pk_UserId_ @i" id="Pk_UserId_ @i" value="@Item.Pk_UserId" />
+                                                </td>
+                                                <td>   
+                                                      <input type="text" name="TransactionNo_ @i" id="TransactionNo_ @i" value="@Item.TransactionNo" />
+                                                </td>
+                                                <td>
+                                                   <input type="date" name="TransactionDate_ @i" id="TransactionDate_ @i" value="@Item.TransactionDate" />
+                                                </td>
+                                            </tr>
+                                            i++;
+                                        }
+                                        <input type="hidden" id="hdRows" name="hdRows" value="@i" />
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer text-left"id="PayAmount">
+                      
+                        <input type="submit" class="btn btn-success" value="Pay" name="PayAmount" />
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+    function validatePay(texbox, amount) {
+        var textamount = $('.' + 'payamount_' + texbox).val();
+        var amount = amount;
+        if (Number(textamount) > Number(amount)) {
+            alert('Pay Amount is always less than Actual Amount');
+            var paya = $('.' + 'payamount_' + texbox).val('');
+        }
+        return false;
+    }
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+
+    function getLoggerName() {
+        var LoginId = $('#LoginId');
+        $.ajax({
+            url: '/Admin/getLoggerName',
+            data: {
+                'LoginId': $('#LoginId').val()
+            },
+            type: 'GET',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.Name == null) {
+                    alert('Invalid Login ID')
+                    $("#LoginId").val('');
+                    $("#Name").val('');
+                    return;
+                }
+                $("#Name").val(data.Name);
+
+            }
+        });
+    }
+
+
+    $('#FromDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1950:2020'
+    });
+
+    $('#ToDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1950:2020'
+    });
+</script>
+
+
+
+

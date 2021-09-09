@@ -1,0 +1,114 @@
+﻿@model CapitalMaxRetail.Models.Home
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+@using (Html.BeginForm("LoginAction", "Main", FormMethod.Post, new { @id = "signupForm", @class = "md-float-material form-material" }))
+{
+<div class="col-lg-12">
+    <div class="logindesign" style="background-image:url(../../Websitecss/images/background/2.1.jpg)">
+        <div class="card-body">
+            <h6 style="color: red"></h6>
+            <div class="row">
+                <div class="form-group col-md-4 col-sm-12">
+                </div>
+                <div class="form-group col-md-4 col-sm-12">
+                    @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", placeholder = "Login Id" })
+
+                </div>
+                <div class="form-group col-md-4 col-sm-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4 col-sm-12">
+                </div>
+                <div class="form-group col-md-4 col-sm-12">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+
+                </div>
+                <div class="form-group col-md-4 col-sm-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4 col-sm-12">
+                </div>
+                <div class="form-group col-md-4 col-sm-12">
+                    <span style="color:red">@TempData["Login"]</span>
+                    <input type="submit" id="Login" class="btn btn-info btn-block btn-flat margin-top-10" name="Login"
+                           value="Sign In" onclick="return validateform();">
+                </div>
+                <div class="form-group col-md-4 col-sm-12">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+}
+
+
+<script>
+    $(document).ready(function () {
+        $("#divload").css({ 'display': 'none' });
+    });
+    function validateform() {
+        $(".errortext").removeClass("errortext");
+
+
+        if ($('#txtLoginID').val() == '') {
+            $("#txtLoginID").addClass('errortext');
+            $('#txtLoginID').focus();
+            return false;
+        }
+
+        if ($('#txtPassword').val() == '') {
+            $("#txtPassword").addClass('errortext');
+            $('#txtPassword').focus();
+            return false;
+        }
+        $("#divload").css({ 'display': '' });
+        return true;
+    }
+</script>
+
+
+
+
+                </body>
+
+
+                </html>
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $("#divload").css({ 'display': 'none' });
+    });
+    function validateform() {
+
+        $(".errortext").removeClass("errortext");
+
+        if ($('#txtLoginID').val() == '') {
+            $("#txtLoginID").addClass('errortext');
+            $('#txtLoginID').focus();
+
+            return false;
+        }
+        if ($('#txtPassword').val() == '') {
+            $("#txtPassword").addClass('errortext');
+            $('#txtPassword').focus();
+
+            return false;
+        }
+        $("#divload").css({ 'display': '' });
+
+
+    }
+</script>
