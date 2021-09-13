@@ -771,5 +771,97 @@ namespace GYF.Controllers
             }
             return RedirectToAction(FormName, Controller);
         }
+        public ActionResult EwallwetRequestList(Admin model)
+        {
+            List<Admin> lst1 = new List<Admin>();
+
+            DataSet ds11 = model.GEtEwalletRequestList();
+
+            if (ds11 != null && ds11.Tables.Count > 0 && ds11.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds11.Tables[0].Rows)
+                {
+                    Admin Obj = new Admin();
+
+                    Obj.LoginId = r["LoginId"].ToString();
+                    Obj.Name = r["Name"].ToString();
+                    Obj.Pk_RequestId = r["Pk_RequestId"].ToString();
+                    Obj.Amount = r["Amount"].ToString();
+                    Obj.RequestedDate = r["RequestedDate"].ToString();
+                    Obj.Status = r["Status"].ToString();
+                    lst1.Add(Obj);
+                }
+                model.EwalletRequestList = lst1;
+            }
+            return View(model);
+        }
+        public ActionResult ApproveRequest(string Pk_RequestId)
+        {
+            Admin model = new Admin();
+            model.Pk_RequestId = Pk_RequestId;
+            try
+            {
+
+                model.Status = "Approved";
+                model.AddedBy = Session["Pk_AdminId"].ToString();
+
+                DataSet ds = model.ApproveDeclineEwalletRequest();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0]["Msg"].ToString() == "1")
+                    {
+                        TempData["EWalletRequest"] = "Approved Successfully";
+                    }
+                    else if (ds.Tables[0].Rows[0]["Msg"].ToString() == "0")
+                    {
+                        TempData["EWalletRequest"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        return View(model);
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                TempData["EWalletRequest"] = ex.Message;
+                return View(model);
+            }
+            return RedirectToAction("EwallwetRequestList");
+        }
+
+
+        public ActionResult DeclineRequest(string Pk_RequestId)
+        {
+            Admin model = new Admin();
+            model.Pk_RequestId = Pk_RequestId;
+            try
+            {
+
+                model.Status = "Declined";
+                model.AddedBy = Session["Pk_AdminId"].ToString();
+
+                DataSet ds = model.ApproveDeclineEwalletRequest();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0]["Msg"].ToString() == "1")
+                    {
+                        TempData["EWalletRequest"] = "Declined Successfully";
+                    }
+                    else if (ds.Tables[0].Rows[0]["Msg"].ToString() == "0")
+                    {
+                        TempData["EWalletRequest"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        return View(model);
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                TempData["EWalletRequest"] = ex.Message;
+                return View(model);
+            }
+            return RedirectToAction("EwallwetRequestList");
+        }
     }
 }
