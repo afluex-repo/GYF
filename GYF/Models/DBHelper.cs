@@ -15,8 +15,8 @@ namespace GYF.Models
         {
             try
             {
-                //connectionString = "Data Source=23.111.171.42;Initial Catalog=GYFdb;User Id=sa; Password =anil@123!@#;Integrated Security=false;";
-                connectionString = "Data Source=103.48.51.111,1232;Initial Catalog=xmoneydb;User Id=xmoneyuser; Password =Pa$$w0rd@123;Integrated Security=false;";
+                //connectionString = "Data Source=103.48.51.111,1232;Initial Catalog=GyfDB;User Id=gyfuser; Password=gyf@!123#!;Integrated Security=false;";
+              connectionString = "Data Source=103.48.51.111,1232;Initial Catalog=xmoneydb;User Id=xmoneyuser; Password =Pa$$w0rd@123;Integrated Security=false;";
             }
             catch (Exception)
             {
