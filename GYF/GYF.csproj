@@ -930,6 +930,7 @@
     <Content Include="Views\Associate\ConfirmRegistration.cshtml" />
     <Content Include="Views\Wallet\EWalletRequest.cshtml" />
     <Content Include="Views\Wallet\EwalletRequestList.cshtml" />
+    <Content Include="Views\Admin\EwallwetRequestList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

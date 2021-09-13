@@ -42,7 +42,11 @@ namespace GYF.Models
         public string PK_DocumentID { get; set; }
         public string DocumentNumber { get; set; }
         public string DocumentType { get; set; }
+        public string RequestedDate { get; set; }
         public string DocumentImage { get; set; }
+        public string Pk_RequestId { get; set;}
+        public string Amount { get; set; }
+        public List<Admin> EwalletRequestList { get; set; }
         public DataSet GetPaymentMode()
         {
 
@@ -56,7 +60,25 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("GetPackage");
             return ds;
         }
+        public DataSet GEtEwalletRequestList()
+        {
+            SqlParameter[] para = {
+                  new SqlParameter("@FK_UserId",Fk_UserId)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetEwalletRequestList", para);
+            return ds;
+        }
 
+        public DataSet ApproveDeclineEwalletRequest()
+        {
+            SqlParameter[] para = {
+                new SqlParameter("@AddedBy",AddedBy),
+                 new SqlParameter("@Pk_RequestId",Pk_RequestId),
+                 new SqlParameter("@Status",Status)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("ApproveDeclineEwalletRequest", para);
+            return ds;
+        }
         public DataSet GetUserName()
         {
             SqlParameter[] para =
@@ -255,5 +277,6 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("ApproveKYC", para);
             return ds;
         }
+ 
     }
 }

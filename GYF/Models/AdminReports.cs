@@ -469,5 +469,24 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("GetAutoPoolTeam", para);
             return ds;
         }
+        public DataSet GEtEwalletRequestList()
+        {
+            SqlParameter[] para = {
+                  new SqlParameter("@FK_UserId",Fk_UserId)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetEwalletRequestList", para);
+            return ds;
+        }
+
+        public DataSet ApproveDeclineEwalletRequest()
+        {
+            SqlParameter[] para = {
+                new SqlParameter("@AddedBy",AddedBy),
+                 new SqlParameter("@Pk_RequestId",Pk_RequestId),
+                 new SqlParameter("@Status",Status)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("ApproveDeclineEwalletRequest", para);
+            return ds;
+        }
     }
 }
