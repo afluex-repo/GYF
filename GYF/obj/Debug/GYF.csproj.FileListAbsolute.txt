@@ -105,3 +105,4 @@ E:\Repository\GYF\GYF\bin\System.Web.Http.xml
 E:\Repository\GYF\GYF\bin\System.Web.Http.WebHost.xml
 E:\Repository\GYF\GYF\obj\Debug\GYF.dll
 E:\Repository\GYF\GYF\obj\Debug\GYF.pdb
+E:\Repository\GYF\GYF\obj\Debug\GYF.csprojResolveAssemblyReference.cache
