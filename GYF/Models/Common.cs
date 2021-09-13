@@ -271,20 +271,20 @@ namespace GYF.Models
             ddlLevel.Add(new SelectListItem { Text = "Level-5", Value = "5" });
             ddlLevel.Add(new SelectListItem { Text = "Level-6", Value = "6" });
             ddlLevel.Add(new SelectListItem { Text = "Level-7", Value = "7" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-8", Value = "8" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-9", Value = "9" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-10", Value = "10" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-11", Value = "11" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-12", Value = "12" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-13", Value = "13" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-14", Value = "14" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-15", Value = "15" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-16", Value = "16" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-17", Value = "17" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-18", Value = "18" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-19", Value = "19" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-20", Value = "20" });
-            ddlLevel.Add(new SelectListItem { Text = "Level-21", Value = "21" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-8", Value = "8" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-9", Value = "9" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-10", Value = "10" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-11", Value = "11" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-12", Value = "12" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-13", Value = "13" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-14", Value = "14" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-15", Value = "15" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-16", Value = "16" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-17", Value = "17" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-18", Value = "18" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-19", Value = "19" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-20", Value = "20" });
+            //ddlLevel.Add(new SelectListItem { Text = "Level-21", Value = "21" });
             
 
             return ddlLevel;

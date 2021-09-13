@@ -41,25 +41,31 @@
                                 <div class="row ">
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
-                                            <label>Sponsor Id <span style="color:red;font-size: 21px;">*</span></label>
-                                            @Html.TextBoxFor(m => m.SponsorId, new { @class = "form-control", @Placeholder = "Sponsor Id", @onchange = "getsponsordetails(this);" })
-
+                                            <label>Package Id <span style="color:red;font-size: 21px;">*</span></label>
+                                            @Html.DropDownListFor(m => m.PackageId, new SelectList(ViewBag.Package, "Value", "Text"), new { @class = "form-control", @Placeholder = "Package Id", })
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group">
+                                            <label>Sponsor Id <span style="color:red;font-size: 21px;">*</span></label>
+                                            @Html.TextBoxFor(m => m.SponsorId, new { @class = "form-control", @Placeholder = "Sponsor Id", @onchange = "getsponsordetails(this);" })
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="form-group ">
                                             <label> Sponsor Name</label>
                                             @Html.TextBoxFor(m => m.SponsorName, new { @class = "form-control", @Disabled = "true", @Placeholder = "Sponsor Name", })
                                         </div>
                                     </div>
+                                    
+                                </div>
+                                <div class="row">
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
                                             <label> First Name <span style="color:red;font-size: 21px;">*</span></label>
                                             @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @Placeholder = "First Name" })
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
                                             <label> Last Name</label>
@@ -72,34 +78,14 @@
                                             @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @Placeholder = "Email Id" })
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
                                             <label> Mobile No. <span style="color:red;font-size: 21px;">*</span></label>
                                             @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", @Placeholder = "Mobile No", @Maxlength = "10", @onkeypress = "return isNumberKey(event);" })
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="form-group ">
-                                            <label> Gender</label>
-                                            @Html.DropDownListFor(m => m.Gender, new SelectList(ViewBag.ddlgender, "Value", "Text"), new { @class = "form-control" })
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="form-group ">
-                                            <label> PAN No.</label>
-                                            @Html.TextBoxFor(m => m.PanNo, new { @class = "form-control", @Placeholder = "PAN No", @onchange = "return validatepan(event);" })
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="form-group ">
-                                            <label> Aadhar No.</label>
-                                            @Html.TextBoxFor(m => m.AdharNo, new { @class = "form-control", @Placeholder = "Aadhar No", @Maxlength="12", @onkeypress = "return isNumberKey(event);" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
                                             <label> Pin Code</label>
@@ -112,14 +98,15 @@
                                             @Html.TextBoxFor(m => m.State, new { @class = "form-control", @Placeholder = "State", @Disabled = "disabled" })
                                         </div>
                                     </div>
+                                    
+                                </div>
+                                <div class="row">
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
                                             <label> City</label>
-                                            @Html.TextBoxFor(m => m.City, new { @class = "form-control", @Placeholder = "State", @Disabled = "disabled"})
+                                            @Html.TextBoxFor(m => m.City, new { @class = "form-control", @Placeholder = "State", @Disabled = "disabled" })
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
                                             <label> Password</label>
@@ -132,7 +119,9 @@
                                             @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", @Placeholder = "Confirm Password", @onChange = "return ValidatePassword();" })
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-3">
+                                </div>
+                                <div class="row">
+                                     <div class="col-lg-4 col-md-3">
                                         <div class="form-group ">
                                             <br />
                                             <input type="button" id="Confirm" onclick="return confirmregistration();" class="btn btn-primary" name="Confirm" value="Confirm" />
@@ -202,30 +191,30 @@
             return false;
         }
     }
-    function validatepan(event) {
-        $(".errortext").removeClass("errortext");
-        var regExp = /[a-zA-z]{5}\d{4}[a-zA-Z]{1}/;
-        var txtpan = $('#PanNo').val();
-        if (txtpan.length == 10) {
-            if (txtpan.match(regExp)) {
+    //function validatepan(event) {
+    //    $(".errortext").removeClass("errortext");
+    //    var regExp = /[a-zA-z]{5}\d{4}[a-zA-Z]{1}/;
+    //    var txtpan = $('#PanNo').val();
+    //    if (txtpan.length == 10) {
+    //        if (txtpan.match(regExp)) {
 
-            }
-            else {
-                $("#PanNo").addClass('errortext');
-                $('#PanNo').focus();
-                $('#PanNo').val('');
-                alert('Please enter valid PanNo');
+    //        }
+    //        else {
+    //            $("#PanNo").addClass('errortext');
+    //            $('#PanNo').focus();
+    //            $('#PanNo').val('');
+    //            alert('Please enter valid PanNo');
 
-            }
-        }
-        else {
-            $("#PanNo").addClass('errortext');
-            $('#PanNo').focus();
-            $('#PanNo').val('');
-            alert('Please enter 10 digits for a valid PAN number');
+    //        }
+    //    }
+    //    else {
+    //        $("#PanNo").addClass('errortext');
+    //        $('#PanNo').focus();
+    //        $('#PanNo').val('');
+    //        alert('Please enter 10 digits for a valid PAN number');
 
-        }
-    }
+    //    }
+    //}
     function getstatecity() {
         $(".errortext").removeClass("errortext");
         $("#divload").css({ 'display': '' });
@@ -307,8 +296,6 @@
         $("#SponsorId").attr("disabled", "disabled");
         $("#Email").attr("disabled", "disabled");
         $("#LastName").attr("disabled", "disabled");
-        $("#Gender").attr("disabled", "disabled");
-        $("#PanNo").attr("disabled", "disabled");
         $("#Address").attr("disabled", "disabled");
         $("#PinCode").attr("disabled", "disabled");
         $("#Password").attr("disabled", "disabled");
@@ -326,7 +313,7 @@
             url: "/Associate/RegistrationAction",
             Type: "Get",
             DataType: "JSON",
-            data: { SponsorId: $("#SponsorId").val(), FirstName: $("#FirstName").val(), LastName: $("#LastName").val(), Email: $("#Email").val(), MobileNo: $("#MobileNo").val(), PanNo: $("#PanNo").val(), AdharNo: $("#AdharNo").val(), Gender: $("#Gender").val(), PinCode: $("#PinCode").val(), Password: $("#Password").val() },
+            data: { SponsorId: $("#SponsorId").val(), FirstName: $("#FirstName").val(), LastName: $("#LastName").val(), Email: $("#Email").val(), MobileNo: $("#MobileNo").val(), PinCode: $("#PinCode").val(), Password: $("#Password").val(), PackageId: $("#PackageId").val() },
             success: function (data) {
                 if (data.Response == "1") {
                     window.location.href = '@Url.Action("ConfirmRegistration", "Associate")';
