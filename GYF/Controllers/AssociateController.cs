@@ -1587,6 +1587,18 @@ namespace GYF.Controllers
             List<SelectListItem> ddlgender = Common.BindGender();
             ViewBag.ddlgender = ddlgender;
             #endregion ddlgender
+            List<SelectListItem> Package = new List<SelectListItem>();
+            Package.Add(new SelectListItem { Text = "Select", Value = "0" });
+            DataSet ds2 = model.GetProductList();
+            if (ds2 != null && ds2.Tables.Count > 0 && ds2.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds2.Tables[0].Rows)
+                {
+                    Package.Add(new SelectListItem { Text = r["ProductName"].ToString(), Value = r["PK_ProductID"].ToString() });
+
+                }
+            }
+            ViewBag.Package = Package;
             return View(model);
         }
         public ActionResult ConfirmRegistration()
@@ -1594,13 +1606,25 @@ namespace GYF.Controllers
             return View();
         }
 
-        public ActionResult RegistrationAction(string SponsorId, string FirstName, string LastName, string Email, string MobileNo, string PanNo, string AdharNo, string Gender, string PinCode, string Password)
+        public ActionResult RegistrationAction(string SponsorId, string FirstName, string LastName, string Email, string MobileNo,  string Gender, string PinCode, string Password,string PackageId)
         {
             Home obj = new Home();
             #region ddlgender
             List<SelectListItem> ddlgender = Common.BindGender();
             ViewBag.ddlgender = ddlgender;
             #endregion ddlgender
+            List<SelectListItem> Package = new List<SelectListItem>();
+            Package.Add(new SelectListItem { Text = "Select", Value = "0" });
+            DataSet ds2 = obj.GetProductList();
+            if (ds2 != null && ds2.Tables.Count > 0 && ds2.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds2.Tables[0].Rows)
+                {
+                    Package.Add(new SelectListItem { Text = r["ProductName"].ToString(), Value = r["PK_ProductID"].ToString() });
+
+                }
+            }
+            ViewBag.Package = Package;
             try
             {
                 obj.SponsorId = SponsorId;
@@ -1609,14 +1633,15 @@ namespace GYF.Controllers
                 obj.Email = Email;
                 obj.MobileNo = MobileNo;
                 obj.Gender = Gender;
-                obj.RegistrationBy = "Web";
+                obj.RegistrationBy = Session["Pk_userId"].ToString();
                 obj.PinCode = PinCode;
-                obj.PanNo = PanNo;
-                obj.AdharNo = AdharNo;
+                obj.PackageId = PackageId;
+                //obj.PanNo = PanNo;
+                //obj.AdharNo = AdharNo;
                 obj.Password = Crypto.Encrypt(Password);
                 obj.Fk_ParentId = Session["Pk_userId"].ToString();
 
-                DataSet ds = obj.RegistrationNew();
+                DataSet ds = obj.Registration();
                 if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
 

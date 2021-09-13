@@ -43,6 +43,7 @@ namespace GYF.Models
         public string Gender { get; set; }
         public string PanNo { get; set; }
         public string AdharNo { get; set; }
+        public string PackageId { get; set; }
         public DataSet Login()
         {
             SqlParameter[] param = { new SqlParameter("@LoginID",LoginId),
@@ -121,8 +122,8 @@ namespace GYF.Models
 
                                      new SqlParameter("@PinCode",PinCode),
 
-                                     new SqlParameter("@Password",Password)
-
+                                     new SqlParameter("@Password",Password),
+                                     new SqlParameter("@PackageId",PackageId)
                                    };
             DataSet ds = DBHelper.ExecuteQuery("Registration", para);
             return ds;
@@ -155,6 +156,10 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("RegistrationNew", para);
             return ds;
         }
-
+        public DataSet GetProduct()
+        {
+            DataSet ds = DBHelper.ExecuteQuery("GetProduct");
+            return ds;
+        }
     }
 }
