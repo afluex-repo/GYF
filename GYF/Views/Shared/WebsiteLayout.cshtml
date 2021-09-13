@@ -73,12 +73,12 @@
                                         <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
                                         <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
                                         <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
-                                        <li><a href="../../Websitecss/images/GYF.pdf" target="_blank">Business Plan</a></li>
+                                        <li><a href="#">Business Plan</a></li>
                                 @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
                                 <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
                                                 <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
                                                 <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
-                                                      <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Registration" ? "current" : "")"><a href="/Main/Registration">Registration</a></li>
+                                                      @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Registration" ? "current" : "")"><a href="/Main/Registration">Registration</a></li>*@
                                                 <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
 
                                             </ul>
@@ -156,12 +156,12 @@
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
-                                    <li><a href="../../Websitecss/images/GYF.pdf" target="_blank">Business Plan</a></li>
+                                    <li><a href="#">Business Plan</a></li>
                                     @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Registration" ? "current" : "")"><a href="/Main/Registration">Registration</a></li>
+                                    @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Registration" ? "current" : "")"><a href="/Main/Registration">Registration</a></li>*@
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
 
                                 </ul>
@@ -204,10 +204,9 @@
                                         <h4>Our Location</h4>
                                     </div>
                                     <p class="color-gray">
-                                        <span class="icon fa fa-map-marker color11"></span>  No 30 4th Cross CMR Road HRBR 2 Block Kalyana Nagar Post Bangalore,
-                                        Karnataka, 560042
+                                        <span class="icon fa fa-map-marker color11"></span>  Dadar, City- Mohania, Dist- Kaimur (Bhabhua), State- Bihar, Pin Code 821109
                                     </p>
-                                    <p class="color-gray"><span class="icon fa fa-envelope color11"></span>support@GYF.in, GYFteam@gmail.com  </p>
+                                    <p class="color-gray"><span class="icon fa fa-envelope color11"></span>grazieforyouventures@gmail.com  </p>
 
                                 </div>
                             </div>
@@ -246,7 +245,7 @@
                         <div class="row clearfix">
                             <!-- Column -->
                             <div class="column col-lg-12 col-md-12 col-sm-12 text-center">
-                                <div class="copyright">Copyright © 2020 GYF ‐ All Rights Reserved</div>
+                                <div class="copyright">Copyright © @DateTime.Now.Year GYF ‐ All Rights Reserved</div>
                             </div>
                             <!-- Column -->
                         </div>

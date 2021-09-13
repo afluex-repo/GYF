@@ -146,6 +146,7 @@
     <Content Include="AssociateAssets\global_assets\css\icons\material\fonts\material-icons119d.svg" />
     <Content Include="AssociateAssets\global_assets\css\icons\material\styles.min.css" />
     <Content Include="AssociateAssets\global_assets\demo_data\maps\vector\gdp_demo_data.js" />
+    <Content Include="AssociateAssets\global_assets\images\footer-logo.png" />
     <Content Include="AssociateAssets\global_assets\images\list-icon.png" />
     <Content Include="AssociateAssets\global_assets\images\login_cover.jpg" />
     <Content Include="AssociateAssets\global_assets\images\logo.png" />
@@ -794,6 +795,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AgentServicesController.cs" />
+    <Compile Include="Controllers\WalletController.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminReportsController.cs" />
@@ -816,6 +818,7 @@
     <Compile Include="Models\DashBoard.cs" />
     <Compile Include="Models\DBHelper.cs" />
     <Compile Include="Models\Home.cs" />
+    <Compile Include="Models\Wallet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -848,7 +851,7 @@
     <Content Include="Views\Shared\AssociateLayout.cshtml" />
     <Content Include="Views\Main\Login.cshtml" />
     <Content Include="Views\Associate\AssociateDashBoard.cshtml" />
-    <Content Include="Views\Associate\ViewProfile.cshtml" />
+    <Content Include="Views\Main\ViewProfile.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Associate\UpdateProfile.cshtml" />
     <Content Include="Views\Associate\ChangePassword.cshtml" />
@@ -925,6 +928,8 @@
     <Content Include="Views\Associate\Tree.cshtml" />
     <Content Include="Views\Associate\Registration.cshtml" />
     <Content Include="Views\Associate\ConfirmRegistration.cshtml" />
+    <Content Include="Views\Wallet\EWalletRequest.cshtml" />
+    <Content Include="Views\Wallet\EwalletRequestList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
