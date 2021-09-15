@@ -38,6 +38,7 @@
                                     <th>Login Id</th>
                                     <th>Associate Name</th>
                                     <th>Amount</th>
+                                    <th>Payment Mode</th>
                                     <th>Requested Date</th>
                                     <th>Status</th>
                                 </tr>
@@ -59,6 +60,7 @@
                                                 <td>@Item.LoginId</td>
                                                 <td>@Item.Name</td>
                                                 <td>@Item.Amount</td>
+                                                <td>@Item.PaymentMode</td>
                                                 <td>@Item.RequestedDate</td>
                                                 @if (Item.Status == "Pending")
                                                 {
