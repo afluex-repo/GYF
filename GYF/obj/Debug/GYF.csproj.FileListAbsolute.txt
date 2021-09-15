@@ -209,6 +209,5 @@ D:\SachinMishraProject\repository\GYF\GYF\bin\Newtonsoft.Json.xml
 D:\SachinMishraProject\repository\GYF\GYF\bin\System.Net.Http.Formatting.xml
 D:\SachinMishraProject\repository\GYF\GYF\bin\System.Web.Http.xml
 D:\SachinMishraProject\repository\GYF\GYF\bin\System.Web.Http.WebHost.xml
-D:\SachinMishraProject\repository\GYF\GYF\obj\Debug\GYF.csprojResolveAssemblyReference.cache
 D:\SachinMishraProject\repository\GYF\GYF\obj\Debug\GYF.dll
 D:\SachinMishraProject\repository\GYF\GYF\obj\Debug\GYF.pdb

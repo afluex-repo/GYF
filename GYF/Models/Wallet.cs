@@ -54,6 +54,14 @@ namespace GYF.Models
         public string SenderMobile { get; set; }
         public string ReceiverName { get; set; }
         public string SenderName { get; set; }
+        public DataSet GetDigiWalletBalance()
+        {
+            SqlParameter[] para = {
+                                      new SqlParameter("@Fk_UserId", Fk_UserId)
+                                     };
+            DataSet ds = DBHelper.ExecuteQuery("GetEWalletBalance", para);
+            return ds;
+        }
         public DataSet SaveProductWalletRequest()
         {
             SqlParameter[] para = {
