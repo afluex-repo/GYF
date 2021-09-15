@@ -1582,7 +1582,9 @@ namespace GYF.Controllers
         }
         public ActionResult Registration()
         {
+
             Home model = new Home();
+            model.UserId= Session["Pk_userId"].ToString();
             #region ddlgender
             List<SelectListItem> ddlgender = Common.BindGender();
             ViewBag.ddlgender = ddlgender;
@@ -1599,6 +1601,17 @@ namespace GYF.Controllers
                 }
             }
             ViewBag.Package = Package;
+
+
+            DataSet ds3 = model.WalletBalanceNew();
+            if (ds3 != null && ds3.Tables.Count > 0 && ds3.Tables[0].Rows.Count > 0)
+            {
+                ViewBag.WalletBalanceNew = ds3.Tables[0].Rows[0]["BalanceAmount"].ToString();
+            }
+
+
+
+
             return View(model);
         }
         public ActionResult ConfirmRegistration()

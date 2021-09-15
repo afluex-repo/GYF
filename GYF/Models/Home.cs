@@ -44,6 +44,10 @@ namespace GYF.Models
         public string PanNo { get; set; }
         public string AdharNo { get; set; }
         public string PackageId { get; set; }
+        public string WalletBalance { get; set; }
+        public string UserId { get; set; }
+        
+
         public DataSet Login()
         {
             SqlParameter[] param = { new SqlParameter("@LoginID",LoginId),
@@ -130,7 +134,7 @@ namespace GYF.Models
         }
         public DataSet GetProductList()
         {
-            DataSet ds = DBHelper.ExecuteQuery("ProductList");
+            DataSet ds = DBHelper.ExecuteQuery("ProductListNew");
             return ds;
         }
 
@@ -159,6 +163,17 @@ namespace GYF.Models
         public DataSet GetProduct()
         {
             DataSet ds = DBHelper.ExecuteQuery("GetProduct");
+            return ds;
+        }
+
+
+        public DataSet WalletBalanceNew()
+        {
+            SqlParameter[] para =
+            {
+                 new SqlParameter("@UserId",UserId)
+            };
+             DataSet ds = DBHelper.ExecuteQuery("WalletBalance", para);
             return ds;
         }
     }
