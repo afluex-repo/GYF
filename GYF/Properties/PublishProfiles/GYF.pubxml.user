@@ -1,0 +1,2404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\info\Desktop\PublishFolder\GYF</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/assets/css/bootstrap.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/assets/css/bootstrap_limitless.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/assets/css/colors.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/assets/css/components.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/assets/css/layout.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/assets/js/app.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/extras/animate.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-brands-400.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-brands-400.svg">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-brands-400.ttf">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-brands-400.woff">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-brands-400.woff2">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-brands-400d41d.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-regular-400.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-regular-400.svg">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-regular-400.ttf">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-regular-400.woff">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-regular-400.woff2">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-regular-400d41d.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-solid-900.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-solid-900.svg">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-solid-900.ttf">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-solid-900.woff">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-solid-900.woff2">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/fonts/fa-solid-900d41d.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/fontawesome/styles.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/icomoon/fonts/icomoond41d.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/icomoon/fonts/icomoone627.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/icomoon/fonts/icomoone627.svg">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/icomoon/fonts/icomoone627.ttf">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/icomoon/fonts/icomoone627.woff">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/icomoon/styles.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/material/fonts/material-icons119d.svg">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/material/fonts/material-icons119d.ttf">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/material/fonts/material-icons119d.woff">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/css/icons/material/styles.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/demo_data/maps/vector/gdp_demo_data.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/images/footer-logo.png">
+      <publishTime>09/13/2021 18:13:18</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/images/list-icon.png">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/images/login_cover.jpg">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/images/logo.png">
+      <publishTime>09/13/2021 18:13:11</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/alpaca_advanced.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/alpaca_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/alpaca_controls.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/animations_css3.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/animations_velocity_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/animations_velocity_examples.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/animations_velocity_ui.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/blog_single.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/c3/c3_advanced.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/c3/c3_axis.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/c3/c3_bars_pies.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/c3/c3_grid.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/c3/c3_lines_areas.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_advanced_hierarchical.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_advanced_histogram.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_advanced_simple_interaction.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_advanced_sortable_horizontal.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_advanced_sortable_vertical.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_advanced_stacked_multiple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_basic_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_basic_horizontal.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_basic_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_basic_stacked_normalized.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_basic_tooltip.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/bars/bars_basic_vertical.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/chords/chord_arcs.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/chords/chord_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/chords/chord_chart.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/chords/chord_tweens.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_advanced_difference.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_advanced_missing.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_advanced_small_multiples.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_advanced_spline_transition.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_advanced_transitions.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_advanced_zoom.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_basic_area.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_basic_bivariate.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_basic_gradient.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_basic_multi_series.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_basic_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/lines/lines_basic_stacked_nest.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/other/bubbles.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/other/streamgraph.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/other/treemap.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/other/waterfall.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/donut_arc_tween.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/donut_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/donut_entry_animation.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/donut_multiple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/donut_multiple_nesting.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/donut_update.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/pie_arc_tween.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/pie_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/pie_entry_animation.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/pie_multiple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/pie_multiple_nesting.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/pies/pie_update.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/sunburst/sunburst_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/sunburst/sunburst_combined.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/sunburst/sunburst_distortion.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/sunburst/sunburst_zoom.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/tree/tree_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/tree/tree_bracket.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/tree/tree_collapsible.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/tree/tree_dendrogram.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/tree/tree_dendrogram_radial.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/tree/tree_radial.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/venn/venn_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/venn/venn_colors.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/venn/venn_interactive.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/venn/venn_rings.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/venn/venn_tooltip.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/d3/venn/venn_weighted.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_horizontal.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_horizontal_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_horizontal_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_horizontal_stacked_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_horizontal_stacked_normalized.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_vertical.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_vertical_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_vertical_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_vertical_stacked_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/area/area_vertical_stacked_normalized.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_horizontal.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_horizontal_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_horizontal_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_horizontal_stacked_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_horizontal_stacked_normalized.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_vertical.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_vertical_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_vertical_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_vertical_stacked_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bars/bar_vertical_stacked_normalized.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bubble/bubble_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bubble/bubble_horizontal_lollipop.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bubble/bubble_lollipop_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bubble/bubble_matrix.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/bubble/bubble_vertical_lollipop.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/lines/line_horizontal_multiple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/lines/line_horizontal_multiple_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/lines/line_horizontal_single.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/lines/line_horizontal_single_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/lines/line_vertical_multiple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/lines/line_vertical_multiple_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/lines/line_vertical_single.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/lines/line_vertical_single_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/pies/pie_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/pies/pie_bubble.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/pies/pie_legend.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/pies/pie_lollipop.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/pies/pie_matrix.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/pies/pie_scatter.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/rings/ring_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/rings/ring_bubble.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/rings/ring_concentric.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/rings/ring_lollipop.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/rings/ring_matrix.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/rings/ring_scatter.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/scatter/scatter_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/scatter/scatter_horizontal_lollipop.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/scatter/scatter_lollipop_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/scatter/scatter_matrix.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/scatter/scatter_vertical_lollipop.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/step/step_horizontal_multiple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/step/step_horizontal_multiple_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/step/step_horizontal_single.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/step/step_horizontal_single_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/step/step_vertical_multiple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/step/step_vertical_multiple_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/step/step_vertical_single.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/dimple/step/step_vertical_single_grouped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/echarts/areas.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/echarts/bars_tornados.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/echarts/candlesticks_others.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/echarts/columns_waterfalls.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/echarts/funnels_calendars.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/echarts/lines.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/echarts/pies_donuts.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/echarts/scatter.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/bars/bar.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/bars/bar_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/bars/column.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/bars/column_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/bars/combo.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/bars/histogram.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/bubbles/bubble.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/bubbles/bubble_gradient.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/lines/area.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/lines/area_intervals.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/lines/area_stacked.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/lines/area_stepped.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/lines/lines.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/lines/line_intervals.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/other/candlestick.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/other/diff.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/other/geo.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/other/sankey.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/other/trendline.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/3d_exploded.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/donut.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/donut_exploded.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/donut_rotate.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/pie.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/pie_3d.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/pie_diff_border.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/pie_diff_invert.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/pie_diff_opacity.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/pie_diff_radius.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/pie_exploded.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/pies/pie_rotate.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/scatter/scatter.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/charts/google/scatter/scatter_diff.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/chat_layouts.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_blue.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_brown.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_danger.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_green.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_grey.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_indigo.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_info.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_orange.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_pink.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_primary.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_purple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_slate.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_success.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_teal.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_violet.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/colors_warning.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_buttons.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_collapsible.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_dropdowns.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_media.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_modals.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_pagination.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_popups.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_progress.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/components_scrollspy.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/content_cards_content.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/content_cards_draggable.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/content_cards_footer.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/content_cards_header.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/content_page_header.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/dashboard.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/dashboard_boxed.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_advanced.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_api.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_data_sources.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_autofill.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_buttons_flash.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_buttons_html5.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_buttons_init.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_buttons_print.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_colvis.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_fixed_columns.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_fixed_header.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_key_table.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_reorder.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_row_reorder.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_scroller.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_extension_select.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_responsive.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/datatables_sorting.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/ecommerce_customers.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/ecommerce_orders_history.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/ecommerce_product_list.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/editor_ckeditor.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/editor_code.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/editor_summernote.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/editor_trumbowyg.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extension_blockui.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extension_dnd.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extension_image_cropper.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_context_menu.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_fab.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_idle_timeout.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_jgrowl_noty.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_pnotify.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_session_timeout.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_sliders_ion.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_sliders_noui.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_sweetalert.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/extra_trees.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_actions.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_checkboxes_radios.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_controls_extended.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_dual_listboxes.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_floating_labels.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_inputs.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_input_groups.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_layouts.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_multiselect.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_select2.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_tags_input.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_validation.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/form_wizard.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/fullcalendar_advanced.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/fullcalendar_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/fullcalendar_formats.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/fullcalendar_styling.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/gallery.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/gallery_library.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_ac_password.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_advanced.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_cells.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_cols.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_context.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_custom_checks.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_search.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/handsontable_types.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/internationalization_callbacks.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/internationalization_fallback.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/internationalization_switch_direct.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/internationalization_switch_query.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/invoice_archive.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/invoice_grid.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/invoice_template.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/job_apply.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/job_list.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/jqueryui_components.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/jqueryui_forms.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/jqueryui_interactions.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/jqueryui_navigation.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/jqueryui_sliders.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/layout_fixed_sidebar_custom.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/learning.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/learning_detailed.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/login.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/login_validation.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/mail_list.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/mail_list_read.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/mail_list_write.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/basic/basic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/basic/click_event.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/basic/coordinates.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/basic/geolocation.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/controls/adding_controls.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/controls/control_options.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/controls/control_positioning.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/controls/disable_ui.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/drawings/circles.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/drawings/polygons.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/drawings/polylines.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/drawings/rectangles.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/layers/bicycling.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/layers/fusion_tables.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/layers/traffic.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/layers/transit.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/markers/animation.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/markers/simple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/markers/symbols_custom.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/google/markers/symbols_predefined.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/maps/vector/vector_maps_demo.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/navbar_components.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/navbar_hideable.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/navbar_multiple.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/navbar_multiple_sticky.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/navigation_horizontal_mega.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/picker_color.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/picker_date.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/picker_location.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/sidebar_components.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/sidebar_secondary.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/table_elements.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/table_responsive.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/task_manager_detailed.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/task_manager_grid.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/task_manager_list.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/timelines.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/uploader_bootstrap.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/uploader_dropzone.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/uploader_plupload.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/user_pages_profile.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/user_pages_profile_tabbed.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/widgets_content.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/demo_pages/widgets_stats.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/main/bootstrap.bundle.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/main/jquery.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/buttons/hover_dropdown.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/buttons/ladda.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/buttons/spin.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/ace/ace.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/ckeditor/ckeditor.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/summernote/summernote.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/base64/trumbowyg.base64.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/cleanpaste/trumbowyg.cleanpaste.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/colors/trumbowyg.colors.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/insertaudio/trumbowyg.insertaudio.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/noembed/trumbowyg.noembed.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/pasteimage/trumbowyg.pasteimage.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/preformatted/trumbowyg.preformatted.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/template/trumbowyg.template.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/plugins/upload/trumbowyg.upload.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/editors/trumbowyg/trumbowyg.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/contextmenu.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/cookie.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/jquery_ui/core.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/jquery_ui/effects.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/jquery_ui/globalize/cultures/globalize.culture.de-DE.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/jquery_ui/globalize/cultures/globalize.culture.ja-JP.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/jquery_ui/globalize/globalize.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/jquery_ui/interactions.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/jquery_ui/touch.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/jquery_ui/widgets.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/mousewheel.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/rowlink.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/extensions/session_timeout.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/alpaca/alpaca.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/alpaca/price_format.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/autosize.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/duallistbox/duallistbox.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/formatter.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/inputmask.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/maxlength.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/passy.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/touchspin.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/typeahead/handlebars.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/selects/bootstrap_multiselect.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/selects/select2.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/styling/switch.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/styling/switchery.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/styling/uniform.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/tags/tagsinput.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/tags/tokenfield.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/validation/validate.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/forms/wizards/steps.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/internationalization/i18next.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/internationalization/i18nextBrowserLanguageDetector.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/internationalization/i18nextXHRBackend.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/internationalization/jquery-i18next.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/loaders/blockui.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/loaders/progressbar.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/maps/jvectormap/jvectormap.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/maps/jvectormap/map_files/countries/germany.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/maps/jvectormap/map_files/countries/usa.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/maps/jvectormap/map_files/world.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/media/cropper.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/media/fancybox.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/notifications/bootbox.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/notifications/jgrowl.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/notifications/noty.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/notifications/pnotify.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/notifications/sweet_alert.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pagination/bs_pagination.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/anytime.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/color/spectrum.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/daterangepicker.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/location/autocomplete_addresspicker.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/location/location.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/location/typeahead_addresspicker.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/pickadate/legacy.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/pickadate/picker.date.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/pickadate/picker.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/pickers/pickadate/picker.time.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/sliders/ion_rangeslider.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/sliders/nouislider.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/sliders/slider_pips.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/datatables.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/autofill.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/buttons.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/col_reorder.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/fixed_columns.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/fixed_header.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/jszip/jszip.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/key_table.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/natural_sort.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/pdfmake/pdfmake.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/pdfmake/vfs_fonts.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/responsive.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/row_reorder.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/scroller.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/datatables/extensions/select.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/footable/footable.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/handsontable/handsontable.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/handsontable/languages.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/tables/handsontable/sheetclip.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/trees/fancytree_all.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/trees/fancytree_childcounter.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/dragula.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/fab.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/fullcalendar/core/locales-all.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/fullcalendar/core/locales/ar.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/fullcalendar/core/main.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/fullcalendar/daygrid/main.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/fullcalendar/interaction/main.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/fullcalendar/list/main.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/fullcalendar/timegrid/main.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/headroom.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/moment/moment.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/moment/moment_locales.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/perfect_scrollbar.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/prism.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/ripple.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/slinky.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/ui/sticky.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/uploaders/dropzone.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/uploaders/fileinput/fileinput.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/uploaders/fileinput/plugins/purify.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/uploaders/plupload/plupload.full.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/uploaders/plupload/plupload.queue.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/velocity/velocity.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/velocity/velocity.ui.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/visualization/c3/c3.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/visualization/d3/d3.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/visualization/d3/d3_tooltip.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/visualization/d3/venn.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/visualization/dimple/dimple.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociateAssets/global_assets/js/plugins/visualization/echarts/echarts.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="AssociatePic/0c06524e-2866-4cd3-b1df-d9dd511898cd.jpg">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="bin/GYF.dll">
+      <publishTime>09/13/2021 19:27:45</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="css/tree-responsive.css">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="css/tree.css">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Datatablecss/css/amchart/export.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Datatablecss/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Datatablecss/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Datatablecss/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Datatablecss/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Datatablecss/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Datatablecss/datatables/datatables-init.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Datatablecss/datatables/datatables.min.js">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="images/loader.gif">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/noimage.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/treeicon.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/default.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/girl-active.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/girl-active1.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/girl-block.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/girl-block1.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/girl-inactive.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/girl-inactive1.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/men-active.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/men-active1.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/men-block.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/men-block1.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/men-inactive.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/men-inactive1.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/TreeIcon/Open.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="images/user.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.min.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.10.2.min.map">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.min.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="scripts/modernizr-2.6.2.js">
+      <publishTime>09/13/2021 15:07:26</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminDashBoard.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/CreatePin.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/EwallwetRequestList.cshtml">
+      <publishTime>09/13/2021 19:24:11</publishTime>
+    </File>
+    <File Include="Views/Admin/NewsMaster.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/NewsMasterList.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/ProductList.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/ProductMaster.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/TopUp.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/UnusedPin.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/UploadKYCList.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Admin/UsedPins.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/AssociateList.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/AssociateProfile.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/AutoPoolIncome.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/AutoPoolStructure.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/DirectIncome.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/DirectReport.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/Downline.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/LevelIncome.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/LevelWiseTeam.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/PaidPayoutDetails.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/PayoutDetails.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/PayoutLedger.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/PayoutWalletRequest.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/PayPayout.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/PinTransferReport.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/ROI.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/SingleLegIncome.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/Support.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/SupportReply.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/AdminReports/TopupReport.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/AssociateDashBoard.cshtml">
+      <publishTime>09/13/2021 19:21:05</publishTime>
+    </File>
+    <File Include="Views/Associate/AutoPoolIncome.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/AutoPoolStructure.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/ChangePassword.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/ConfirmRegistration.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/DirectIncome.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/DirectReport.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/Downline.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/LevelIncome.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/LevelWiseTeam.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/MultiplePinTransfer.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/PaidPayoutDetails.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/PayoutDetails.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/PayoutLedger.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/PayoutWalletRequest.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/PinTransferReport.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/Registration.cshtml">
+      <publishTime>09/13/2021 19:08:02</publishTime>
+    </File>
+    <File Include="Views/Associate/Reward.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/ROI.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/SingleLegIncome.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/Support.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/TopUp.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/TransferPin.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/Tree.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/UnusedPin.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/UpdateBankDetails.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/UpdateProfile.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/UploadKYC.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Associate/UsedPins.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/AutoDistributePaymentAF.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/BankDetails.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/CalculateLevelIncomeDailyAF.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/CompanyOverView.cshtml">
+      <publishTime>09/13/2021 19:13:51</publishTime>
+    </File>
+    <File Include="Views/Main/ConfirmRegistration.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/ContactUs.cshtml">
+      <publishTime>09/13/2021 19:26:41</publishTime>
+    </File>
+    <File Include="Views/Main/Gallery.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/GeneratDailyROIAF.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/Index.cshtml">
+      <publishTime>09/13/2021 19:13:51</publishTime>
+    </File>
+    <File Include="Views/Main/Login.cshtml">
+      <publishTime>09/13/2021 17:34:05</publishTime>
+    </File>
+    <File Include="Views/Main/NewsList.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/NewsMasterList.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/Product.cshtml">
+      <publishTime>09/13/2021 15:44:20</publishTime>
+    </File>
+    <File Include="Views/Main/Registration.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/ViewProfile.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Main/VissionMission.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/Shared/AssociateLayout.cshtml">
+      <publishTime>09/13/2021 19:43:18</publishTime>
+    </File>
+    <File Include="Views/Shared/WebsiteLayout.cshtml">
+      <publishTime>09/13/2021 18:01:59</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>09/13/2021 19:50:04</publishTime>
+    </File>
+    <File Include="Views/Wallet/EWalletRequest.cshtml">
+      <publishTime>09/13/2021 19:47:02</publishTime>
+    </File>
+    <File Include="Views/Wallet/EwalletRequestList.cshtml">
+      <publishTime>09/13/2021 17:47:45</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/13/2021 19:27:46</publishTime>
+    </File>
+    <File Include="Websitecss/css/animate.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/bootstrap.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-switcher-design.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-themes/brown-theme.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-themes/default-theme.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-themes/green-theme.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-themes/olive-theme.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-themes/orange-theme.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-themes/purple-theme.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-themes/redd-color.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/color-themes/teal-theme.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/custom-animate.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/flaticon.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/font-awesome.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/jquery-ui.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/jquery.bootstrap-touchspin.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/jquery.fancybox.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/jquery.mCustomScrollbar.min.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/mCSB_buttons.html">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/owl.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/owl.video.play.html">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/responsive.css">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/css/style.css">
+      <publishTime>09/13/2021 15:34:56</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/flaticon.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/flaticon.html">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/flaticon.ttf">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/flaticon.woff">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/flaticond41d.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/fontawesome-webfontd41d.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/fontawesome-webfonte0a5.eot">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/fontawesome-webfonte0a5.svg">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/fontawesome-webfonte0a5.ttf">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/fontawesome-webfonte0a5.woff">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/fonts/fontawesome-webfonte0a5.woff2">
+      <publishTime>09/13/2021 15:07:24</publishTime>
+    </File>
+    <File Include="Websitecss/images/aadhar_new.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/10.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/2.1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/4.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/6.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/9.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/pattern-2.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/pattern-3.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/background/pattern-6.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/bank-details.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/CapitalMaxRetail.pdf">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/1.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/17.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/18.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/19.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/2.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/2.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/20.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/3.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/3.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/4.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/4.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/5.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/clients/6.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/cross-out.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/documents_new.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/favicon.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/footer-logo.png">
+      <publishTime>09/13/2021 16:17:32</publishTime>
+    </File>
+    <File Include="Websitecss/images/gallery/1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/gallery/2.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/gallery/3.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/gallery/4.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/gallery/5.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/gallery/6.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/circle-1.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/circle-2.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/circle-3.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/circle-4.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/circle-6.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/circle-9.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/dotted-map.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/flag-icon.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/map-marker.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/pattern-1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/preloader.svg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/signature.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/icons/tick.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/image-3.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/image-5.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/logo-small.png">
+      <publishTime>09/13/2021 16:17:32</publishTime>
+    </File>
+    <File Include="Websitecss/images/logo.png">
+      <publishTime>09/13/2021 16:20:13</publishTime>
+    </File>
+    <File Include="Websitecss/images/main-slider/slider1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/main-slider/slider2.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/main-slider/slider3.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/news-image-1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/pancard_new.png">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/product/product1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/some-good-causes/1.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/some-good-causes/2.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/some-good-causes/3.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/some-good-causes/4.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/images/vision-nd-mision.jpg">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/appear.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/bootstrap.min.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/color-settings.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/jquery-ui.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/jquery.bootstrap-touchspin.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/jquery.countdown.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/jquery.fancybox.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/jquery.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/jquery.mCustomScrollbar.concat.min.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/map-script.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/mixitup.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/nav-tool.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/owl.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/popper.min.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/script.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/validate.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+    <File Include="Websitecss/js/wow.js">
+      <publishTime>09/13/2021 15:07:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

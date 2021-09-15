@@ -157,7 +157,6 @@ D:\Mona Afluex\Repositories\GYF\GYF\bin\Newtonsoft.Json.xml
 D:\Mona Afluex\Repositories\GYF\GYF\bin\System.Net.Http.Formatting.xml
 D:\Mona Afluex\Repositories\GYF\GYF\bin\System.Web.Http.xml
 D:\Mona Afluex\Repositories\GYF\GYF\bin\System.Web.Http.WebHost.xml
-D:\Mona Afluex\Repositories\GYF\GYF\obj\Debug\GYF.csprojResolveAssemblyReference.cache
 D:\Mona Afluex\Repositories\GYF\GYF\obj\Debug\GYF.dll
 D:\Mona Afluex\Repositories\GYF\GYF\obj\Debug\GYF.pdb
 D:\SachinMishraProject\repository\GYF\GYF\bin\ApplicationInsights.config

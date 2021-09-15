@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="CapitalMaxRetail.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="GYF.Global" Language="C#" %>

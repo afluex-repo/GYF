@@ -56,6 +56,7 @@
                         </div>
                         <div class="col-lg-10 col-md-10">
                             <div class="nav-outer clearfix">
+
                                 <!-- Main Menu -->
                                 <nav class="main-menu navbar-expand-md">
                                     <div class="navbar-header">
@@ -67,21 +68,25 @@
                                             <span class="icon-bar"></span>
                                         </button>
                                     </div>
-                                    <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                                        <ul class="navigation clearfix">
-                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
-                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
-                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
-                                            <li><a href="../../Websitecss/images/CapitalMaxRetail.pdf" target="_blank">Business Plan</a></li>
-                                            @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
-                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
-                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
-                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
-                                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
+                                <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
+                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
+                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
+                                        <li><a href="#">Business Plan</a></li>
+                                @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
+                                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
+                                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
+                                                      @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Registration" ? "current" : "")"><a href="/Main/Registration">Registration</a></li>*@
+                                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
 
-                                        </ul>
-                                    </div>
-                                </nav>
+                                            </ul>
+                                        </div>
+                                    </nav>
+
+
+
                                 <!-- Main Menu End-->
                                 <!-- Options Box -->
                                 <div class="options-box clearfix">
@@ -102,14 +107,14 @@
                                         <div class="pull-left upper-right clearfix">
 
                                             <!--Info Box-->
-                                            <div class="upper-column info-box">
-                                                <a href="/Main/Registration" class="theme-btn btn-style-one">
-                                                    <span class="txt">
-                                                        Free Registration
-                                                        Now
-                                                    </span>
-                                                </a>
-                                            </div>
+                                            @*<div class="upper-column info-box">
+                                                    <a href="/Main/Registration" class="theme-btn btn-style-one">
+                                                        <span class="txt">
+                                                            Free Registration
+                                                            Now
+                                                        </span>
+                                                    </a>
+                                                </div>*@
                                         </div>
                                     </div>
                                 </div>
@@ -151,11 +156,12 @@
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
-                                    <li><a href="../../Websitecss/images/CapitalMaxRetail.pdf" target="_blank">Business Plan</a></li>
+                                    <li><a href="#">Business Plan</a></li>
                                     @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
+                                    @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Registration" ? "current" : "")"><a href="/Main/Registration">Registration</a></li>*@
                                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
 
                                 </ul>
@@ -198,11 +204,10 @@
                                         <h4>Our Location</h4>
                                     </div>
                                     <p class="color-gray">
-                                        <span class="icon fa fa-map-marker color11"></span>  No 30 4th Cross CMR Road HRBR 2 Block Kalyana Nagar Post Bangalore,
-                            Karnataka, 560042
+                                        <span class="icon fa fa-map-marker color11"></span>  Dadar, City- Mohania, Dist- Kaimur (Bhabhua), State- Bihar, Pin Code 821109
                                     </p>
-                                    <p class="color-gray"><span class="icon fa fa-envelope color11"></span>support@capitalmaxretail.in, capitalmaxretailteam@gmail.com  </p>
-                                    
+                                    <p class="color-gray"><span class="icon fa fa-envelope color11"></span>grazieforyouventures@gmail.com  </p>
+
                                 </div>
                             </div>
                         </div>
@@ -240,7 +245,7 @@
                         <div class="row clearfix">
                             <!-- Column -->
                             <div class="column col-lg-12 col-md-12 col-sm-12 text-center">
-                                <div class="copyright">Copyright © 2020 CapitalMax Retail ‐ All Rights Reserved</div>
+                                <div class="copyright">Copyright © @DateTime.Now.Year GYF ‐ All Rights Reserved</div>
                             </div>
                             <!-- Column -->
                         </div>
