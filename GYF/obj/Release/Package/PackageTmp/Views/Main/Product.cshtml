@@ -26,118 +26,39 @@
         <div class="sec-title text-center">
             <h2>Our Best Product</h2>
             <div class="seperater style-two"></div>
+            <h3>Coming Soon</h3>
         </div>
         <!-- Services Carousel -->
-        <div class="services-carousel owl-carousel owl-theme">
+    
             <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
+            <div class="services-carousel owl-carousel owl-theme">
+              
+                @*@if (Model != null)
+            {
+                if (Model.lstProduct != null)
+                {
+                    int i = 1;
+                    foreach (var Item in Model.lstProduct)
+                    {
+                            <div class="service-block-two">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image"><a href="#"><img src="@Item.ProductImage" width="390" alt=""></a></figure>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h3><a href="#">@Item.ProductName</a></h3>
+                                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i>@Item.ProductPrice</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }
+                }*@
+
             </div>
-            <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Service Block -->
-            <div class="service-block-two">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="#"><img src="../../Websitecss/images/product/product1.jpg" alt=""></a></figure>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Capitalmax</a></h3>
-                        <div class="text"><i class="fa fa-inr" aria-hidden="true"></i> 520</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+           
+      
     </div>
 </section>
 <!--End Product Section -->

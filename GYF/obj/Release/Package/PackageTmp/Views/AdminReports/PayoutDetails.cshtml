@@ -1,4 +1,4 @@
-﻿@model CapitalMaxRetail.Models.AdminReports
+﻿@model GYF.Models.AdminReports
 
 @{
     ViewBag.Title = "PayoutDetails";
@@ -95,13 +95,14 @@
 
                                     <th>Sr No.</th>
                                     <th>Login ID</th>
-                                    <th>First Name</th>
+                                    <th>Name</th>
                                     <th>Payout No</th>
                                     <th>Closing Date</th>
-                                    <th>Direct Income</th>
-                                    @*<th>RY</th>*@
+                                    @*<th>Direct Income</th>*@
+                                 
                                     @*<th>Single Leg Income</th>*@
                                     <th>Level Income</th>
+                                    <th>ROI</th>
                                     @*<th>Auto Pool Income</th>*@
                                     <th>Gross Amount</th>
                                     <th>TDS Amount</th>
@@ -127,9 +128,10 @@
                                                 <td>@Item.FirstName</td>
                                                 <td>@Item.PayoutNo</td>
                                                 <td>@Item.ClosingDate</td>
-                                                <td>@Item.DirectIncome</td>
+                                                @*<td>@Item.DirectIncome</td>*@
                                                 @*<td>@Item.SingleLegIncome</td>*@
                                                 <td>@Item.LevelIncome</td>
+                                                <td>@Item.ROI</td>
                                                 @*<td>@Item.AutoPoolIncome</td>*@
                                                 @*<td>@Item.RY</td>*@
                                                 <td>@Item.GrossAmount</td>

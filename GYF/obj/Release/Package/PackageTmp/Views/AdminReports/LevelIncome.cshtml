@@ -1,4 +1,4 @@
-﻿@model CapitalMaxRetail.Models.AdminReports
+﻿@model GYF.Models.AdminReports
 
 @{
     ViewBag.Title = "LevelIncome";
@@ -86,6 +86,7 @@
                                 <tr>
 
                                     <th>Sr No.</th>
+                                    <th>From</th>
                                     <th>Date</th>
                                     <th>Level Income</th>
                                     <th>Level</th>
@@ -104,10 +105,8 @@
                                         {
                                             <tr class="text-left">
 
-                                                <td>
-                                                    @i
-
-                                                </td>
+                                                <td> @i</td>
+                                                <td>@Item.FromId (@Item.FromName)</td>
                                                 <td>@Item.CurrentDate</td>
                                                 <td>@Item.Amount</td>
                                                 <td>@Item.level</td>

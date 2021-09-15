@@ -1,4 +1,4 @@
-﻿@model CapitalMaxRetail.Models.Associate
+﻿@model GYF.Models.Associate
 
 @{
     ViewBag.Title = "LevelIncome";
@@ -67,11 +67,12 @@
 
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-bordered w-100 mb-0" id="example25">
+                        <table class="table table-bordered w-100 mb-0" id="example24">
                             <thead>
                                 <tr>
 
                                     <th>Sr No.</th>
+                                    <th>From</th>
                                     <th>Date</th>
                                     <th>Level Income</th>
                                     <th>Level</th>
@@ -90,10 +91,8 @@
                                         {
                                             <tr class="text-left">
 
-                                                <td>
-                                                    @i
-
-                                                </td>
+                                                <td> @i</td>
+                                                <td>@Item.FromId (@Item.FromName)</td>
                                                 <td>@Item.CurrentDate</td>
                                                 <td>@Item.Amount</td>
                                                 <td>@Item.level</td>
