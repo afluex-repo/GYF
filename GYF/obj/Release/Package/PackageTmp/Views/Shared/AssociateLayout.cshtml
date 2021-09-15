@@ -278,16 +278,23 @@
                             <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                                 <li class="nav-item"><a href="/Associate/ViewProfile" class="nav-link">View Profile</a></li>
                                 <li class="nav-item"><a href="/Associate/UpdateProfile" class="nav-link">Update Profile</a></li>
+                                <li class="nav-item"><a href="/Associate/UploadKYC" class="nav-link">Upload KYC</a></li>
                                 <li class="nav-item"><a href="/Associate/UpdateBankDetails" class="nav-link">Update Bank Details</a></li>
 
                                 <li class="nav-item"><a href="/Associate/ChangePassword" class="nav-link">Change Password</a></li>
                                 </ul>
                         </li>
                         
-                       
+                        <li class="nav-item">
+                            <a href="/Associate/Registration" class="nav-link">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Registration</span>
+                            </a>
+                        </li>
                         <li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="fas fa-bezier-curve"></i> <span>Team</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                                <li class="nav-item"><a href="/Associate/Tree" class="nav-link">Tree</a></li>
                                 <li class="nav-item"><a href="/Associate/DirectReport" class="nav-link">Direct</a></li>
                                <li class="nav-item"><a href="/Associate/Downline" class="nav-link">My Downline Team</a></li>
                                 <li class="nav-item"><a href="/Associate/LevelWiseTeam" class="nav-link">Level Wise Team</a></li>
@@ -295,6 +302,13 @@
                             </ul>
                         </li>
                         <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-bezier-curve"></i> <span>Wallet</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                                <li class="nav-item"><a href="/Wallet/EWalletRequest" class="nav-link">E-Wallet Request</a></li>
+                                @*<li class="nav-item"><a href="/Associate/AutoPoolStructure" class="nav-link">Auto Pool Structure</a></li>*@
+                            </ul>
+                        </li>
+                        @*<li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="fa fa-thumbtack"></i> <span>Pin Management</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
                                 <li class="nav-item"><a href="/Associate/MultiplePinTransfer" class="nav-link">Multiple Pin Transfer</a></li>
@@ -302,31 +316,31 @@
                                 <li class="nav-item"><a href="/Associate/UsedPins" class="nav-link">Used Pins</a></li>
                                 <li class="nav-item"><a href="/Associate/PinTransferReport" class="nav-link">Pin Transfer Report</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item nav-item-submenu">
+                        </li>*@
+                        @*<li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="far fa-credit-card"></i> <span>Income</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
-                                <li class="nav-item"><a href="/Associate/DirectIncome" class="nav-link">Direct Income</a></li>
-                                <li class="nav-item"><a href="/Associate/ROI" class="nav-link">ROI</a></li>
-                                @*<li class="nav-item"><a href="/Associate/SingleLegIncome" class="nav-link">Single Leg Income</a></li>
-                                <li class="nav-item"><a href="/Associate/LevelIncome" class="nav-link">Level Income</a></li>
-                                <li class="nav-item"><a href="/Associate/AutoPoolIncome" class="nav-link">Auto Pool Income</a></li>*@
-                            </ul>
-                        </li>
-                        <li class="nav-item nav-item-submenu">
+                                @*<li class="nav-item"><a href="/Associate/DirectIncome" class="nav-link">Direct Income</a></li>*@
+                                @*<li class="nav-item"><a href="/Associate/ROI" class="nav-link">ROI</a></li>*@
+                                @*<li class="nav-item"><a href="/Associate/SingleLegIncome" class="nav-link">Single Leg Income</a></li>*@
+                                @*<li class="nav-item"><a href="/Associate/LevelIncome" class="nav-link">Level Income</a></li>*@
+                                @*<li class="nav-item"><a href="/Associate/AutoPoolIncome" class="nav-link">Auto Pool Income</a></li>*@
+                            @*</ul>
+                        </li>*@
+                        @*<li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="fab fa-cc-visa"></i> <span>Payout</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
                                 <li class="nav-item"><a href="/Associate/PayoutDetails" class="nav-link">Payout Details</a></li>
                                 <li class="nav-item"><a href="/Associate/PaidPayoutDetails" class="nav-link">Paid Payout Details</a></li>
                               </ul>
-                        </li>
-                        <li class="nav-item nav-item-submenu">
+                        </li>*@
+                        @*<li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="far fa-money-bill-alt"></i> <span>Payout Wallet</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
                                 <li class="nav-item"><a href="/Associate/PayoutLedger" class="nav-link">Payout Ledger</a></li>
                                 <li class="nav-item"><a href="/Associate/PayoutWalletRequest" class="nav-link">Payout Request</a></li>
                             </ul>
-                        </li>
+                        </li>*@
                         @*<li class="nav-item">
                             <a href="/Associate/Reward" class="nav-link">
                                 <i class="fas fa-award"></i>
@@ -383,7 +397,7 @@
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-footer">
                     <span class="navbar-text">
-                        &copy; 2020. <a href="#" target="_blank">CapitalMaxRetail</a>
+                        &copy; @DateTime.Now.Year <a href="#" target="_blank">GYF</a>
                     </span>
                    
                 </div>

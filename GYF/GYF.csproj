@@ -768,6 +768,7 @@
     <Content Include="Websitecss\js\validate.js" />
     <Content Include="Websitecss\js\wow.js" />
     <None Include="Properties\PublishProfiles\CapitalMaxRetail.pubxml" />
+    <None Include="Properties\PublishProfiles\GYF.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />

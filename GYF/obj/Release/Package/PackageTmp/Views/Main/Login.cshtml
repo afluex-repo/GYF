@@ -1,4 +1,4 @@
-﻿@model CapitalMaxRetail.Models.Home
+﻿@model GYF.Models.Home
 
 @{
     ViewBag.Title = "Login";
@@ -7,46 +7,53 @@
 
 @using (Html.BeginForm("LoginAction", "Main", FormMethod.Post, new { @id = "signupForm", @class = "md-float-material form-material" }))
 {
-<div class="col-lg-12">
-    <div class="logindesign" style="background-image:url(../../Websitecss/images/background/2.1.jpg)">
-        <div class="card-body">
-            <h6 style="color: red"></h6>
-            <div class="row">
-                <div class="form-group col-md-4 col-sm-12">
-                </div>
-                <div class="form-group col-md-4 col-sm-12">
-                    @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", placeholder = "Login Id" })
+    <div class="row">
 
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 logindesign" style="float:left;background-color:#57a695">
+            <div class="card-body">
+                <h6 style="color: red"></h6>
+                <div class="row">
+                    <div class="form-group col-md-1 col-sm-12">
+                    </div>
+                    
+                    <div class="form-group col-md-10 col-sm-12">
+                        <label style="color:white">Login Id</label>
+                        @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", placeholder = "Login Id" })
+
+                    </div>
+                    <div class="form-group col-md-1 col-sm-12">
+                    </div>
                 </div>
-                <div class="form-group col-md-4 col-sm-12">
+                <div class="row">
+                    <div class="form-group col-md-1 col-sm-12">
+                    </div>
+                    <div class="form-group col-md-10 col-sm-12">
+                        <label style="color:white">Password</label>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+
+                    </div>
+                    <div class="form-group col-md-1 col-sm-12">
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="form-group col-md-1 col-sm-12">
+                    </div>
+                    <div class="form-group col-md-10 col-sm-12">
+                        <span style="color:red">@TempData["Login"]</span>
+                        <input type="submit" id="Login" class="btn btn-info btn-block btn-flat margin-top-10" name="Login"
+                               value="Sign In" onclick="return validateform();">
+                    </div>
+                    <div class="form-group col-md-1 col-sm-12">
+                    </div>
+                </div>
+
+
             </div>
-            <div class="row">
-                <div class="form-group col-md-4 col-sm-12">
-                </div>
-                <div class="form-group col-md-4 col-sm-12">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
-
-                </div>
-                <div class="form-group col-md-4 col-sm-12">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-4 col-sm-12">
-                </div>
-                <div class="form-group col-md-4 col-sm-12">
-                    <span style="color:red">@TempData["Login"]</span>
-                    <input type="submit" id="Login" class="btn btn-info btn-block btn-flat margin-top-10" name="Login"
-                           value="Sign In" onclick="return validateform();">
-                </div>
-                <div class="form-group col-md-4 col-sm-12">
-                </div>
-            </div>
-
-
         </div>
+        <div class="col-lg-4" style="float:left"></div>
     </div>
-</div>
+
 }
 
 
@@ -73,14 +80,6 @@
         return true;
     }
 </script>
-
-
-
-
-                </body>
-
-
-                </html>
 <style>
     .errortext {
         border: 1px solid red !important;

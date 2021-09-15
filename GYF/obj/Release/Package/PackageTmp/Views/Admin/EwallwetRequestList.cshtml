@@ -1,0 +1,103 @@
+﻿@model GYF.Models.Admin
+
+@{
+    ViewBag.Title = "EwallwetRequestList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("EwallwetRequestList", "Admin", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Ewallet  </span> - Ewallet RequestList</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Ewallet RequestList</h6>
+                        <p style="color:red">
+                            @TempData["EWalletRequest"]
+                        </p>
+                    </div>
+               
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example24">
+                            <thead>
+                                <tr>
+
+                                    <th>Sr No.</th>
+                                    <th>Login Id</th>
+                                    <th>Associate Name</th>
+                                    <th>Amount</th>
+                                    <th>Requested Date</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.EwalletRequestList != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.EwalletRequestList)
+                                        {
+                                            <tr class="text-left">
+
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.Name</td>
+                                                <td>@Item.Amount</td>
+                                                <td>@Item.RequestedDate</td>
+                                                @if (Item.Status == "Pending")
+                                                {
+                                                    <td>
+                                                        <a href="/Admin/ApproveRequest?Pk_RequestId=@Item.Pk_RequestId" class="btn btn-sm btn-success">Approve</a>
+
+                                                        <a href="/Admin/DeclineRequest?Pk_RequestId=@Item.Pk_RequestId" class="btn btn-sm btn-danger">Decline</a>
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td>@Item.Status</td>
+
+                                                }
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    function validate() {
+        $(".errortext").removeClass('errortext');
+        if ($("#LoginId").val() == '') {
+            $("#LoginId").addClass('errortext');
+            $("#LoginId").focus();
+            return false;
+        }
+    }
+</script>
+

@@ -1,0 +1,102 @@
+﻿@model GYF.Models.Admin
+
+@{
+    ViewBag.Title = "UploadKYCList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("UploadKYCList", "Admin", FormMethod.Post, new { id = "form" }))
+{
+
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Admin </span> - Approve KYC</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <p style="color:red">@TempData["KYCVerification"]</p>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="input-field col-3">
+                                <div class="form-group">
+                                    Login ID
+                                    @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @Placeholder = "Search by Login ID" })
+                                </div>
+                            </div>
+
+
+                            <div class="input-field col m2 s12">
+                                <div class="form-group">
+                                    <br />
+                                    <input class="btn btn-success" type="submit" value="Search" id="btnSearch" name="btnSearch" />
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="dt-responsive table-responsive">
+                            <table class="table table-bordered w-100 mb-0" id="example25">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No.</th>
+                                        <th>LoginID</th>
+                                        <th>Name</th>
+                                        <th>Document Number</th>
+                                        <th>Document Image</th>
+                                        <th>Document Type</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        if (Model.lstdetails != null)
+                                        {
+                                            int i = 1;
+                                            foreach (var Item in Model.lstdetails)
+                                            {
+                                                <tr class="text-left">
+                                                    <td>@i</td>
+                                                    <td>@Item.LoginId</td>
+                                                    <td>@Item.DisplayName</td>
+                                                    <td>@Item.DocumentNumber</td>
+                                                    <td><img src="@Item.DocumentImage" height="120" width="180" /></td>
+                                                    <td>@Item.DocumentType</td>
+                                                    <td>@Item.Status</td>
+                                                    <td>
+                                                        @if (Item.Status == "Pending")
+                                                        {
+                                                            <a href="/Admin/ApproveKYC?Id=@Item.PK_DocumentID&&DocumentType=@Item.DocumentType&&LoginID=@Item.LoginId" class="btn btn-success pull-right" name="btnUpdate">Approve</a>
+                                                        }
+
+                                                    </td>
+                                                </tr>
+
+                                                i++;
+                                            }
+                                        }
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
