@@ -931,6 +931,7 @@
     <Content Include="Views\Wallet\EWalletRequest.cshtml" />
     <Content Include="Views\Wallet\EwalletRequestList.cshtml" />
     <Content Include="Views\Admin\EwallwetRequestList.cshtml" />
+    <Content Include="Views\Wallet\EwalletLedger.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
