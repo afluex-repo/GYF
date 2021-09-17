@@ -179,6 +179,11 @@
     }
     function ValidateForm() {
         $(".errortext").removeClass("errortext");
+        if ($('#PackageId').val() == '0') {
+            $("#PackageId").addClass('errortext');
+            $('#PackageId').focus();
+            return false;
+        }
         if ($('#SponsorId').val() == '') {
             $("#SponsorId").addClass('errortext');
             $('#SponsorId').focus();
@@ -260,6 +265,11 @@
     }
     function confirmregistration() {
         $(".errortext").removeClass("errortext");
+        if ($('#PackageId').val() == '0') {
+            $("#PackageId").addClass('errortext');
+            $('#PackageId').focus();
+            return false;
+        }
         if ($('#SponsorId').val() == '') {
             $("#SponsorId").addClass('errortext');
             $('#SponsorId').focus();
