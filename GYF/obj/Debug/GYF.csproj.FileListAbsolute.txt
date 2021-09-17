@@ -105,7 +105,6 @@ E:\Repository\GYF\GYF\bin\System.Web.Http.xml
 E:\Repository\GYF\GYF\bin\System.Web.Http.WebHost.xml
 E:\Repository\GYF\GYF\obj\Debug\GYF.dll
 E:\Repository\GYF\GYF\obj\Debug\GYF.pdb
-E:\Repository\GYF\GYF\obj\Debug\GYF.csprojResolveAssemblyReference.cache
 D:\Mona Afluex\Repositories\GYF\GYF\bin\ApplicationInsights.config
 D:\Mona Afluex\Repositories\GYF\GYF\bin\roslyn\csc.exe
 D:\Mona Afluex\Repositories\GYF\GYF\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll

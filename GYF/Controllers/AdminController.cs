@@ -787,6 +787,7 @@ namespace GYF.Controllers
                     Obj.Name = r["Name"].ToString();
                     Obj.Pk_RequestId = r["Pk_RequestId"].ToString();
                     Obj.Amount = r["Amount"].ToString();
+                    Obj.PaymentMode = r["PaymentMode"].ToString();
                     Obj.RequestedDate = r["RequestedDate"].ToString();
                     Obj.Status = r["Status"].ToString();
                     lst1.Add(Obj);
