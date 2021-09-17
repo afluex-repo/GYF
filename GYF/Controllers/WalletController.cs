@@ -155,5 +155,51 @@ namespace GYF.Controllers
             }
             return View(objewallet);
         }
+        public ActionResult ShoppingWalletLedger()
+        {
+            Wallet objewallet = new Wallet();
+            objewallet.Fk_UserId = Session["Pk_UserId"].ToString();
+            List<Wallet> lst = new List<Wallet>();
+            DataSet ds = objewallet.ShoppingWalletLedger();
+            if (ds.Tables != null && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Wallet Objload = new Wallet();
+                    Objload.Narration = dr["Narration"].ToString();
+                    Objload.DrAmount = dr["DrAMount"].ToString();
+                    Objload.CrAmount = dr["CrAmount"].ToString();
+                    Objload.AddedOn = dr["CurrentDate"].ToString();
+                    Objload.EwalletBalance = dr["Balance"].ToString();
+
+                    lst.Add(Objload);
+                }
+                objewallet.lstewalletledger = lst;
+            }
+            return View(objewallet);
+        }
+        public ActionResult RealEstateWalletLedger()
+        {
+            Wallet objewallet = new Wallet();
+            objewallet.Fk_UserId = Session["Pk_UserId"].ToString();
+            List<Wallet> lst = new List<Wallet>();
+            DataSet ds = objewallet.RealEstateWalletLedger();
+            if (ds.Tables != null && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Wallet Objload = new Wallet();
+                    Objload.Narration = dr["Narration"].ToString();
+                    Objload.DrAmount = dr["DrAMount"].ToString();
+                    Objload.CrAmount = dr["CrAmount"].ToString();
+                    Objload.AddedOn = dr["CurrentDate"].ToString();
+                    Objload.EwalletBalance = dr["Balance"].ToString();
+
+                    lst.Add(Objload);
+                }
+                objewallet.lstewalletledger = lst;
+            }
+            return View(objewallet);
+        }
     }
 }

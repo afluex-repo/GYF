@@ -1,0 +1,250 @@
+﻿@model GYF.Models.Associate
+@{
+    ViewBag.Title = "ViewProfile";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("ViewProfile", "Associate", FormMethod.Post, new { @id = "form1" }))
+{
+
+
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Profile </span> - View Profile</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">View Profile</h6>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+
+                                <div class="card-header">
+
+                                    <p style="color: red">
+                                        @TempData["ViewProfile"]
+                                    </p>
+                                </div>
+
+
+                                <div class="row" style="margin-left:10px;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                        <div class="x_panel">
+
+                                            <div class="x_content">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+
+                                                        <div class="row">
+
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Login ID
+                                                                    @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @Placeholder = "Login ID", @readonly = "readonly" })
+                                                                    @Html.HiddenFor(m => m.Fk_UserId)
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Name
+                                                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @Placeholder = "Name", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Mobile
+                                                                    @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @Placeholder = "Mobile", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    Address
+                                                                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @Placeholder = "Address" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Pincode
+                                                                    @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control", @Placeholder = "PinCode", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    State Name
+                                                                    @Html.TextBoxFor(m => m.State, new { @class = "form-control", @Placeholder = "State Name", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    CityName
+                                                                    @Html.TextBoxFor(m => m.City, new { @class = "form-control", @Placeholder = "City Name", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-header">
+                                                            <div class="row ">
+
+                                                                <div class="col-auto">
+                                                                    <h4 class="mt-0 mb-1">Sponsor Details</h4>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Sponsor ID
+                                                                    @Html.TextBoxFor(m => m.SponsorID, new { @class = "form-control", @Placeholder = "Sponsor ID", @readonly = "readonly" })
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group">
+                                                                    Sponsor Name
+                                                                    @Html.TextBoxFor(m => m.SponsorName, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-header">
+                                                            <div class="row ">
+
+                                                                <div class="col-auto">
+                                                                    <h4 class="mt-0 mb-1">Bank Details</h4>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    Bank Name
+                                                                    @Html.TextBoxFor(m => m.BankName, new { @class = "form-control", @Placeholder = "Bank Name", @readonly = "readonly" })
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    Bank Holder Name
+                                                                    @Html.TextBoxFor(m => m.BankHolderName, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Bank A/C No.
+                                                                    @Html.TextBoxFor(m => m.AccountNo, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    IFSC
+                                                                    @Html.TextBoxFor(m => m.IFSC, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Branch
+                                                                    @Html.TextBoxFor(m => m.BankBranch, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Pan No.
+                                                                    @Html.TextBoxFor(m => m.PanNumber, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    PAYTM No.
+                                                                    @Html.TextBoxFor(m => m.PAYTMNo, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    PhonePe
+                                                                    @Html.TextBoxFor(m => m.Phonepay, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Google Pay
+                                                                    @Html.TextBoxFor(m => m.GooglePay, new { @class = "form-control", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-header">
+                                                            <div class="row ">
+
+                                                                <div class="col-auto">
+                                                                    <h4 class="mt-0 mb-1">Nominee Details</h4>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    Nominee Name
+                                                                    @Html.TextBoxFor(m => m.NomineName, new { @class = "form-control", @Placeholder = "Nomine Name", @readonly = "readonly" })
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="form-group">
+                                                                    Nomine Relation
+                                                                    @Html.TextBoxFor(m => m.NomineRealation, new { @class = "form-control", @Placeholder = "Nomine Relation", @readonly = "readonly" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @*<div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <br />
+                                                @Html.HiddenFor(m => m.UserID, new { @Value = @Model.UserID })
+                                                <input class="btn btn-success pull-right" type="submit" onclick="return validateform();" value="Update" id="btnUpdate" name="btnUpdate" />
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
