@@ -226,7 +226,7 @@ namespace GYF.Controllers
                 {
                     if (ds.Tables[0].Rows[0]["Msg"].ToString() == "1")
                     {
-                        Session["LoginId"] = ds.Tables[0].Rows[0]["LoginId"].ToString();
+                        Session["Login_Id"] = ds.Tables[0].Rows[0]["LoginId"].ToString();
                         Session["DisplayName"] = ds.Tables[0].Rows[0]["Name"].ToString();
                         Session["PassWord"] = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
                         Session["Transpassword"] = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());

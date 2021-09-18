@@ -154,7 +154,24 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("GetEwalletLedger", para);
             return ds;
         }
+        public DataSet ShoppingWalletLedger()
+        {
+            SqlParameter[] para = {
+                                      new SqlParameter("@Fk_UserId", Fk_UserId),
 
+                                     };
+            DataSet ds = DBHelper.ExecuteQuery("GetShoppingWalletLedger", para);
+            return ds;
+        }
+        public DataSet RealEstateWalletLedger()
+        {
+            SqlParameter[] para = {
+                                      new SqlParameter("@Fk_UserId", Fk_UserId),
+
+                                     };
+            DataSet ds = DBHelper.ExecuteQuery("GetRealEstateWalletLedger", para);
+            return ds;
+        }
         public DataSet ProductWalletLedger()
         {
             SqlParameter[] para = { new SqlParameter("@Fk_UserId", Fk_UserId), };

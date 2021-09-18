@@ -45,7 +45,7 @@
                                 <div class="row ">
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
-                                            <label>Package<span style="color:red;font-size: 21px;">*</span></label>
+                                            <label>Subscription<span style="color:red;font-size: 21px;">*</span></label>
                                             @Html.DropDownListFor(m => m.PackageId, new SelectList(ViewBag.Package, "Value", "Text"), new { @class = "form-control", @Placeholder = "Package Id", })
                                         </div>
                                     </div>
@@ -179,6 +179,11 @@
     }
     function ValidateForm() {
         $(".errortext").removeClass("errortext");
+        if ($('#PackageId').val() == '0') {
+            $("#PackageId").addClass('errortext');
+            $('#PackageId').focus();
+            return false;
+        }
         if ($('#SponsorId').val() == '') {
             $("#SponsorId").addClass('errortext');
             $('#SponsorId').focus();
@@ -260,6 +265,11 @@
     }
     function confirmregistration() {
         $(".errortext").removeClass("errortext");
+        if ($('#PackageId').val() == '0') {
+            $("#PackageId").addClass('errortext');
+            $('#PackageId').focus();
+            return false;
+        }
         if ($('#SponsorId').val() == '') {
             $("#SponsorId").addClass('errortext');
             $('#SponsorId').focus();
