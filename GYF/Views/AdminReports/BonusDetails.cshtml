@@ -1,0 +1,53 @@
+﻿@model GYF.Models.AdminReports
+@{
+    ViewBag.Title = "BonusDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("BonusDetails", "AdminReports", FormMethod.Post, new { id = "form" }))
+{
+
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Income Reports</span> - Bonus Details</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h3 class="card-title">No Record</h3>
+
+                    </div>
+                    <div class="card-header">
+
+                        <p style="color: red">
+                            @TempData["LevelIncome"]
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

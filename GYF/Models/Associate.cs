@@ -123,6 +123,7 @@ namespace GYF.Models
         public string TargetDirect { get; set; }
         public string TargetDays { get; set; }
         public string RewardAmount { get; set; }
+        public string RewardImage { get; set; }
 
         public string Balance { get; set; }
         public string Pk_RequestId { get; set; }
@@ -324,7 +325,6 @@ namespace GYF.Models
         {
             SqlParameter[] para = { new SqlParameter("@LoginId", LoginId),
                                       new SqlParameter("@PayoutNo", PayoutNo),
-
                                          new SqlParameter("@FromDate", FromDate),
                                          new SqlParameter("@ToDate", ToDate),
                                           new SqlParameter("@Name", Name),

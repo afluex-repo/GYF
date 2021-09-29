@@ -857,7 +857,6 @@ namespace GYF.Controllers
                     Obj.PayoutNo = r["PayoutNo"].ToString();
                     Obj.ClosingDate = r["ClosingDate"].ToString();
                     Obj.DirectIncome = r["DirectIncome"].ToString();
-
                     Obj.SingleLegIncome = r["SingleLegIncome"].ToString();
                     Obj.LevelIncome = r["LevelIncome"].ToString();
                     Obj.AutoPoolIncome = r["AutoPoolIncome"].ToString();
@@ -902,12 +901,12 @@ namespace GYF.Controllers
                     Obj.PayoutNo = r["PayoutNo"].ToString();
                     Obj.ClosingDate = r["ClosingDate"].ToString();
                     Obj.DirectIncome = r["DirectIncome"].ToString();
-                    Obj.SingleLegIncome = r["SingleLegIncome"].ToString();
+                    //Obj.SingleLegIncome = r["SingleLegIncome"].ToString();
                     Obj.LevelIncome = r["LevelIncome"].ToString();
-                    Obj.AutoPoolIncome = r["AutoPoolIncome"].ToString();
+                    //Obj.AutoPoolIncome = r["AutoPoolIncome"].ToString();
                     Obj.GrossAmount = r["GrossAmount"].ToString();
                     Obj.TDSAmount = r["TDSAmount"].ToString();
-                    Obj.ROI = r["ROI"].ToString();
+                    //Obj.ROI = r["ROI"].ToString();
                     Obj.AdminFee = r["AdminFee"].ToString();
                     Obj.NetAmount = r["NetAmount"].ToString();
                     Obj.SingleLegIncome = r["SingleLegIncome"].ToString();
@@ -1158,6 +1157,7 @@ namespace GYF.Controllers
                     Obj.TargetDirect = r["TargetDirect"].ToString();
                     Obj.TargetDays = r["TargetDays"].ToString();
                     Obj.Status = r["Status"].ToString();
+                    Obj.RewardImage = r["RewardImage"].ToString();
                     Obj.RewardAmount = r["RewardAmount"].ToString();
                     lst1.Add(Obj);
                 }
@@ -1686,6 +1686,19 @@ namespace GYF.Controllers
             }
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
+
+
+        public ActionResult BonusDetails()
+        {
+            return View();
+        }
+
+        public ActionResult FounderClub()
+        {
+            return View();
+        }
+
+
     }
 
 }
