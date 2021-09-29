@@ -936,6 +936,10 @@
     <Content Include="Views\Wallet\ShoppingWalletLedger.cshtml" />
     <Content Include="Views\Wallet\RealEstateWalletLedger.cshtml" />
     <Content Include="Views\Associate\ViewProfile.cshtml" />
+    <Content Include="Views\AdminReports\BonusDetails.cshtml" />
+    <Content Include="Views\AdminReports\FounderClub.cshtml" />
+    <Content Include="Views\Associate\BonusDetails.cshtml" />
+    <Content Include="Views\Associate\FounderClub.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1299,5 +1299,18 @@ namespace GYF.Controllers
                 throw;
             }
         }
+
+
+        public ActionResult BonusDetails()
+        {
+            return View();
+        }
+
+        public ActionResult FounderClub()
+        {
+            return View();
+        }
+
+
     }
 }
