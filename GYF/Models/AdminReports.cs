@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Mvc;
 
 namespace GYF.Models
 {
@@ -135,7 +136,9 @@ namespace GYF.Models
         public string step { get; set; }
         public string entrydate { get; set; }
         public string EntryAmount { get; set; }
-
+        public List<AdminReports> GetPayoutRequestList { get; set; }
+        public string PK_ProductId { get; set; }
+        public List<SelectListItem> ProductLst { get; set; }
         #endregion
 
         public DataSet GetStateCityByPincode()
@@ -486,6 +489,52 @@ namespace GYF.Models
                  new SqlParameter("@Status",Status)
             };
             DataSet ds = DBHelper.ExecuteQuery("ApproveDeclineEwalletRequest", para);
+            return ds;
+        }
+
+
+        public DataSet GetPayoutRequestLists()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@Fk_UserId",Pk_UserId),
+                 new SqlParameter("@LoginId",LoginId)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetPayoutRequest", para);
+            return ds;
+        }
+
+
+        public DataSet ApprovePayoutRequest()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@Pk_RequestId",Pk_RequestId),
+                 new SqlParameter("@Status",Status),
+                  new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("ApproveDeclinePayoutRequest", para);
+            return ds;
+        }
+
+
+
+        public DataSet ProductNameDetails()
+        {
+            DataSet ds = DBHelper.ExecuteQuery("CreateProductMaster");
+            return ds;
+        }
+        
+
+        public DataSet SaveTopUp()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@FK_ProductId",PK_ProductId),
+                 new SqlParameter("@PinAmount",PinAmount),
+                  new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("SaveTopUp", para);
             return ds;
         }
     }
