@@ -940,6 +940,11 @@
     <Content Include="Views\AdminReports\FounderClub.cshtml" />
     <Content Include="Views\Associate\BonusDetails.cshtml" />
     <Content Include="Views\Associate\FounderClub.cshtml" />
+    <Content Include="Views\Associate\PayoutRequest.cshtml" />
+    <Content Include="Views\Associate\GetPayoutRequestList.cshtml" />
+    <Content Include="Views\AdminReports\GetPayoutRequestList.cshtml" />
+    <Content Include="Views\AdminReports\TopUp.cshtml" />
+    <Content Include="Views\Wallet\PayoutWalletLedger.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

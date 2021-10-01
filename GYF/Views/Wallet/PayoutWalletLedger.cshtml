@@ -1,0 +1,94 @@
+﻿@model GYF.Models.Wallet
+@{
+    ViewBag.Title = "PayoutWalletLedger";
+    Layout = "~/Views/Shared/AssociateLayout.cshtml";
+}
+
+@using (Html.BeginForm("PayoutWalletLedger", "Wallet", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Wallet </span> - Payout Wallet Ledger</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Payout Wallet Ledger</h6>
+                        <p style="color:red">
+                            @TempData["UpdateBankDetails"]
+                        </p>
+                    </div>
+
+
+
+                    <div class="row" style="margin-left:10px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-lg-12 digi_list_layout">
+
+                                            <!-- /.panel-heading -->
+                                            <table id="example23" class="display table table-bordered" cellspacing="0" width="100%" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Sr No.</th>
+                                                        <th>Transaction Date</th>
+                                                        <th>Narration</th>
+                                                        <th>CrAmount</th>
+                                                        <th>DrAMount</th>
+                                                        <th>Balance</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @if (Model != null)
+                                                    {
+                                                        if (Model.lstPayoutWalletLedger != null)
+                                                        {
+                                                            int i = 1;
+                                                            foreach (var Item in Model.lstPayoutWalletLedger)
+                                                            {
+                                                                <tr class="text-left">
+                                                                    <td>@i</td>
+
+                                                                    <td>@Item.AddedOn</td>
+                                                                    <td>@Item.Narration</td>
+                                                                    <td>@Item.CrAmount</td>
+                                                                    <td>@Item.DrAmount</td>
+                                                                    <td>@Item.EwalletBalance</td>
+
+                                                                </tr>
+                                                                i++;
+                                                            }
+
+                                                        }
+                                                    }
+                                                </tbody>
+                                            </table>
+                                            <!-- /.panel-body -->
+                                            <!-- /.panel -->
+                                        </div>
+                                        <!-- /.col-lg-12 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

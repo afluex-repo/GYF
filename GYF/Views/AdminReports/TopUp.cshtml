@@ -1,0 +1,101 @@
+﻿@model GYF.Models.AdminReports
+@{
+    ViewBag.Title = "TopUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TopUp</h2>
+
+
+@using (Html.BeginForm("TopUp", "AdminReports", FormMethod.Post, new { id = "form" }))
+{
+    <!-- Page header -->
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold"> </span> - TopUp</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">TopUp</h6>
+
+                    </div>
+                    <div class="card-header">
+
+                        <p style="color: red">
+                           @TempData["TopUp"] 
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 mx-auto">
+                                <div class="row ">
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                               Product Name<span style="color:red;">*</span>
+                                            </label>
+                                            @Html.DropDownListFor(m => m.PK_ProductId, new SelectList(ViewBag.ddlProduct, "Value", "Text"), new { @class = "form-control" })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="form-group">
+                                            <label>
+                                                Amount<span style="color:red;">*</span>
+                                            </label>
+                                            @Html.TextBoxFor(m => m.PinAmount, new { @class = "form-control", @Placeholder = "PinAmount" })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="form-group ">
+                                            <input type="submit" class="btn btn-info" name="topup" id="topup" style="margin-top:25px" value="Save" onclick="return ValidateForm();" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    function ValidateForm()
+    {
+            $(".errortext").removeClass('errortext');
+            if ($("#PK_ProductId").val() == '') {
+                $("#PK_ProductId").addClass('errortext');
+                $("#PK_ProductId").focus();
+                return false;
+            }
+            if ($("#PinAmount").val() == '') {
+                $("#PinAmount").addClass('errortext');
+                $("#PinAmount").focus();
+                return false;
+            }
+            return true;
+
+    }
+</script> 
+
+<style>
+    .errortext{
+        border:1px solid red !important;
+        background-color:#fff !important;
+    }
+</style>

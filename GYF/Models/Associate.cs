@@ -140,6 +140,10 @@ namespace GYF.Models
         public string PinAmount { get; set; }
         public string SelectedValue { get; set; }
 
+        public string PK_PayoutId { get; set; }
+        public string PayoutWallet { get; set; }
+        
+
         public DataSet GetStateCityByPincode()
         {
             SqlParameter[] para ={
@@ -511,6 +515,31 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("UploadKYC", para);
             return ds;
 
+        }
+
+        public DataSet SavePayoutRequest()
+        {
+
+            SqlParameter[] para =
+            {
+                new SqlParameter("@LoginId",LoginId),
+                new SqlParameter("@Amount",Amount),
+                new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("PayoutRequest", para);
+            return ds;
+        }
+
+        public DataSet PayoutWallets()
+        {
+
+            SqlParameter[] para =
+            {
+                new SqlParameter("@FK_UserId",Fk_UserId),
+              
+            };
+            DataSet ds = DBHelper.ExecuteQuery("PayoutWallet", para);
+            return ds;
         }
     }
 }

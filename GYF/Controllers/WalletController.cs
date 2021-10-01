@@ -201,5 +201,32 @@ namespace GYF.Controllers
             }
             return View(objewallet);
         }
+
+        public ActionResult PayoutWalletLedger()
+        {
+            Wallet objewallet = new Wallet();
+            objewallet.Fk_UserId = Session["Pk_UserId"].ToString();
+            List<Wallet> lstPayoutWalletLedger = new List<Wallet>();
+            DataSet ds = objewallet.PayoutWalletLedger();
+            if (ds.Tables != null && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Wallet Objload = new Wallet();
+                    Objload.Narration = dr["Narration"].ToString();
+                    Objload.DrAmount = dr["DrAMount"].ToString();
+                    Objload.CrAmount = dr["CrAmount"].ToString();
+                    Objload.AddedOn = dr["CurrentDate"].ToString();
+                    Objload.EwalletBalance = dr["Balance"].ToString();
+
+                    lstPayoutWalletLedger.Add(Objload);
+                }
+                objewallet.lstPayoutWalletLedger = lstPayoutWalletLedger;
+            }
+            return View(objewallet);
+            
+        }
+
+
     }
 }

@@ -1699,6 +1699,53 @@ namespace GYF.Controllers
         }
 
 
+        public ActionResult PayoutRequest()
+        {
+            Associate model = new Associate();
+            model.LoginId = Session["LoginId"].ToString();
+            model.Fk_UserId = Session["Pk_userId"].ToString();
+            DataSet ds = model.PayoutWallets();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                ViewBag.PayoutWallet = ds.Tables[0].Rows[0]["PayoutWallet"].ToString();
+
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("PayoutRequest")]
+        [OnAction(ButtonName = "btnsave")]
+        public ActionResult PayoutRequest(Associate model)
+        {
+            try
+            {
+                model.AddedBy = Session["Pk_userId"].ToString();
+                model.LoginId = Session["LoginId"].ToString();
+                DataSet ds = model.SavePayoutRequest();
+                if(ds!=null && ds.Tables.Count>0 && ds.Tables[0].Rows.Count>0)
+                {
+                    if(ds.Tables[0].Rows[0][0].ToString()=="1")
+                    {
+                        TempData["PayoutRequest"] = "Payout Request Save Successfully";
+                    }
+                    else if(ds.Tables[0].Rows[0][0].ToString()=="0")
+                    {
+                        TempData["PayoutRequest"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+                else
+                {
+                    TempData["PayoutRequest"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                TempData["PayoutRequest"] = ex.Message;
+            }
+            return RedirectToAction("PayoutRequest", "Associate");
+        }
+        
     }
 
 }

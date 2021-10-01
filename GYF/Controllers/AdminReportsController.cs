@@ -1168,7 +1168,6 @@ namespace GYF.Controllers
                     else if (ds.Tables[0].Rows[0]["Msg"].ToString() == "0")
                     {
                         TempData["PayoutWalletRequest"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
-                        return View(model);
                     }
                 }
 
@@ -1177,9 +1176,8 @@ namespace GYF.Controllers
             catch (Exception ex)
             {
                 TempData["PayoutWalletRequest"] = ex.Message;
-                return View(model);
             }
-            return RedirectToAction("PayoutWalletRequest");
+            return RedirectToAction("GetPayoutRequestList", "AdminReports");
         }
 
 
@@ -1203,7 +1201,6 @@ namespace GYF.Controllers
                     else if (ds.Tables[0].Rows[0]["Msg"].ToString() == "0")
                     {
                         TempData["PayoutWalletRequest"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
-                        return View(model);
                     }
                 }
 
@@ -1212,9 +1209,8 @@ namespace GYF.Controllers
             catch (Exception ex)
             {
                 TempData["PayoutWalletRequest"] = ex.Message;
-                return View(model);
             }
-            return RedirectToAction("PayoutWalletRequest");
+            return RedirectToAction("GetPayoutRequestList", "AdminReports");
         }
 
 
@@ -1309,6 +1305,107 @@ namespace GYF.Controllers
         public ActionResult FounderClub()
         {
             return View();
+        }
+
+
+        public ActionResult GetPayoutRequestList()
+        {
+            //AdminReports model = new AdminReports();
+            //List<AdminReports> GetPayoutRequestList = new List<AdminReports>();
+            //DataSet ds = model.GetPayoutRequestLists();
+            //if(ds!=null && ds.Tables.Count>0 && ds.Tables[0].Rows.Count>0)
+            //{
+            //    foreach(DataRow dr in ds.Tables[0].Rows)
+            //    {
+            //        AdminReports obj = new AdminReports();
+            //        obj.Pk_RequestId = dr["Pk_RequestId"].ToString();
+            //        obj.Amount = dr["Amount"].ToString();
+            //        obj.RequestedDate = dr["RequestedDate"].ToString();
+            //        obj.Status = dr["Status"].ToString();
+            //        obj.LoginId = dr["LoginId"].ToString();
+            //        obj.Name = dr["Name"].ToString();
+            //        GetPayoutRequestList.Add(obj);
+            //    }
+            //    model.GetPayoutRequestList = GetPayoutRequestList;
+            //}
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("GetPayoutRequestList")]
+        [OnAction(ButtonName = "btnDetails")]
+        public ActionResult GetPayoutRequestList(AdminReports model)
+        {
+            List<AdminReports> GetPayoutRequestList = new List<AdminReports>();
+            DataSet ds = model.GetPayoutRequestLists();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    AdminReports obj = new AdminReports();
+                    obj.Pk_RequestId = dr["Pk_RequestId"].ToString();
+                    obj.Amount = dr["Amount"].ToString();
+                    obj.RequestedDate = dr["RequestedDate"].ToString();
+                    obj.Status = dr["Status"].ToString();
+                    obj.LoginId = dr["LoginId"].ToString();
+                    obj.Name = dr["Name"].ToString();
+                    GetPayoutRequestList.Add(obj);
+                }
+                model.GetPayoutRequestList = GetPayoutRequestList;
+            }
+            return View(model);
+        }
+
+        public ActionResult TopUp()
+        {
+            AdminReports model = new AdminReports();
+            int count1 = 0;
+            List<SelectListItem> ddlProduct = new List<SelectListItem>();
+            DataSet ds = model.ProductNameDetails();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    if (count1 == 0)
+                    {
+                        ddlProduct.Add(new SelectListItem { Text = "--Select--", Value = "" });
+                    }
+                    ddlProduct.Add(new SelectListItem { Text = r["ProductName"].ToString(), Value = r["PK_ProductId"].ToString() });
+                    count1 = count1 + 1;
+                }
+            }
+
+            ViewBag.ddlProduct = ddlProduct;
+
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("TopUp")]
+        [OnAction(ButtonName = "topup")]
+        public ActionResult TopUp(AdminReports model)
+        {
+            try
+            {
+                model.AddedBy = Session["Pk_AdminId"].ToString();
+                DataSet ds = model.SaveTopUp();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["TopUp"] = "TopUp Save Successfully";
+                    }
+                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    {
+                        TempData["TopUp"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["TopUp"] = ex.Message;
+            }
+            return RedirectToAction("TopUp", "AdminReports");
         }
 
 
