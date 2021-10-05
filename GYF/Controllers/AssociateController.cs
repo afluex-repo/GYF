@@ -277,6 +277,7 @@ namespace GYF.Controllers
                 model.PAYTMNo = ds.Tables[0].Rows[0]["PAYTMNo"].ToString();
                 model.Phonepay = ds.Tables[0].Rows[0]["Phonepay"].ToString();
                 model.GooglePay = ds.Tables[0].Rows[0]["GooglePay"].ToString();
+                model.UPINo = ds.Tables[0].Rows[0]["UPINo"].ToString();
             }
             return View(model);
         }
@@ -1426,7 +1427,7 @@ namespace GYF.Controllers
         [HttpPost]
         [ActionName("UploadKYC")]
         [OnAction(ButtonName = "btnUpdateAdhar")]
-        public ActionResult KYCDocuments(IEnumerable<HttpPostedFileBase> postedFile, Associate obj)
+        public ActionResult KYCDocuments(IEnumerable<HttpPostedFileBase> postedFile, IEnumerable<HttpPostedFileBase> postedPan, IEnumerable<HttpPostedFileBase> postedDoc, Associate obj)
         {
             string FormName = "";
             string Controller = "";
@@ -1441,6 +1442,31 @@ namespace GYF.Controllers
 
                         obj.AdharImage = "/KYCDocuments/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
                         file.SaveAs(Path.Combine(Server.MapPath(obj.AdharImage)));
+
+                    }
+
+                }
+
+                foreach (var file in postedPan)
+                {
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        //E:\BitBucket\TejInfraZone\TejInfra\files\assets\images\
+
+                        obj.PanImage = "/KYCDocuments/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
+                        file.SaveAs(Path.Combine(Server.MapPath(obj.PanImage)));
+
+                    }
+
+                }
+                foreach (var file in postedDoc)
+                {
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        //E:\BitBucket\TejInfraZone\TejInfra\files\assets\images\
+
+                        obj.DocumentImage = "/KYCDocuments/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
+                        file.SaveAs(Path.Combine(Server.MapPath(obj.DocumentImage)));
 
                     }
 

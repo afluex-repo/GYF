@@ -24,6 +24,7 @@ namespace GYF.Models
         public string PAYTMNo { get; set; }
         public string Phonepay { get; set; }
         public string GooglePay { get; set; }
+        public string UPINo { get; set; }
         public string NomineName { get; set; }
         public string NomineRealation { get; set; }
         public string DOB { get; set; }
@@ -208,7 +209,8 @@ namespace GYF.Models
                 new SqlParameter("@AccountNo",AccountNo),
                 new SqlParameter("@PAYTMNo",PAYTMNo),
                 new SqlParameter("@Phonepay",Phonepay),
-                new SqlParameter("@GooglePay",GooglePay)
+                new SqlParameter("@GooglePay",GooglePay),
+                 new SqlParameter("@UPINo",UPINo)
             };
             DataSet ds = DBHelper.ExecuteQuery("UpdateBankdetails", para);
             return ds;
