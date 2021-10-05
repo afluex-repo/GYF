@@ -4,7 +4,7 @@
     ViewBag.Title = "UploadKYC";
     Layout = "~/Views/Shared/AssociateLayout.cshtml";
 }
-@using (Html.BeginForm("UploadKYC", "Associate", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+@using (Html.BeginForm("UploadKYC", "Associate", FormMethod.Post, new { @id = "form1", enctype="multipart/form-data" }))
 {
 
     <div class="page-header page-header-light">
@@ -80,7 +80,7 @@
                                                 }
                                                 
                                                 <br />
-                                                    <input style="margin:10px;" onclick="return confirmAdhar();"  type="submit" id="btnUpdateAdhar" class="btn btn-success pull-left" name="btnUpdateAdhar" value="Update Adhar" />
+                                                    <input style="margin:10px;"  type="submit" id="btnUpdateAdhar" class="btn btn-success pull-left" name="btnUpdateAdhar" value="Upload" />
                                                     <br />
                                             }
                                         </div>
@@ -88,7 +88,7 @@
                                             @if (Model.PanStatus == "Status : Approved")
                                             {
                                                 <label>Adhar Number </label>
-                                                @Html.TextBoxFor(m => m.PanNumber, new { @class = "form-control", @onclick = "return isNumberOrDecimal(event);", @maxlength = "12", @minlength = "12", @readonly = "readonly" })
+                                                @Html.TextBoxFor(m => m.PanNumber, new { @class = "form-control", @maxlength = "10", @onchange = "return validatePan();", @readonly = "readonly" })
                                                 @Html.DisplayFor(m => m.PanStatus, new { @class = "form-control" })
                                                 <br />
                                                 <br />
@@ -108,11 +108,11 @@
                                             else
                                             {
                                                 <label>Pan Number <span style="color: red">*</span></label>
-                                                @Html.TextBoxFor(m => m.PanNumber, new { @class = "form-control", @minlength = "10" })
+                                                @Html.TextBoxFor(m => m.PanNumber, new { @class = "form-control", @maxlength = "10", @onchange = "return validatePan();" })
                                                 @Html.DisplayFor(m => m.PanStatus, new { @class = "form-control" })
                                                 <br />
                                                 <br />
-                                                <input type="file" name="postedFile" />
+                                                <input type="file" name="postedPan" />
                                                 <br />
                                                 if (Model.PanImage == "" || Model.PanImage ==null)
                                                 {
@@ -124,8 +124,8 @@
                                                 }
 
                                               <br />
-                                                <input type="submit" style="margin:10px;" onclick="return confirmPan();"  id="btnUpdatePan" class="btn btn-success pull-left" name="btnUpdatePan" value="Update Pan" />
-                                                <br />
+                                                @*<input type="submit" style="margin:10px;" onclick="return confirmPan();"  id="btnUpdatePan" class="btn btn-success pull-left" name="btnUpdatePan" value="Update Pan" />
+                                                <br />*@
                                             }
                                         </div>
                                         <div class="col-12 col-md-4 col-lg-4">
@@ -157,7 +157,7 @@
                                                 @Html.DisplayFor(m => m.DocumentStatus, new { @class = "form-control" })
                                                 <br />
                                                 <br />
-                                                <input type="file" name="postedFile" />
+                                                <input type="file" name="postedDoc" />
                                                 <br />
                                                 if (Model.DocumentImage == "" || Model.DocumentImage==null)
                                                 {
@@ -169,8 +169,8 @@
                                                     <img src="@Url.Content(Model.DocumentImage)" height="120" width="180" />
                                                 }
                                               <br />
-                                                <input type="submit" style="margin:10px;" id="btnUpdateDoc" class="btn btn-success mr-1btn" name="btnUpdateDoc" value="Update Document" />
-                                                <br />
+                                                @*<input type="submit" style="margin:10px;" id="btnUpdateDoc" class="btn btn-success mr-1btn" name="btnUpdateDoc" value="Update Document" />
+                                                <br />*@
                                             }
                                         </div>
                                     </div>
@@ -200,13 +200,37 @@
             return false;
         }
     }
-    function confirmPan() {
-        $(".errortext").removeClass("errortext");
-        if ($('#PanNumber').val() == '') {
+    //function confirmPan() {
+    //    $(".errortext").removeClass("errortext");
+    //    if ($('#PanNumber').val() == '') {
+    //        $("#PanNumber").addClass('errortext');
+    //        $('#PanNumber').focus();
+    //        return false;
+    //    }
+    //}
+
+
+
+    function validatePan() {
+        debugger;
+        var panVal = $('#PanNumber').val();
+        var regpan = /^([A-Z]){5}([0-9]){4}([A-Z]){1}?$/;
+
+        if (regpan.test(panVal)) {
+            $("#PanNumber").removeClass('errortext');
+        } else {
+            alert("Invalid PAN Number");
+            $("#PanNumber").val('');
             $("#PanNumber").addClass('errortext');
-            $('#PanNumber').focus();
-            return false;
         }
     }
-</script>
 
+
+
+</script>
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>

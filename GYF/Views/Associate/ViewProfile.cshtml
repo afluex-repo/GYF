@@ -41,7 +41,6 @@
                                     </p>
                                 </div>
 
-
                                 <div class="row" style="margin-left:10px;">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
 
@@ -85,8 +84,8 @@
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
-                                                                    Pincode
-                                                                    @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control", @Placeholder = "PinCode", @readonly = "readonly" })
+                                                                    Pin Code
+                                                                    @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control", @Placeholder = "Pin Code", @readonly = "readonly" })
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
@@ -97,7 +96,7 @@
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
-                                                                    CityName
+                                                                    City Name
                                                                     @Html.TextBoxFor(m => m.City, new { @class = "form-control", @Placeholder = "City Name", @readonly = "readonly" })
                                                                 </div>
                                                             </div>
@@ -174,7 +173,7 @@
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     Pan No.
-                                                                    @Html.TextBoxFor(m => m.PanNumber, new { @class = "form-control", @readonly = "readonly" })
+                                                                    @Html.TextBoxFor(m => m.PanNumber, new { @class = "form-control" , @maxlength = "10", @onchange = "return validatePan();" })
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
@@ -235,7 +234,7 @@
                                             <div class="form-group">
                                                 <br />
                                                 @Html.HiddenFor(m => m.UserID, new { @Value = @Model.UserID })
-                                                <input class="btn btn-success pull-right" type="submit" onclick="return validateform();" value="Update" id="btnUpdate" name="btnUpdate" />
+                                                <input class="btn btn-success pull-right" type="submit" onclick="return validateform();" value="Save" id="btnSave" name="btnSave" />
                                             </div>
                                         </div>
                                     </div>*@
@@ -248,3 +247,41 @@
     </div>
 }
 
+
+
+<script>
+
+    function validateform() {
+        $(".errortext").removeClass("errortext");
+      
+        if ($('#PanNumber').val() == '') {
+            $("#PanNumber").addClass('errortext');
+            $('#PanNumber').focus();
+            return false;
+        }
+
+    }
+
+
+
+
+    function validatePan() {
+        var panVal = $('#PanNo').val();
+        var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+
+        if (regpan.test(panVal)) {
+            $("#PanNo").removeClass('errortext');
+        } else {
+            alert("Invalid PAN Number");
+            $("#PanNo").val('');
+            $("#PanNo").addClass('errortext');
+        }
+    }
+
+</script>
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>
