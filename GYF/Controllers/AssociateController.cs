@@ -857,7 +857,6 @@ namespace GYF.Controllers
                     Obj.PayoutNo = r["PayoutNo"].ToString();
                     Obj.ClosingDate = r["ClosingDate"].ToString();
                     Obj.DirectIncome = r["DirectIncome"].ToString();
-
                     Obj.SingleLegIncome = r["SingleLegIncome"].ToString();
                     Obj.LevelIncome = r["LevelIncome"].ToString();
                     Obj.AutoPoolIncome = r["AutoPoolIncome"].ToString();
@@ -902,12 +901,12 @@ namespace GYF.Controllers
                     Obj.PayoutNo = r["PayoutNo"].ToString();
                     Obj.ClosingDate = r["ClosingDate"].ToString();
                     Obj.DirectIncome = r["DirectIncome"].ToString();
-                    Obj.SingleLegIncome = r["SingleLegIncome"].ToString();
+                    //Obj.SingleLegIncome = r["SingleLegIncome"].ToString();
                     Obj.LevelIncome = r["LevelIncome"].ToString();
-                    Obj.AutoPoolIncome = r["AutoPoolIncome"].ToString();
+                    //Obj.AutoPoolIncome = r["AutoPoolIncome"].ToString();
                     Obj.GrossAmount = r["GrossAmount"].ToString();
                     Obj.TDSAmount = r["TDSAmount"].ToString();
-                    Obj.ROI = r["ROI"].ToString();
+                    //Obj.ROI = r["ROI"].ToString();
                     Obj.AdminFee = r["AdminFee"].ToString();
                     Obj.NetAmount = r["NetAmount"].ToString();
                     Obj.SingleLegIncome = r["SingleLegIncome"].ToString();
@@ -1158,6 +1157,7 @@ namespace GYF.Controllers
                     Obj.TargetDirect = r["TargetDirect"].ToString();
                     Obj.TargetDays = r["TargetDays"].ToString();
                     Obj.Status = r["Status"].ToString();
+                    Obj.RewardImage = r["RewardImage"].ToString();
                     Obj.RewardAmount = r["RewardAmount"].ToString();
                     lst1.Add(Obj);
                 }
@@ -1660,7 +1660,7 @@ namespace GYF.Controllers
 
                     if (ds.Tables[0].Rows[0]["MSG"].ToString() == "1")
                     {
-                        Session["LoginId"] = ds.Tables[0].Rows[0]["LoginId"].ToString();
+                        Session["Login_Id"] = ds.Tables[0].Rows[0]["LoginId"].ToString();
                         Session["DisplayName"] = ds.Tables[0].Rows[0]["Name"].ToString();
                         Session["PassWord"] = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
                         Session["Transpassword"] = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
@@ -1686,6 +1686,66 @@ namespace GYF.Controllers
             }
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
+
+
+        public ActionResult BonusDetails()
+        {
+            return View();
+        }
+
+        public ActionResult FounderClub()
+        {
+            return View();
+        }
+
+
+        public ActionResult PayoutRequest()
+        {
+            Associate model = new Associate();
+            model.LoginId = Session["LoginId"].ToString();
+            model.Fk_UserId = Session["Pk_userId"].ToString();
+            DataSet ds = model.PayoutWallets();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                ViewBag.PayoutWallet = ds.Tables[0].Rows[0]["PayoutWallet"].ToString();
+
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("PayoutRequest")]
+        [OnAction(ButtonName = "btnsave")]
+        public ActionResult PayoutRequest(Associate model)
+        {
+            try
+            {
+                model.AddedBy = Session["Pk_userId"].ToString();
+                model.LoginId = Session["LoginId"].ToString();
+                DataSet ds = model.SavePayoutRequest();
+                if(ds!=null && ds.Tables.Count>0 && ds.Tables[0].Rows.Count>0)
+                {
+                    if(ds.Tables[0].Rows[0][0].ToString()=="1")
+                    {
+                        TempData["PayoutRequest"] = "Payout Request Save Successfully";
+                    }
+                    else if(ds.Tables[0].Rows[0][0].ToString()=="0")
+                    {
+                        TempData["PayoutRequest"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+                else
+                {
+                    TempData["PayoutRequest"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                TempData["PayoutRequest"] = ex.Message;
+            }
+            return RedirectToAction("PayoutRequest", "Associate");
+        }
+        
     }
 
 }

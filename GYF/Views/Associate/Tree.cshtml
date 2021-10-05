@@ -38,6 +38,7 @@
         transition-property: opacity;
         transition-duration: 5s;
         transition-delay: 0.5s;
+        overflow-x: scroll;
     }
 
     #firstRow, [id*="level"] {
@@ -486,8 +487,8 @@
                             </a>
                             <a id="btnRoot" class="btn btn-primary m-b-10 m-l-5">Root</a>
                         </div>
-                        <div class="form-group col-md-12">
-                            <div class="col-sm-12 col-md-12" id="chart">
+                        <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" id="chart">
                                 <div class="tree family-tree clearfix">
                                     <ul>
                                         <li id="firstRow">
@@ -561,7 +562,7 @@
     var Fk_UserId = "0";
     var clicked = 0;
 
-    
+
 
 </script>
 
@@ -608,7 +609,6 @@
 
 
         function OnSuccess(response) {
-            debugger;
             var ul = $("<ul></ul>");
             var freeBlock = "";
             var freeBlock1 = "";
@@ -617,7 +617,6 @@
             var freeBlock4 = "";
             var freeBlock5 = "";
             var model = response;
-            debugger;
             if (!$.trim(model)) {
 
                 $(".alert-warning").show();
@@ -677,7 +676,6 @@
                     }
 
                     if (level == 5) {
-                        debugger;
                         if (id != '-1') {
 
                             child = " <li id='level" + i + "'><a data-toggle='popover' id='levelLink" + i + "' href='" + item1.Href + "' class='from " + cssclass + " rounded-circle' onclick='ClickHere(this," + item1.Fk_UserId + ")')><div class='outer-ring " + cssclass + " rounded-circle'><div class='member-img " + cssclass + " rounded-circle'><i class='" + cssclass + " rounded-circle '></i></div></div><span class='name member-name'>" +
@@ -709,7 +707,6 @@
                                                      "</a></li>";
                         }
                         freeBlock = "<li id='1'><a href='Registration.cshtml?Pid=" + item1.LoginId + "&amp;lg=" + item1.Leg + "' target='_blank'><img src='/Content/img/open-member.png'><br><span>Join Now</span></a></li>";
-                        debugger;
                         if (item1.Leg == '') {
                             ul.append(freeBlock + child);
                         }
@@ -724,8 +721,7 @@
             $('#divload').hide();
         }
     }
-    function ClickHere(obj,Id) {
-        debugger;
+    function ClickHere(obj, Id) {
         $("#member-details").removeClass('active');
         $("#lblFk_UserId").text(Id);
         clicked = 1;
@@ -738,7 +734,6 @@
     });
 
     function openPopup(obj, item1) {
-        debugger;
         $("#lblFk_UserId").text(item1);
     }
     function GetDataFirst(id, text) {
@@ -756,10 +751,8 @@
             }
         });
         function OnSuccess2(response) {
-            debugger;
             var modal = response;
             $.each(modal, function (i, item) {
-                debugger;
                 $("#headClass span").text(item.MemberName + "(" + item.LoginId + ")");
                 var status = item.Status;
                 var gender = item.Gender;
@@ -828,11 +821,9 @@
                     //contentType: "application/json; charset=utf-8",
                     success: OnSuccessThis,
                     error: function (response) {
-                        debugger;
                         console.log(response.responseText);
                     },
                     failure: function (response) {
-                        debugger;
                         console.log(response.responseText);
                     },
                     select: function (e, i) {
@@ -843,7 +834,6 @@
 
 
             function OnSuccessThis(data) {
-                debugger;
                 console.log(data);
                 var r = data;
                 $(r).each(function () {

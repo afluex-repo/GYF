@@ -123,6 +123,7 @@ namespace GYF.Models
         public string TargetDirect { get; set; }
         public string TargetDays { get; set; }
         public string RewardAmount { get; set; }
+        public string RewardImage { get; set; }
 
         public string Balance { get; set; }
         public string Pk_RequestId { get; set; }
@@ -138,6 +139,10 @@ namespace GYF.Models
         public List<Associate> MultiplePinList { get; set; }
         public string PinAmount { get; set; }
         public string SelectedValue { get; set; }
+
+        public string PK_PayoutId { get; set; }
+        public string PayoutWallet { get; set; }
+        
 
         public DataSet GetStateCityByPincode()
         {
@@ -324,7 +329,6 @@ namespace GYF.Models
         {
             SqlParameter[] para = { new SqlParameter("@LoginId", LoginId),
                                       new SqlParameter("@PayoutNo", PayoutNo),
-
                                          new SqlParameter("@FromDate", FromDate),
                                          new SqlParameter("@ToDate", ToDate),
                                           new SqlParameter("@Name", Name),
@@ -511,6 +515,31 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("UploadKYC", para);
             return ds;
 
+        }
+
+        public DataSet SavePayoutRequest()
+        {
+
+            SqlParameter[] para =
+            {
+                new SqlParameter("@LoginId",LoginId),
+                new SqlParameter("@Amount",Amount),
+                new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("PayoutRequest", para);
+            return ds;
+        }
+
+        public DataSet PayoutWallets()
+        {
+
+            SqlParameter[] para =
+            {
+                new SqlParameter("@FK_UserId",Fk_UserId),
+              
+            };
+            DataSet ds = DBHelper.ExecuteQuery("PayoutWallet", para);
+            return ds;
         }
     }
 }

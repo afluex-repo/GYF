@@ -54,6 +54,17 @@ namespace GYF.Models
         public string SenderMobile { get; set; }
         public string ReceiverName { get; set; }
         public string SenderName { get; set; }
+        public List<Wallet> lstPayoutWalletLedger { get; set; }
+
+        public DataSet PayoutWalletLedger()
+        {
+            SqlParameter[] para = {
+                                      new SqlParameter("@Fk_UserId", Fk_UserId),
+                                     };
+            DataSet ds = DBHelper.ExecuteQuery("GePayoutWalletLedger", para);
+            return ds;
+        }
+        
         public DataSet GetDigiWalletBalance()
         {
             SqlParameter[] para = {
@@ -154,7 +165,24 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("GetEwalletLedger", para);
             return ds;
         }
+        public DataSet ShoppingWalletLedger()
+        {
+            SqlParameter[] para = {
+                                      new SqlParameter("@Fk_UserId", Fk_UserId),
 
+                                     };
+            DataSet ds = DBHelper.ExecuteQuery("GetShoppingWalletLedger", para);
+            return ds;
+        }
+        public DataSet RealEstateWalletLedger()
+        {
+            SqlParameter[] para = {
+                                      new SqlParameter("@Fk_UserId", Fk_UserId),
+
+                                     };
+            DataSet ds = DBHelper.ExecuteQuery("GetRealEstateWalletLedger", para);
+            return ds;
+        }
         public DataSet ProductWalletLedger()
         {
             SqlParameter[] para = { new SqlParameter("@Fk_UserId", Fk_UserId), };
@@ -799,5 +827,10 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("CouponTopUpByUser", para);
             return ds;
         }
+
+      
     }
+
+
+
 }
