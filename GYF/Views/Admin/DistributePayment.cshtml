@@ -1,0 +1,145 @@
+﻿@model GYF.Models.Admin
+@{
+    ViewBag.Title = "DistributePayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("DistributePayment", "Admin", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Payout Reports</span> - Distribute Payment</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Distribute Payment</h6>
+                        @*<p style="color:red">
+                            @TempData["NewsMasterList"]
+                        </p>*@
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-3">
+                           
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label> Closing Date<span style="color:red;">*</span></label>
+                            @Html.TextBoxFor(m => m.ClosingDate, new { @class = "form-control", @Placeholder = "Closing Date" })
+                        </div>
+                        <div class="col-sm-4">
+                          <input type="submit" value="Distribute Payment" id="btnsave" name="btnsave" onclick="return validateform();" class="btn btn-success" style="margin-top:25px;" />
+                            <input type="submit" value="Export To Excel" id="btnsave" name="Export" class="btn btn-success"  style="margin-top:25px;"/>
+                        </div>
+                    </div>
+
+
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered w-100 mb-0" id="example24">
+                            <thead>
+                                <tr>
+                                    <th>Sr No.</th>
+                                    <th>LoginId</th>
+                                    <th>Name</th>
+                                    <th>Binary</th>
+                                    <th>Direct Income</th>
+                                    <th>Gross Amount</th>
+                                    <th>TDS Amount</th>
+                                    <th>Processing Amount</th>
+                                    <th>Net Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.DistributePaymentList != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.DistributePaymentList)
+                                        {
+                                            <tr class="text-left">
+                                               <td>@i</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            i++;
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+<script src="../vendor/jquery/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+</script>
+
+<script src="../..//WebsiteCss/js/jquery.min.js"></script>
+
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+<script>
+
+    $('#ClosingDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+    });
+
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+
+    function validateform() {
+        $(".errortext").removeClass("errortext");
+        if ($('#ClosingDate').val() == '') {
+            $("#ClosingDate").addClass('errortext');
+            $('#ClosingDate').focus();
+            return false;
+        }
+    }
+</script>
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>

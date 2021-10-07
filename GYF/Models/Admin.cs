@@ -46,7 +46,12 @@ namespace GYF.Models
         public string DocumentImage { get; set; }
         public string Pk_RequestId { get; set;}
         public string Amount { get; set; }
+        public string ClosingDate { get; set; }
         public List<Admin> EwalletRequestList { get; set; }
+        public List<Admin> DistributePaymentList { get; set; }
+
+
+
         public DataSet GetPaymentMode()
         {
 

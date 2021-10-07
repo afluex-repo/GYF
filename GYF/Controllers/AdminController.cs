@@ -864,5 +864,11 @@ namespace GYF.Controllers
             }
             return RedirectToAction("EwallwetRequestList");
         }
+
+        public ActionResult DistributePayment()
+        {
+            return View();
+        }
+
     }
 }

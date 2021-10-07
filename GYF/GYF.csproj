@@ -945,6 +945,7 @@
     <Content Include="Views\AdminReports\GetPayoutRequestList.cshtml" />
     <Content Include="Views\AdminReports\TopUp.cshtml" />
     <Content Include="Views\Wallet\PayoutWalletLedger.cshtml" />
+    <Content Include="Views\Admin\DistributePayment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
