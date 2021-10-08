@@ -48,9 +48,22 @@ namespace GYF.Models
         public string Amount { get; set; }
         public string ClosingDate { get; set; }
         public List<Admin> EwalletRequestList { get; set; }
+
+        public string FirstName { get; set; }
+        public string BinaryIncome { get; set; }
+        public string DirectIncome { get; set; }
+        public string DirectLeaderShipBonus { get; set; }
+        public string GrossIncome { get; set; }
+        public string Processing { get; set; }
+        public string TDS { get; set; }
+        public string NetIncome { get; set; }
+        public string LastClosingDate { get; set; }
+        public string PayoutNo { get; set; }
+        public string LeadershipBonus { get; set; }
+        
+
         public List<Admin> DistributePaymentList { get; set; }
-
-
+        
 
         public DataSet GetPaymentMode()
         {
@@ -282,6 +295,13 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("ApproveKYC", para);
             return ds;
         }
- 
+
+        public DataSet GetDitributePaymentList()
+        {
+            DataSet ds = DBHelper.ExecuteQuery("MakePaymentList");
+            return ds;
+        }
+
+
     }
 }

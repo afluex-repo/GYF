@@ -30,11 +30,15 @@
                     </div>
 
                     <div class="row">
-
-                        <div class="col-sm-3">
-                           
-                        </div>
-
+                    <div class="col-sm-3">
+                       
+                            <label>Last Closing Date : </label>
+                            @Html.DisplayFor(m => m.LastClosingDate)
+                            <br />
+                            <label>Last Payout No : </label>
+                            @Html.DisplayFor(m => m.PayoutNo)
+                     
+                    </div>
                         <div class="col-sm-3">
                             <label> Closing Date<span style="color:red;">*</span></label>
                             @Html.TextBoxFor(m => m.ClosingDate, new { @class = "form-control", @Placeholder = "Closing Date" })
@@ -45,8 +49,6 @@
                         </div>
                     </div>
 
-
-
                     <div class="table-responsive">
                         <table class="table table-bordered w-100 mb-0" id="example24">
                             <thead>
@@ -54,9 +56,9 @@
                                     <th>Sr No.</th>
                                     <th>LoginId</th>
                                     <th>Name</th>
-                                    <th>Binary</th>
+                                    <th>Binary Income</th>
                                     <th>Direct Income</th>
-                                    <th>Gross Amount</th>
+                                    <th>Gross Income</th>
                                     <th>TDS Amount</th>
                                     <th>Processing Amount</th>
                                     <th>Net Amount</th>
@@ -72,14 +74,14 @@
                                         {
                                             <tr class="text-left">
                                                <td>@i</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.FirstName</td>
+                                                <td>@Item.BinaryIncome</td>
+                                                <td>@Item.DirectIncome</td>
+                                                <td>@Item.GrossIncome</td>
+                                                <td>@Item.TDS</td>
+                                                <td>@Item.Processing</td>
+                                                <td>@Item.NetIncome</td>
                                             </tr>
                                             i++;
                                         }
@@ -87,12 +89,20 @@
                                     }
                                 }
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3"><b><p style="text-align:end;">Total</p></b></td>
+                                    <td><b>@ViewBag.BinaryIncome</b></td>
+                                    <td><b>@ViewBag.DirectIncome</b></td>
+                                    <td><b>@ViewBag.GrossIncome</b></td>
+                                    <td><b>@ViewBag.Processing</b></td>
+                                    <td><b>@ViewBag.TDS</b></td>
+                                    <td><b>@ViewBag.NetIncome</b></td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
-
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -101,13 +111,6 @@
 
 <script src="../vendor/jquery/jquery.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-</script>
 
 <script src="../..//WebsiteCss/js/jquery.min.js"></script>
 
@@ -118,15 +121,6 @@
     $('#ClosingDate').datepicker({
         dateFormat: 'dd/mm/yy',
     });
-
-    function isNumberKey(evt) {
-        var charCode = (evt.which) ? evt.which : event.keyCode;
-        if (charCode != 46 && charCode > 31
-          && (charCode < 48 || charCode > 57))
-            return false;
-
-        return true;
-    }
 
     function validateform() {
         $(".errortext").removeClass("errortext");

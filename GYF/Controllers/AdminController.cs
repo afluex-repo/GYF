@@ -865,9 +865,43 @@ namespace GYF.Controllers
             return RedirectToAction("EwallwetRequestList");
         }
 
-        public ActionResult DistributePayment()
+        public ActionResult DistributePayment(Admin model)
         {
-            return View();
+          List<Admin> lstDistributePayment = new List<Admin>();
+            ViewBag.Binary = ViewBag.Direct = ViewBag.Gross = ViewBag.TDS = ViewBag.Processing = ViewBag.NetIncome = 0;
+            DataSet ds = model.GetDitributePaymentList();
+            if(ds!=null && ds.Tables.Count>0 && ds.Tables[0].Rows.Count>0)
+            {
+                foreach(DataRow r in ds.Tables[0].Rows)
+                {
+                    Admin obj = new Admin();
+                    obj.LoginId = r["LoginId"].ToString();
+                    obj.FirstName = r["FirstName"].ToString();
+                    obj.BinaryIncome = r["BinaryIncome"].ToString();
+                    obj.DirectIncome = r["DirectIncome"].ToString();
+                    obj.DirectLeaderShipBonus = r["DirectLeaderShipBonus"].ToString();
+                    obj.GrossIncome = r["GrossIncome"].ToString();
+                    obj.Processing = r["Processing"].ToString();
+                    obj.TDS = r["TDS"].ToString();
+                    obj.NetIncome = r["NetIncome"].ToString();
+                    obj.LeadershipBonus = r["DirectLeaderShipBonus"].ToString();
+                    lstDistributePayment.Add(obj);
+                    
+                }
+                ViewBag.BinaryIncome = double.Parse(ds.Tables[0].Compute("sum(BinaryIncome)", "").ToString()).ToString("n2");
+                ViewBag.DirectIncome = double.Parse(ds.Tables[0].Compute("sum(DirectIncome)", "").ToString()).ToString("n2");
+                ViewBag.GrossIncome = double.Parse(ds.Tables[0].Compute("sum(GrossIncome)", "").ToString()).ToString("n2");
+                ViewBag.Processing = double.Parse(ds.Tables[0].Compute("sum(Processing)", "").ToString()).ToString("n2");
+                ViewBag.TDS = double.Parse(ds.Tables[0].Compute("sum(TDS)", "").ToString()).ToString("n2");
+                ViewBag.NetIncome = double.Parse(ds.Tables[0].Compute("sum(NetIncome)", "").ToString()).ToString("n2");
+
+                model.DistributePaymentList = lstDistributePayment;
+
+                model.LastClosingDate = ds.Tables[1].Rows[0]["ClosingDate"].ToString();
+                model.PayoutNo = ds.Tables[1].Rows[0]["PayoutNo"].ToString();
+
+            }
+            return View(model);
         }
 
     }
