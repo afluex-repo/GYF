@@ -143,7 +143,10 @@ namespace GYF.Models
 
         public string PK_PayoutId { get; set; }
         public string PayoutWallet { get; set; }
-        
+
+
+        public string Password { get; set; }
+        public string ConfirmNewPassword { get; set; }
 
         public DataSet GetStateCityByPincode()
         {
@@ -542,6 +545,17 @@ namespace GYF.Models
             };
             DataSet ds = DBHelper.ExecuteQuery("PayoutWallet", para);
             return ds;
+        }
+
+        public DataSet ChangePassword()
+        {
+            SqlParameter[] para = {new SqlParameter("@OldPassword",Password),
+                                   new SqlParameter("@NewPassword",NewPassword),
+                                   new SqlParameter("@UpdatedBy",UpdatedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("ChangePasswordForUser", para);
+            return ds;
+
         }
     }
 }

@@ -47,6 +47,7 @@ namespace GYF.Models
         public string Pk_RequestId { get; set;}
         public string Amount { get; set; }
         public string ClosingDate { get; set; }
+        public string ClosingDateValid { get; set; }
         public List<Admin> EwalletRequestList { get; set; }
 
         public string FirstName { get; set; }
@@ -60,8 +61,9 @@ namespace GYF.Models
         public string LastClosingDate { get; set; }
         public string PayoutNo { get; set; }
         public string LeadershipBonus { get; set; }
+        public string DistPaymentPassword { get; set; }
         
-
+             public List<Admin> lstassociate { get; set; }
         public List<Admin> DistributePaymentList { get; set; }
         
 
@@ -296,11 +298,55 @@ namespace GYF.Models
             return ds;
         }
 
+
+
+
+
+
+        public DataSet SaveDitributePayment()
+        {
+            SqlParameter[] para = { new SqlParameter("@ClosingDate", ToDate),
+                                      };
+            DataSet ds = DBHelper.ExecuteQuery("SaveDistributePayment", para);
+            return ds;
+        }
+        
+
         public DataSet GetDitributePaymentList()
         {
             DataSet ds = DBHelper.ExecuteQuery("MakePaymentList");
             return ds;
         }
+        
+        public string Password { get; set; }
+        public string NewPassword { get; set; }
+        public string ConfirmNewPassword { get; set; }
+
+        public DataSet ChangePassword()
+        {
+            SqlParameter[] para = {new SqlParameter("@OldPassword",Password),
+                                   new SqlParameter("@NewPassword",NewPassword),
+                                   new SqlParameter("@UpdatedBy",UpdatedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("ChangePasswordForAdmin", para);
+            return ds;
+
+        }
+
+        public DataSet ValidatePassword()
+        {
+            SqlParameter[] para = { new SqlParameter("@DistPaymentPassword", DistPaymentPassword) };
+            DataSet ds = DBHelper.ExecuteQuery("ValidateDistributePassword", para);
+            return ds;
+        }
+
+        public DataSet AutoDistributePayment()
+        {
+            SqlParameter[] para = { new SqlParameter("@ClosingDate", ClosingDate) };
+            DataSet ds = DBHelper.ExecuteQuery("AutoDistributePayment", para);
+            return null;
+        }
+
 
 
     }
