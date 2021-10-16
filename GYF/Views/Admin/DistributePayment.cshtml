@@ -77,64 +77,64 @@
                                     </div>
 
                                     <div class="dt-responsive table-responsive">
-                                        <table class="table mb-0" id="example23">
-                                            <thead>
-                                                <tr>
-                                                    <th>Sr No.</th>
-                                                    <th>LoginID</th>
-                                                    <th>Name</th>
-                                                    <th>Binary Income </th>
-                                                    <th>Direct Income</th>
-                                                    <th hidden="hidden">Direct Leadership Bonus</th>
-                                                    <th>Gross Amount</th>
-                                                    <th>TDS Amount</th>
-                                                    <th>Processing</th>
-                                                    <th>Net Payable Amount</th>
+                                            <table class="table table-bordered w-100 mb-0" id="example24">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Sr No.</th>
+                                                        <th>LoginID</th>
+                                                        <th>Name</th>
+                                                        <th>Binary Income </th>
+                                                        <th>Direct Income</th>
+                                                        <th hidden="hidden">Direct Leadership Bonus</th>
+                                                        <th>Gross Amount</th>
+                                                        <th>TDS Amount</th>
+                                                        <th>Processing</th>
+                                                        <th>Net Payable Amount</th>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @if (Model != null)
-                                                {
-                                                    if (Model.lstassociate != null)
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @if (Model != null)
                                                     {
-                                                        int i = 1;
-                                                        foreach (var Item in Model.lstassociate)
+                                                        if (Model.lstassociate != null)
                                                         {
-                                                            <tr class="text-left">
-                                                                <td>@i</td>
-                                                                <td>@Item.LoginId</td>
-                                                                <td>@Item.FirstName</td>
-                                                                <td>@Item.BinaryIncome</td>
-                                                                <td>@Item.DirectIncome</td>
-                                                                <td hidden="hidden">@Item.LeadershipBonus</td>
-                                                                <td>@Item.GrossIncome</td>
-                                                                <td>@Item.TDS</td>
-                                                                <td>@Item.Processing</td>
-                                                                <td>@Item.NetIncome</td>
-                                                            </tr>
-                                                            i++;
+                                                            int i = 1;
+                                                            foreach (var Item in Model.lstassociate)
+                                                            {
+                                                                <tr class="text-left">
+                                                                    <td>@i</td>
+                                                                    <td>@Item.LoginId</td>
+                                                                    <td>@Item.FirstName</td>
+                                                                    <td>@Item.BinaryIncome</td>
+                                                                    <td>@Item.DirectIncome</td>
+                                                                    <td hidden="hidden">@Item.LeadershipBonus</td>
+                                                                    <td>@Item.GrossIncome</td>
+                                                                    <td>@Item.TDS</td>
+                                                                    <td>@Item.Processing</td>
+                                                                    <td>@Item.NetIncome</td>
+                                                                </tr>
+                                                                i++;
+                                                            }
+
                                                         }
-
                                                     }
-                                                }
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th></th>
+                                                </tbody>
+                                                @*<tfoot>
+                <tr>
+                    <th></th>
 
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th style="text-align:right">Total Net Payable Amount</th>
-                                                    <th style="color:dodgerblue;font-weight:800">@ViewBag.Total</th>
+                    <th></th>
+                    <th></th>
+                    <th style="text-align:right">Total Net Payable Amount</th>
+                    <th style="color:dodgerblue;font-weight:800">@ViewBag.Total</th>
 
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th></th>
-                                                    <th></th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tfoot>*@
+                                            </table>
                                     </div>
                                 </div>
                             </div>
