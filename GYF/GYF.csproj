@@ -855,7 +855,6 @@
     <Content Include="Views\Main\ViewProfile.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Associate\UpdateProfile.cshtml" />
-    <Content Include="Views\Associate\ChangePassword.cshtml" />
     <Content Include="Views\Associate\UpdateBankDetails.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -945,6 +944,10 @@
     <Content Include="Views\AdminReports\GetPayoutRequestList.cshtml" />
     <Content Include="Views\AdminReports\TopUp.cshtml" />
     <Content Include="Views\Wallet\PayoutWalletLedger.cshtml" />
+    <Content Include="Views\Admin\DistributePayment.cshtml" />
+    <Content Include="Views\Main\ChangePassword.cshtml" />
+    <Content Include="Views\Associate\ChangePasswordUser.cshtml" />
+    <Content Include="Views\Admin\DistributePaymentPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

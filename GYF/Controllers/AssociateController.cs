@@ -1771,7 +1771,41 @@ namespace GYF.Controllers
             }
             return RedirectToAction("PayoutRequest", "Associate");
         }
-        
+
+        public ActionResult ChangePasswordUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("ChangePasswordUser")]
+        public ActionResult ChangePasswordUser(Associate model)
+        {
+            try
+            {
+                model.UpdatedBy = Session["Pk_userId"].ToString();
+                model.Password = Crypto.Encrypt(model.Password);
+                model.NewPassword = Crypto.Encrypt(model.NewPassword);
+                DataSet ds = model.ChangePassword();
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["Error"] = "Password Changed  Successfully";
+                    }
+                    else
+                    {
+                        TempData["Error"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+            }
+            return RedirectToAction("ChangePasswordUser", "Associate");
+        }
+
     }
 
 }
