@@ -934,7 +934,111 @@ namespace GYF.Controllers
             model.ClosingDate = id;
             return View(model);
         }
+        public ActionResult UploadBanner(string Id)
+        {
+            Admin obj = new Admin();
+            List<Admin> lst = new List<Admin>();
+            DataSet ds = obj.GetBannerImage();
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    Admin model = new Admin();
+                    model.PK_BannerId = r["PK_BannerId"].ToString();
+                    model.BannerImage = "/BannerImage/" + r["BannerImage"].ToString();
+                    lst.Add(model);
+                }
+                obj.lstBanner = lst;
+            }
+            if (Id != null)
+            {
+                obj.PK_BannerId = Id;
+                DataSet ds1 = obj.GetBannerImage();
+                if (ds1 != null && ds1.Tables.Count > 0)
+                {
+                    obj.BannerImage = "/BannerImage/" + ds1.Tables[0].Rows[0]["BannerImage"].ToString();
+                }
+            }
+            return View(obj);
+        }
+        [HttpPost]
+        public ActionResult UploadBanner(Admin obj)
+        {
+            string FormName = "";
+            string Controller = "";
+            try
+            {
+                Random rnd = new Random();
+                string imageFile = "";
+                string path = "";
+                if (obj.postedFile != null)
+                {
 
-
+                    imageFile = "img_" + rnd.Next(000, 999) + obj.postedFile.FileName;
+                    path = Server.MapPath("~/BannerImage/");
+                    obj.postedFile.SaveAs(path + imageFile);
+                    obj.BannerImage = imageFile;
+                }
+                obj.AddedBy = Session["PK_AdminId"].ToString();
+                DataSet ds1 = obj.UploadBanner();
+                if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
+                {
+                    if (ds1.Tables[0].Rows[0]["Msg"].ToString() == "1")
+                    {
+                        TempData["Banner"] = "Banner Uploaded successfully";
+                        FormName = "UploadBanner";
+                        Controller = "Admin";
+                    }
+                    else
+                    {
+                        TempData["Banner"] = ds1.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        FormName = "UploadBanner";
+                        Controller = "Admin";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Banner"] = ex.Message;
+                FormName = "UploadBanner";
+                Controller = "Admin";
+            }
+            return RedirectToAction(FormName, Controller);
+        }
+        public ActionResult DeleteBannerImage(string Id)
+        {
+            string FormName = "";
+            string Controller = "";
+            try
+            {
+                Admin obj = new Admin();
+                Random rnd = new Random();
+                obj.PK_BannerId = Id;
+                obj.AddedBy = Session["PK_AdminId"].ToString();
+                DataSet ds1 = obj.DeleteBanner();
+                if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
+                {
+                    if (ds1.Tables[0].Rows[0]["Msg"].ToString() == "1")
+                    {
+                        TempData["Banner"] = "Banner Deleted successfully";
+                        FormName = "UploadBanner";
+                        Controller = "Admin";
+                    }
+                    else
+                    {
+                        TempData["Banner"] = ds1.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        FormName = "UploadBanner";
+                        Controller = "Admin";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Banner"] = ex.Message;
+                FormName = "UploadBanner";
+                Controller = "Admin";
+            }
+            return RedirectToAction(FormName, Controller);
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace GYF.Controllers
     {
         // GET: Main
 
-     
+
         public ActionResult Index()
         {
             return View();
@@ -71,7 +71,7 @@ namespace GYF.Controllers
                                 FormName = "AssociateDashboard";
                                 Controller = "Associate";
                                 //Controller = "Associate";
-                               // TempData["Login"] = "Site has been closed . Please Contact to Administrator...";
+                                // TempData["Login"] = "Site has been closed . Please Contact to Administrator...";
                             }
                             else
                             {
@@ -88,7 +88,7 @@ namespace GYF.Controllers
                             Session["UsertypeName"] = ds.Tables[0].Rows[0]["UsertypeName"].ToString();
                             Session["Name"] = ds.Tables[0].Rows[0]["Name"].ToString();
 
-                          //  TempData["Login"] = "Site has been closed . Please Contact to Administrator...";
+                            //  TempData["Login"] = "Site has been closed . Please Contact to Administrator...";
                             FormName = "AdminDashBoard";
                             Controller = "Admin";
 
@@ -152,9 +152,9 @@ namespace GYF.Controllers
         public ActionResult Registration(string Pid)
         {
             Home obj = new Home();
-            if (Pid!="" && Pid!=null)
+            if (Pid != "" && Pid != null)
             {
-               
+
                 Common obj1 = new Common();
                 obj1.ReferBy = Pid;
                 DataSet ds = obj1.GetMemberDetails();
@@ -164,18 +164,18 @@ namespace GYF.Controllers
                     {
                         obj.SponsorName = ds.Tables[0].Rows[0]["Name"].ToString();
                         obj.SponsorId = Pid;
-                        
+
                     }
                     else
                     {
-                       
+
                     }
 
                 }
-                else {  }
+                else { }
 
             }
-            
+
             return View(obj);
         }
 
@@ -202,7 +202,7 @@ namespace GYF.Controllers
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult RegistrationAction(string SponsorId, string FirstName, string LastName, string Email, string MobileNo, string PinCode, string Leg,string Password)
+        public ActionResult RegistrationAction(string SponsorId, string FirstName, string LastName, string Email, string MobileNo, string PinCode, string Leg, string Password)
 
         {
             Home obj = new Home();
@@ -219,7 +219,7 @@ namespace GYF.Controllers
 
                 obj.PinCode = PinCode;
                 obj.Leg = Leg;
-               
+
                 obj.Password = Crypto.Encrypt(Password);
                 DataSet ds = obj.Registration();
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
@@ -291,11 +291,11 @@ namespace GYF.Controllers
             DataSet ds = model.GetNewsList();
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
-                
-                    model.Title = ds.Tables[0].Rows[0]["Title"].ToString();
-                    model.Description = ds.Tables[0].Rows[0]["Description"].ToString();
-                    model.Result = "1";
-               
+
+                model.Title = ds.Tables[0].Rows[0]["Title"].ToString();
+                model.Description = ds.Tables[0].Rows[0]["Description"].ToString();
+                model.Result = "1";
+
             }
             return Json(model, JsonRequestBehavior.AllowGet);
         }
@@ -319,7 +319,7 @@ namespace GYF.Controllers
                 }
                 model.lstNewsList = list;
             }
-                return PartialView("NewsMasterList", model);
+            return PartialView("NewsMasterList", model);
         }
         public ActionResult Product(Home Model)
         {
@@ -398,6 +398,22 @@ namespace GYF.Controllers
             }
             return RedirectToAction("ChangePassword", "Main");
         }
-        
+        public ActionResult Banner()
+        {
+            Admin obj = new Admin();
+            List<Admin> lst = new List<Admin>();
+            DataSet ds = obj.GetBannerImage();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    Admin model = new Admin();
+                    model.BannerImage = "/BannerImage/"+r["BannerImage"].ToString();
+                    lst.Add(model);
+                }
+                obj.lstBanner = lst;
+            }
+            return View(obj);
+        }
     }
 }

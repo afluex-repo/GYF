@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace GYF.Models
 {
-    public class Admin:Common
+    public class Admin : Common
     {
         public string LoginId { get; set; }
         public string Fk_PackageId { get; set; }
@@ -44,7 +44,7 @@ namespace GYF.Models
         public string DocumentType { get; set; }
         public string RequestedDate { get; set; }
         public string DocumentImage { get; set; }
-        public string Pk_RequestId { get; set;}
+        public string Pk_RequestId { get; set; }
         public string Amount { get; set; }
         public string ClosingDate { get; set; }
         public string ClosingDateValid { get; set; }
@@ -62,10 +62,13 @@ namespace GYF.Models
         public string PayoutNo { get; set; }
         public string LeadershipBonus { get; set; }
         public string DistPaymentPassword { get; set; }
-        
-             public List<Admin> lstassociate { get; set; }
+
+        public List<Admin> lstassociate { get; set; }
         public List<Admin> DistributePaymentList { get; set; }
-        
+        public string PK_BannerId { get; set; }
+        public string BannerImage { get; set; }
+        public HttpPostedFileBase postedFile { get; set; }
+        public List<Admin> lstBanner { get; set; }
 
         public DataSet GetPaymentMode()
         {
@@ -105,7 +108,7 @@ namespace GYF.Models
             {
                 new SqlParameter("@LoginId",LoginId)
             };
-            DataSet ds = DBHelper.ExecuteQuery("GetUserName",para);
+            DataSet ds = DBHelper.ExecuteQuery("GetUserName", para);
             return ds;
         }
 
@@ -229,7 +232,7 @@ namespace GYF.Models
                 new SqlParameter ("@ProductPrice",ProductPrice),
                 new SqlParameter("@ProductImage",ProductImage),
                 new SqlParameter("@PK_ProductId",EncrptProductId)
-                
+
             };
             DataSet ds = DBHelper.ExecuteQuery("UpdateProduct", para);
             return ds;
@@ -310,14 +313,14 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("SaveDistributePayment", para);
             return ds;
         }
-        
+
 
         public DataSet GetDitributePaymentList()
         {
             DataSet ds = DBHelper.ExecuteQuery("MakePaymentList");
             return ds;
         }
-        
+
         public string Password { get; set; }
         public string NewPassword { get; set; }
         public string ConfirmNewPassword { get; set; }
@@ -346,8 +349,33 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("AutoDistributePayment", para);
             return null;
         }
+        public DataSet UploadBanner()
+        {
+            SqlParameter[] para = {
+                new SqlParameter("@Title", Title),
+                new SqlParameter("@BannerImage", BannerImage),
+                new SqlParameter("@AddedBy", AddedBy),
+            };
+            DataSet ds = DBHelper.ExecuteQuery("UploadBanner", para);
+            return ds;
+        }
 
-
-
+        public DataSet GetBannerImage()
+        {
+            SqlParameter[] para = {
+                new SqlParameter("@PK_BannerId", PK_BannerId),
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetBannerImage", para);
+            return ds;
+        }
+        public DataSet DeleteBanner()
+        {
+            SqlParameter[] para = {
+                new SqlParameter("@PK_BannerId", PK_BannerId),
+                new SqlParameter("@AddedBy", AddedBy),
+            };
+            DataSet ds = DBHelper.ExecuteQuery("DeleteBanner", para);
+            return ds;
+        }
     }
 }
