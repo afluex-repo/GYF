@@ -234,6 +234,8 @@
             <span class="navbar-text ml-md-3">
                 <span class="badge badge-mark border-orange-300 mr-1"></span>
                 Welcome , @Session["FullName"] (@Session["LoginId"])
+                &nbsp; &nbsp;
+                <a href="/Associate/ChangePasswordUser">Change Password</a>
             </span>
         </div>
     </div>
@@ -307,7 +309,7 @@
                                 <li class="nav-item"><a href="/Wallet/EwalletLedger" class="nav-link">E-Wallet Ledger</a></li>
                                 <li class="nav-item"><a href="/Wallet/ShoppingWalletLedger" class="nav-link">Shopping-Wallet Ledger</a></li>
                                 <li class="nav-item"><a href="/Wallet/RealEstateWalletLedger" class="nav-link">RealEstate-Wallet Ledger</a></li>
-                                @*<li class="nav-item"><a href="/Associate/AutoPoolStructure" class="nav-link">Auto Pool Structure</a></li>*@
+                                <li class="nav-item"><a href="/Wallet/PayoutWalletLedger" class="nav-link">Payout Wallet Ledger</a></li>
                             </ul>
                         </li>
                         @*<li class="nav-item nav-item-submenu">
@@ -319,28 +321,34 @@
                                 <li class="nav-item"><a href="/Associate/PinTransferReport" class="nav-link">Pin Transfer Report</a></li>
                             </ul>
                         </li>*@
-                        @*<li class="nav-item nav-item-submenu">
-                            <a href="#" class="nav-link"><i class="far fa-credit-card"></i> <span>Income</span></a>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="far fa-credit-card"></i> <span>Income Reports</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
-                                @*<li class="nav-item"><a href="/Associate/DirectIncome" class="nav-link">Direct Income</a></li>*@
-                                @*<li class="nav-item"><a href="/Associate/ROI" class="nav-link">ROI</a></li>*@
-                                @*<li class="nav-item"><a href="/Associate/SingleLegIncome" class="nav-link">Single Leg Income</a></li>*@
-                                @*<li class="nav-item"><a href="/Associate/LevelIncome" class="nav-link">Level Income</a></li>*@
-                                @*<li class="nav-item"><a href="/Associate/AutoPoolIncome" class="nav-link">Auto Pool Income</a></li>*@
-                            @*</ul>
-                        </li>*@
-                        @*<li class="nav-item nav-item-submenu">
+                                <li class="nav-item"><a href="/Associate/DirectIncome" class="nav-link">Direct Income</a></li>
+                                <li class="nav-item"><a href="/Associate/LevelIncome" class="nav-link">Level Income</a></li>
+                                <li class="nav-item"><a href="/Associate/BonusDetails" class="nav-link">Bonus</a></li>
+                                <li class="nav-item"><a href="/Associate/Reward" class="nav-link">Reward</a></li>
+                                <li class="nav-item"><a href="/Associate/FounderClub" class="nav-link">Founder Club</a></li>
+
+                                @*<li class="nav-item"><a href="/Associate/ROI" class="nav-link">ROI</a></li>
+                                <li class="nav-item"><a href="/Associate/SingleLegIncome" class="nav-link">Single Leg Income</a></li>
+                                <li class="nav-item"><a href="/Associate/AutoPoolIncome" class="nav-link">Auto Pool Income</a></li>*@
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="fab fa-cc-visa"></i> <span>Payout</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
                                 <li class="nav-item"><a href="/Associate/PayoutDetails" class="nav-link">Payout Details</a></li>
+                                <li class="nav-item"><a href="/Associate/PayoutRequest" class="nav-link">Payout Request</a></li>
                                 <li class="nav-item"><a href="/Associate/PaidPayoutDetails" class="nav-link">Paid Payout Details</a></li>
+                               
                               </ul>
-                        </li>*@
+                        </li>
                         @*<li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="far fa-money-bill-alt"></i> <span>Payout Wallet</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
                                 <li class="nav-item"><a href="/Associate/PayoutLedger" class="nav-link">Payout Ledger</a></li>
-                                <li class="nav-item"><a href="/Associate/PayoutWalletRequest" class="nav-link">Payout Request</a></li>
+                                <li class="nav-item"><a href="/Associate/PayoutRequest" class="nav-link">Payout Request</a></li>
                             </ul>
                         </li>*@
                         @*<li class="nav-item">

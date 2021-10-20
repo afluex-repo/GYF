@@ -16,7 +16,7 @@ namespace GYF.Controllers
         public ActionResult AdminDashBoard(Admin model)
         {
             DataSet ds = model.GetAdminDashboard();
-            if(ds!=null && ds.Tables.Count>0 && ds.Tables[0].Rows.Count > 0)
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
 
                 ViewBag.TotalDrAmount = ds.Tables[0].Rows[0]["TotalDrAmount"].ToString();
@@ -116,7 +116,7 @@ namespace GYF.Controllers
         [OnAction(ButtonName = "btnCreatePin")]
         [ActionName("CreatePin")]
         public ActionResult SaveCreatePin(Admin model)
-        {            
+        {
             model.AddedBy = Session["Pk_AdminId"].ToString();
 
 
@@ -130,7 +130,7 @@ namespace GYF.Controllers
             {
                 foreach (DataRow r in ds2.Tables[0].Rows)
                 {
-                    
+
                     ddlpaymentmode.Add(new SelectListItem { Text = r["PaymentMode"].ToString(), Value = r["PK_paymentID"].ToString() });
 
                 }
@@ -186,7 +186,7 @@ namespace GYF.Controllers
             return RedirectToAction("CreatePin");
         }
 
-       
+
         public ActionResult UnusedPin(Admin model)
         {
             List<Admin> list = new List<Admin>();
@@ -212,7 +212,7 @@ namespace GYF.Controllers
         public ActionResult UsedPins(Admin model)
         {
             #region BindddlStatus
-                        
+
             List<SelectListItem> ddlStatus = Common.GetStatus();
             ViewBag.ddlStatus = ddlStatus;
             #endregion
@@ -284,7 +284,7 @@ namespace GYF.Controllers
             model.ePinNo = ePinNo;
             return View(model);
         }
-        
+
         [HttpPost]
         [OnAction(ButtonName = "btnTopup")]
         [ActionName("TopUp")]
@@ -420,7 +420,7 @@ namespace GYF.Controllers
             return RedirectToAction("NewsMasterList");
         }
 
-        
+
         public ActionResult DeleteNewsMasterList(string PK_NewsID)
         {
             Admin model = new Admin();
@@ -451,16 +451,16 @@ namespace GYF.Controllers
         public ActionResult ProductMaster(string id)
         {
             Admin obj = new Admin();
-            if (id!=null)
+            if (id != null)
             {
-                
+
                 try
                 {
                     obj.EncrptProductId = Crypto.Decrypt(id);
                     DataSet ds = obj.ProductDetailsbyId();
                     if (ds != null && ds.Tables[0].Rows.Count > 0)
                     {
-                       
+
                         obj.ProductName = ds.Tables[0].Rows[0]["ProductName"].ToString();
                         obj.EncrptProductId = ds.Tables[0].Rows[0]["PK_ProductId"].ToString();
                         obj.ProductPrice = ds.Tables[0].Rows[0]["ProductPrice"].ToString();
@@ -472,12 +472,12 @@ namespace GYF.Controllers
 
                     throw;
                 }
-              
+
             }
             return View(obj);
         }
         [HttpPost]
-        [OnAction(ButtonName ="Product")]
+        [OnAction(ButtonName = "Product")]
         [ActionName("ProductMaster")]
         public ActionResult ProductSave(Admin Model, HttpPostedFileBase postedfile)
         {
@@ -510,8 +510,8 @@ namespace GYF.Controllers
                         TempData["Product"] = "Product Save Successfully";
                         Model.ProductPrice = string.Empty;
                         Model.ProductName = string.Empty;
-                      
-                }
+
+                    }
                     else if (ds.Tables[0].Rows[0]["Msg"].ToString() == "0")
                     {
                         TempData["Product"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
@@ -554,18 +554,18 @@ namespace GYF.Controllers
                 Model.EncrptProductId = Model.EncrptProductId;
                 Model.UpdatedBy = Session["Pk_AdminId"].ToString();
                 DataSet ds = Model.UpdateProduct();
-                    if (ds != null && ds.Tables[0].Rows.Count > 0)
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0]["Msg"].ToString() == "1")
                     {
-                        if (ds.Tables[0].Rows[0]["Msg"].ToString() == "1")
-                        {
-                            TempData["Product"] = "Product Updated Successfully";
-                        }
-                        else if (ds.Tables[0].Rows[0]["Msg"].ToString() == "0")
-                        {
-                            TempData["Product"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
-                        }
+                        TempData["Product"] = "Product Updated Successfully";
                     }
-               
+                    else if (ds.Tables[0].Rows[0]["Msg"].ToString() == "0")
+                    {
+                        TempData["Product"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+
 
             }
             catch (Exception ex)
@@ -573,7 +573,7 @@ namespace GYF.Controllers
 
                 TempData["Product"] = ex.Message;
             }
-          
+
             return View(Model);
         }
         public ActionResult ProductList()
@@ -591,13 +591,13 @@ namespace GYF.Controllers
                 Model.FromDate = string.IsNullOrEmpty(Model.FromDate) ? null : Common.ConvertToSystemDate(Model.FromDate, "dd/MM/yyyy");
                 Model.ToDate = string.IsNullOrEmpty(Model.ToDate) ? null : Common.ConvertToSystemDate(Model.ToDate, "dd/MM/yyyy");
                 DataSet ds = Model.GetProduct();
-                if(ds!=null && ds.Tables[0].Rows.Count>0)
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
                     foreach (DataRow r in ds.Tables[0].Rows)
                     {
                         Admin obj = new Admin();
                         obj.ProductName = r["ProductName"].ToString();
-                        obj.EncrptProductId= Crypto.Encrypt(r["PK_ProductId"].ToString());
+                        obj.EncrptProductId = Crypto.Encrypt(r["PK_ProductId"].ToString());
                         obj.ProductPrice = r["ProductPrice"].ToString();
                         obj.ProductDate = r["ProductDate"].ToString();
                         obj.ProductImage = r["ProductImage"].ToString();
@@ -620,9 +620,9 @@ namespace GYF.Controllers
             {
                 obj.EncrptProductId = Crypto.Decrypt(id);
                 DataSet ds = obj.ProductDetailsbyId();
-                if(ds !=null && ds.Tables[0].Rows.Count>0)
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
-                    obj.ProductName=
+                    obj.ProductName =
                     obj.ProductName = ds.Tables[0].Rows[0]["ProductName"].ToString();
                     obj.EncrptProductId = ds.Tables[0].Rows[0]["PK_ProductId"].ToString();
                     obj.ProductPrice = ds.Tables[0].Rows[0]["ProductPrice"].ToString();
@@ -668,7 +668,7 @@ namespace GYF.Controllers
             try
             {
                 model.UpdatedBy = Session["Pk_AdminId"].ToString();
-                model.EncrptProductId =(Id);
+                model.EncrptProductId = (Id);
                 DataSet ds = model.DeletedProductImage();
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
@@ -863,6 +863,182 @@ namespace GYF.Controllers
                 return View(model);
             }
             return RedirectToAction("EwallwetRequestList");
+        }
+
+        public ActionResult DistributePayment()
+        {
+            Admin model = new Admin();
+            List<Admin> lstDistributePayment = new List<Admin>();
+            ViewBag.Binary = ViewBag.Direct = ViewBag.Gross = ViewBag.TDS = ViewBag.Processing = ViewBag.NetIncome = 0;
+            DataSet ds = model.GetDitributePaymentList();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    Admin obj = new Admin();
+                    obj.LoginId = r["LoginId"].ToString();
+                    obj.FirstName = r["FirstName"].ToString();
+                    obj.BinaryIncome = r["BinaryIncome"].ToString();
+                    obj.DirectIncome = r["DirectIncome"].ToString();
+                    obj.DirectLeaderShipBonus = r["DirectLeaderShipBonus"].ToString();
+                    obj.GrossIncome = r["GrossIncome"].ToString();
+                    obj.Processing = r["Processing"].ToString();
+                    obj.TDS = r["TDS"].ToString();
+                    obj.NetIncome = r["NetIncome"].ToString();
+                    obj.LeadershipBonus = r["DirectLeaderShipBonus"].ToString();
+
+
+                    ViewBag.Binary = Convert.ToDecimal(ViewBag.Binary) + Convert.ToDecimal(r["BinaryIncome"].ToString());
+                    ViewBag.Direct = Convert.ToDecimal(ViewBag.Direct) + Convert.ToDecimal(r["DirectIncome"].ToString());
+                    ViewBag.Gross = Convert.ToDecimal(ViewBag.Gross) + Convert.ToDecimal(r["GrossIncome"].ToString());
+                    ViewBag.TDS = Convert.ToDecimal(ViewBag.TDS) + Convert.ToDecimal(r["TDS"].ToString());
+                    ViewBag.Processing = Convert.ToDecimal(ViewBag.Processing) + Convert.ToDecimal(r["Processing"].ToString());
+                    ViewBag.NetIncome = Convert.ToDecimal(ViewBag.NetIncome) + Convert.ToDecimal(r["NetIncome"].ToString());
+                    //ViewBag.Total = ds.Tables[0].Rows[2]["Total"].ToString();
+                    lstDistributePayment.Add(obj);
+                }
+                model.lstassociate = lstDistributePayment;
+            }
+            model.LastClosingDate = ds.Tables[1].Rows[0]["ClosingDate"].ToString();
+            model.PayoutNo = ds.Tables[1].Rows[0]["PayoutNo"].ToString();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult DistiributePayemnt(Admin obj)
+        {
+            string FormName = "";
+            string Controller = "";
+            try
+            {
+                obj.ClosingDate = Common.ConvertToSystemDate(obj.ClosingDate, "dd/MM/yyyy");
+                obj.UpdatedBy = Session["PK_AdminId"].ToString();
+                DataSet ds1 = obj.AutoDistributePayment();
+
+                TempData["DistributePayment"] = "Payment distributed successfully";
+                FormName = "DistributePayment";
+                Controller = "Admin";
+            }
+            catch (Exception ex)
+            {
+                TempData["DistributePayment"] = ex.Message;
+                FormName = "DistributePayment";
+                Controller = "Admin";
+            }
+            return RedirectToAction(FormName, Controller);
+        }
+
+        public ActionResult DistributePaymentPassword(string id)
+        {
+            Admin model = new Admin();
+            model.ClosingDate = id;
+            return View(model);
+        }
+        public ActionResult UploadBanner(string Id)
+        {
+            Admin obj = new Admin();
+            List<Admin> lst = new List<Admin>();
+            DataSet ds = obj.GetBannerImage();
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    Admin model = new Admin();
+                    model.PK_BannerId = r["PK_BannerId"].ToString();
+                    model.BannerImage = "/BannerImage/" + r["BannerImage"].ToString();
+                    lst.Add(model);
+                }
+                obj.lstBanner = lst;
+            }
+            if (Id != null)
+            {
+                obj.PK_BannerId = Id;
+                DataSet ds1 = obj.GetBannerImage();
+                if (ds1 != null && ds1.Tables.Count > 0)
+                {
+                    obj.BannerImage = "/BannerImage/" + ds1.Tables[0].Rows[0]["BannerImage"].ToString();
+                }
+            }
+            return View(obj);
+        }
+        [HttpPost]
+        public ActionResult UploadBanner(Admin obj)
+        {
+            string FormName = "";
+            string Controller = "";
+            try
+            {
+                Random rnd = new Random();
+                string imageFile = "";
+                string path = "";
+                if (obj.postedFile != null)
+                {
+
+                    imageFile = "img_" + rnd.Next(000, 999) + obj.postedFile.FileName;
+                    path = Server.MapPath("~/BannerImage/");
+                    obj.postedFile.SaveAs(path + imageFile);
+                    obj.BannerImage = imageFile;
+                }
+                obj.AddedBy = Session["PK_AdminId"].ToString();
+                DataSet ds1 = obj.UploadBanner();
+                if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
+                {
+                    if (ds1.Tables[0].Rows[0]["Msg"].ToString() == "1")
+                    {
+                        TempData["Banner"] = "Banner Uploaded successfully";
+                        FormName = "UploadBanner";
+                        Controller = "Admin";
+                    }
+                    else
+                    {
+                        TempData["Banner"] = ds1.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        FormName = "UploadBanner";
+                        Controller = "Admin";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Banner"] = ex.Message;
+                FormName = "UploadBanner";
+                Controller = "Admin";
+            }
+            return RedirectToAction(FormName, Controller);
+        }
+        public ActionResult DeleteBannerImage(string Id)
+        {
+            string FormName = "";
+            string Controller = "";
+            try
+            {
+                Admin obj = new Admin();
+                Random rnd = new Random();
+                obj.PK_BannerId = Id;
+                obj.AddedBy = Session["PK_AdminId"].ToString();
+                DataSet ds1 = obj.DeleteBanner();
+                if (ds1 != null && ds1.Tables.Count > 0 && ds1.Tables[0].Rows.Count > 0)
+                {
+                    if (ds1.Tables[0].Rows[0]["Msg"].ToString() == "1")
+                    {
+                        TempData["Banner"] = "Banner Deleted successfully";
+                        FormName = "UploadBanner";
+                        Controller = "Admin";
+                    }
+                    else
+                    {
+                        TempData["Banner"] = ds1.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        FormName = "UploadBanner";
+                        Controller = "Admin";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Banner"] = ex.Message;
+                FormName = "UploadBanner";
+                Controller = "Admin";
+            }
+            return RedirectToAction(FormName, Controller);
         }
     }
 }
