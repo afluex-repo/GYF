@@ -62,6 +62,9 @@ namespace GYF.Models
         public string PayoutNo { get; set; }
         public string LeadershipBonus { get; set; }
         public string DistPaymentPassword { get; set; }
+        public string Image { get; set; }
+
+        
 
         public List<Admin> lstassociate { get; set; }
         public List<Admin> DistributePaymentList { get; set; }
@@ -377,5 +380,18 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("DeleteBanner", para);
             return ds;
         }
+
+
+        public DataSet SaveProject()
+        {
+            SqlParameter[] param = { new SqlParameter("@Name",Name),
+                                           new SqlParameter("@PostedFile",Image),
+                                           new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("SaveProject", param);
+            return ds;
+        }
+
+
     }
 }

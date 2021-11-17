@@ -1040,5 +1040,52 @@ namespace GYF.Controllers
             }
             return RedirectToAction(FormName, Controller);
         }
+
+        public ActionResult Project()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        [ActionName("Project")]
+        public ActionResult Project(Admin model, HttpPostedFileBase postedFile)
+        {
+            try
+            {
+                if (postedFile != null)
+                {
+                    model.Image = "../ProjectImage/" + Guid.NewGuid() + Path.GetExtension(postedFile.FileName);
+                    postedFile.SaveAs(Path.Combine(Server.MapPath(model.Image)));
+                }
+                model.AddedBy = "1";
+                DataSet ds = model.SaveProject();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["Project"] = "Project save successfully";
+                    }
+                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    {
+                        TempData["Project"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+                else
+                {
+                    TempData["Project"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                TempData["Project"] = ex.Message;
+            }
+
+            return RedirectToAction("Project", "Admin");
+        }
+
+
+
+
     }
 }

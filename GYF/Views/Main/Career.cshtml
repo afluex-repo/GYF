@@ -1,0 +1,193 @@
+﻿@model GYF.Models.Home
+@{
+    ViewBag.Title = "Career";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+
+
+<div id="carousel" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner" role="listbox">
+
+        <div class="carousel-item active" style="background-image: url('../AdminCss/assets/img/career-banner.jpg'); background-size: cover; ">
+            <div class="caption">
+                <h1>Career</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main id="main">
+
+    <!-- ======= why gfy ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <img src="~/AdminCss/assets/img/why.png" class="img-fluid animated" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <div class="section-title">
+                        <span>Why Grazie For You</span>
+                        <h2>Why Grazie For You</h2>
+                    </div>
+                    <p class="text-justify">
+                        Working with GFY means being given the opportunities and resources to excel. We recognise that our success is a direct result of the commitment of our community, so we go above and beyond to celebrate exceptional performance. The GFY ethos of caring, sharing, and rewarding provides the foundation of our supportive professional culture: a culture which proudly prioritises diversity and inclusivity amongst team members, and which facilitates success and innovation at all levels.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- why gfy -->
+    <!-- =======Rewards & Recognitions======= -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <div class="section-title">
+                        <span>Rewards and Recognitions</span>
+                        <h2>Rewards and Recognitions</h2>
+                    </div>
+                    <p class="text-justify">
+                        In addition to a highly competitive salary and comprehensive benefits package, our Rewards and Recognitions programme serves to proudly recognise the commitment of outstanding colleagues through monetary and non-monetary rewards. Additionally, a GFY employee can expect to be fully supported in their pursuit of professional development, and we take pride in building a workforce which stands the test of time because it takes a community to make a community.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="~/AdminCss/assets/img/re.png" class="img-fluid animated" alt="reward" style="height: 300px;">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- =======Rewards & Recognitions======= -->
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+        <div class="container">
+
+            <div class="text-center">
+                <h2>Culture</h2>
+                <p>GFY work culture reflects its commitment to equality and excellence</p>
+            </div>
+
+        </div>
+    </section><!-- End Cta Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Career</span>
+                <h2>Career</h2>
+                <p>Come, grow with us<br> Joining <strong class="gfy">Grazie for you</strong> means becoming a part of India's most established FMCG & Real estate MARKET. </p>
+                <p>As we continue to expand our reach, we are searching for exceptional individuals ready to accelerate their careers at the industry forefront.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 d-flex align-items-stretch justify-content-center">
+                    <img src="~/AdminCss/assets/img/career-form-1.png">
+
+                </div>
+
+                <div class="col-lg-8 mt-5 mt-lg-0 d-flex align-items-stretch">
+                    <p style="color:red;">
+                        @TempData["Career"]
+                    </p>
+                    @*<form action="forms/contact.php" method="post" role="form" class="php-email-form">*@
+                    @using (Html.BeginForm("Career", "Main", FormMethod.Post, new { @class = "php-email-form", @id = "signupForm", enctype = "multipart/form-data" }))
+                    {
+                        <div class="row">
+
+                            <div class="col-md-12 form-group">
+                                <label>Full Name</label>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Full Name" })
+                                @*<input type="text" name="name" class="form-control" id="name" placeholder="Enter Your Name" required>*@
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6 form-group">
+                                <label>Mobile Number</label>
+                                @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", @placeholder = "Mobile Number" })
+                                @*<input type="text" name="phone" class="form-control" id="phone" placeholder="Mobile Number" required>*@
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <label>Your Email</label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Your Email" })
+                                @*<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>*@
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <label>Year Of Experience</label>
+                                @Html.TextBoxFor(m => m.Experience, new { @class = "form-control", @placeholder = "Year Of Experience" })
+                                @*<input class="form-control" name="experience" id="experience" placeholder="Year Of Experience" required>*@
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Submit Your Resume</label>
+                                <input type="file" class="form-control" style="line-height: 2.2;" name="postedFile" id="postedFile" placeholder="Submit Your Cover Letter or Resume">
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label>Address</label>
+                            @Html.TextBoxFor(m => m.Address, new { @rows = "5", @class = "form-control", @placeholder = "Enter Your Address" })
+                            @*<textarea class="form-control" name="address" rows="5" placeholder="Enter Your Address" required></textarea>*@
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="container">
+                            <div class="text-center "><button type="submit" onclick="return validateform();">Submit Form</button></div>
+                        </div>
+                    @*</form>*@
+                    }
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </section><!-- End Contact Section -->
+</main>
+<!-------==========Whatsapp==================---------->
+<a href="https://wa.me/message/TL4R5ZYK44JIM1" title="gfy" class="float" target="_blank">
+    <i class="bi bi-whatsapp my-float"></i>
+</a>
+
+
+<!-------==========Whatsapp==================---------->
+
+<script>
+    function validateform() {
+
+        $(".errortext").removeClass("errortext");
+        if ($('#Name').val() == '') {
+            $("#Name").addClass('errortext');
+            $('#Name').focus();
+            return false;
+        }
+        if ($('#MobileNo').val() == '') {
+            $("#MobileNo").addClass('errortext');
+            $('#MobileNo').focus();
+            return false;
+        }
+
+        if ($('#Email').val() == '') {
+            $("#Email").addClass('errortext');
+            $('#Email').focus();
+            return false;
+
+            
+        }
+    }
+</script>
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>

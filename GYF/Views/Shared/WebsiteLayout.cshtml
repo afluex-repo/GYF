@@ -20,242 +20,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>GFY</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/AdminCss/assets/img/logo.png" rel="icon">
+    <link href="~/AdminCss/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/AdminCss/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/AdminCss/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/AdminCss/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/AdminCss/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/AdminCss/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.js"></script>
+
+    <!-- Template Main CSS File -->
+    <link href="~/AdminCss/assets/css/style.css" rel="stylesheet">
+    
+
 </head>
 <body>
     <div class="page-wrapper">
         <!-- Preloader -->
         <div class="preloader"></div>
         <!-- Main Header -->
-        <header class="main-header header-style-one">
-            <div class="header-top">
-                <div class="auto-container">
-                    <div class="clearfix">
-                        <!--Top Left-->
-                        <div class="headertop-content clearfix">
-                            <marquee direction="left" onmouseover="this.stop()" onmouseout="this.start()">
-                                <p class="marque-conten">
+        
 
-                                    @{Html.RenderAction("NewsMasterList", "Main", new { area = "" });}
-                                </p>
-                            </marquee>
-                        </div>
-                    </div>
-                </div>
+
+
+        <header id="header" class="fixed-top">
+            <div class="container d-flex align-items-center justify-content-between">
+
+
+                <a href="/Main/Index" class="logo"><img src="~/AdminCss/assets/img/logo.png" alt="" class="img-fluid"></a>
+
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="/Main/Index">Home</a></li>
+                        <li><a class="nav-link scrollto" href="/Main/CompanyOverView">About</a></li>
+                        <li><a class="nav-link scrollto" href="/Main/VissionMission">Mission & Vision</a></li>
+                        <li><a class="nav-link scrollto " href="/Main/Project">Project</a></li>
+                        <li><a class="nav-link scrollto" href="/Main/BankDetails">Bank Details</a></li>
+                        <li><a class="nav-link scrollto" href="/Main/Career">Career</a></li>
+                        <li><a class="nav-link scrollto" href="/Main/ContactUs">Contact</a></li>
+                        <li><a class="getstarted scrollto" href="/Main/Login">Login</a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
+
             </div>
-            <!--Header Lower-->
-            <div class="header-lower">
-                <div class="auto-container">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-2">
-                            <div class="pull-left logo-box">
-                                <div class="logo">
-                                    <a href="/Main/Index"><img src="../../Websitecss/images/logo.png" alt="" title=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-10 col-md-10">
-                            <div class="nav-outer clearfix">
-
-                                <!-- Main Menu -->
-                                <nav class="main-menu navbar-expand-md">
-                                    <div class="navbar-header">
-                                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                                aria-expanded="false" aria-label="Toggle navigation">
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                    </div>
-                                <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
-                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
-                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
-                                        <li><a href="#">Business Plan</a></li>
-                                @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
-                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
-                                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
-                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Banner" ? "current" : "")"><a href="/Main/Banner">Banner</a></li>
-                                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
-                                                      @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Registration" ? "current" : "")"><a href="/Main/Registration">Registration</a></li>*@
-                                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
-
-                                            </ul>
-                                        </div>
-                                    </nav>
+        </header><!-- End Header -->
 
 
 
-                                <!-- Main Menu End-->
-                                <!-- Options Box -->
-                                <div class="options-box clearfix">
-                                    <!--Search Box-->
-                                    <div class="search-box-outer">
-                                        <div class="dropdown">
-                                            <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Header-Upper-->
-                            <div class="header-upper">
-                                <div class="auto-container">
-                                    <div class="clearfix">
-                                        <div class="pull-left upper-right clearfix">
-
-                                            <!--Info Box-->
-                                            @*<div class="upper-column info-box">
-                                                    <a href="/Main/Registration" class="theme-btn btn-style-one">
-                                                        <span class="txt">
-                                                            Free Registration
-                                                            Now
-                                                        </span>
-                                                    </a>
-                                                </div>*@
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Header Upper-->
 
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End Header Lower-->
-            <!--Sticky Header-->
-            <div class="sticky-header">
-                <div class="auto-container clearfix">
-                    <!--Logo-->
-                    <div class="logo pull-left sticky">
-                        <a href="/Main/Index" class="img-responsive">
-                            <img src="../../Websitecss/images/logo-small.png" alt=""
-                                 title="">
-                        </a>
-                    </div>
-                    <!--Right Col-->
-                    <div class="right-col pull-right">
-                        <!-- Main Menu -->
-                        <nav class="main-menu  navbar-expand-md">
-                            <div class="navbar-header">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                        data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
-                                        aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-
-                            <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
-                                <ul class="navigation clearfix">
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "current" : "")"><a href="/Main/Index">Home</a></li>
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CompanyOverView" ? "current" : "")"><a href="/Main/CompanyOverView">Company Overview</a></li>
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "VissionMission" ? "current" : "")"><a href="/Main/VissionMission">Mission & Vision</a></li>
-                                    <li><a href="#">Business Plan</a></li>
-                                    @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "BankDetails" ? "current" : "")"><a href="/Main/BankDetails">Bank Details</a></li>*@
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Product" ? "current" : "")"><a href="/Main/Product">Product</a></li>
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "current" : "")"><a href="/Main/Gallery">Gallery</a></li>
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Banner" ? "current" : "")"><a href="/Main/Banner">Banner</a></li>
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "current" : "")"><a href="/Main/Login">Login</a></li>
-                                    @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Registration" ? "current" : "")"><a href="/Main/Registration">Registration</a></li>*@
-                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "current" : "")"><a href="/Main/ContactUs">Contact us</a></li>
-
-                                </ul>
-                            </div>
-                        </nav><!-- Main Menu End-->
-                    </div>
-                </div>
-            </div>
-            <!--End Sticky Header-->
 
 
-        </header>
         @RenderBody();
-        <footer class="main-footer">
-            <!-- Pattern Layer -->
-            <div class="pattern-layer"></div>
-            <div class="auto-container">
-                <!--Widgets Section-->
-                <div class="widgets-section">
-                    <div class="row clearfix">
-                        <!-- Big Column -->
-                        <div class="big-column col-lg-5 col-md-5 col-sm-12">
-                            <div class="row clearfix">
-                                <!-- Footer Column -->
-                                <div class="footer-column">
-                                    <div class="footer-widget logo-widget">
-                                        <div class="logo">
-                                            <a href="/Main/index"><img src="../../Websitecss/images/footer-logo.png" alt="" /></a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                        </div>
-                        <!-- Big Column -->
-                        <div class="big-column col-lg-6 col-md-6 col-sm-12">
-                            <div class="footer-column">
-                                <div class="footer-widget links-widget">
-                                    <div class="footer-title">
-                                        <h4>Our Location</h4>
-                                    </div>
-                                    <p class="color-gray">
-                                        <span class="icon fa fa-map-marker color11" style="font-size:24px;"></span>  Dadar, City- Mohania, Dist- Kaimur (Bhabhua), State- Bihar, Pin Code 821109
-                                    </p>
-                                    <p class="color-gray"><span class="icon fa fa-envelope color11" ></span>grazieforyouventures@gmail.com  </p>
-                                    <a href='https://web.whatsapp.com/' target='_blank' style="font-size:24px;color:lawngreen"><i class="fa fa-whatsapp color11"></i></a>
-                                    <a href='https://www.facebook.com/' target='_blank' style="font-size:24px;color:lawngreen"><i class="fa fa-facebook color11"></i></a>
-                                    <a href='https://www.instagram.com/' target='_blank' style="font-size:24px;color:lawngreen"><i class="fa fa-instagram color11"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Big Column -->
-                        @*<div class="big-column col-lg-4 col-md-4 col-sm-12">
-                            <div class="footer-column">
-                                <div class="footer-widget news-widget">
-                                    <div class="footer-title">
-                                        <h4>Latest News &amp; Artical</h4>
-                                    </div>
-                                    News Widget Block
-                                    <div class="news-widget-block">
-                                        <div class="widget-inner">
-                                            <div class="image">
-                                                <img src="../../Websitecss/images/news-image-1.jpg" alt="">
-                                            </div>
-                                            <h3>
-                                                <a href="#">
-                                                    We are Best for Industrial and Business
-                                                    Solution.
-                                                </a>
-                                            </h3>
-                                            <div class="post-date">August 1, 2018</div>
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>*@
-                    </div>
-                </div>
-                <!-- Footer Bottom -->
-                <div class="footer-bottom">
-                    <div class="inner-container">
-                        <div class="row clearfix">
-                            <!-- Column -->
-                            <div class="column col-lg-12 col-md-12 col-sm-12 text-center">
-                                <div class="copyright">Copyright © @DateTime.Now.Year GFY ‐ All Rights Reserved</div>
-                            </div>
-                            <!-- Column -->
+        <footer id="footer">
+
+            <div class="footer-top">
+
+                <div class="container">
+
+                    <div class="row  justify-content-center">
+                        <div class="col-lg-6">
+                            <a href="/Main/Index"><img src="~/AdminCss/assets/img/logo.png" alt="" class="footer-img"></a>
+                            <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
                         </div>
                     </div>
+
+                    <!-- <div class="row footer-newsletter justify-content-center">
+                  <div class="col-lg-6">
+                    <form action="" method="post">
+                      <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
+                    </form>
+                  </div>
+                </div> -->
+
+                    <div class="social-links">
+                        <a href="https://twitter.com/Grazieforyou_v?t=nvXre_55VOVw2SAPCXddJw&s=09" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100073215905711" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/invites/contact/?i=p8jg9y9lclix&utm_content=mr6t17i" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/grazieforyou-ventures-pvt-ltd-589667226" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+
                 </div>
             </div>
-        </footer>
+
+            <div class="container footer-bottom clearfix">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>GFY</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    Designed by <a href="https://afluex.com/">Afluex</a>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+
+
+
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="~/AdminCss/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="~/AdminCss/assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="~/AdminCss/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="~/AdminCss/assets/vendor/php-email-form/validate.js"></script>
+        <script src="~/AdminCss/assets/vendor/purecounter/purecounter.js"></script>
+        <script src="~/AdminCss/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- slider -->
+        <!-- <script src="assets/vendor/slider/bootstrap.js"></script>
+    <script src="assets/vendor/slider/jquery.js"></script>
+    <script src="assets/vendor/slider/popper.min.js"></script> -->
+        <!-- Template Main JS File -->
+        <script src="~/AdminCss/assets/js/main.js"></script>
+
+
+
+
+
+
+
+        
         <!-- End Main Footer -->
     </div>
     <!--End pagewrapper-->

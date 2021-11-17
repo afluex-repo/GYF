@@ -3,7 +3,10 @@ using GYF.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
@@ -38,6 +41,132 @@ namespace GYF.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ActionName("ContactUs")]
+        public ActionResult ContactUs(Home model)
+        {
+            try
+            {
+                model.AddedBy = "1";
+                DataSet ds = model.SaveContact();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["Contact"] = "Message send successfully";
+                       
+                        if (model.Email != null)
+                        {
+                            string mailbody = "";
+                            try
+                            {
+                                mailbody = "Dear" + " " + model.Name + ", <br/> Your request message have been send successfully i will contact you soon.";
+
+                                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
+                                {
+                                    Host = "smtp.gmail.com",
+                                    Port = 587,
+                                    EnableSsl = true,
+                                    DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                                    UseDefaultCredentials = true,
+                                    Credentials = new NetworkCredential("developer2.afluex@gmail.com", "devel@486")
+
+                                };
+                                using (var message = new MailMessage("developer2.afluex@gmail.com", model.Email)
+                                {
+                                    IsBodyHtml = true,
+                                    Subject = "Registration Approvel",
+                                    Body = mailbody
+                                })
+                                    smtp.Send(message);
+
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        }
+                    }
+                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    {
+                        TempData["Contact"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+                else
+                {
+                    TempData["Contact"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                TempData["Contact"] = ex.Message;
+            }
+
+            return RedirectToAction("ContactUs","Main");
+        }
+
+        public ActionResult Project(Home model)
+        {
+            List<Home> lstProject = new List<Home>();
+            DataSet ds11 = model.GetProjectDetails();
+            if (ds11 != null && ds11.Tables.Count > 0 && ds11.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds11.Tables[0].Rows)
+                {
+                    Home Obj = new Home();
+                    Obj.Name = r["Name"].ToString();
+                    Obj.Image = r["ImageFile"].ToString();
+                    lstProject.Add(Obj);
+                }
+                model.lstProject = lstProject;
+            }
+            return View(model);
+        }
+       
+
+        public ActionResult Career()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ActionName("Career")]
+        public ActionResult Career(Home model, HttpPostedFileBase postedFile)
+        {
+            try
+            {
+                if (postedFile != null)
+                {
+                    model.Image = "../FileUpload/" + Guid.NewGuid() + Path.GetExtension(postedFile.FileName);
+                    postedFile.SaveAs(Path.Combine(Server.MapPath(model.Image)));
+                }
+                model.AddedBy = "1";
+                DataSet ds = model.SaveCareer();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["Career"] = "Career save successfully";
+                    }
+                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    {
+                        TempData["Career"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+                else
+                {
+                    TempData["Contact"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                TempData["Career"] = ex.Message;
+            }
+
+            return RedirectToAction("Career", "Main");
+        }
+
         public ActionResult Login()
         {
             Session.Abandon();

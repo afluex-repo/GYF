@@ -34,6 +34,7 @@ namespace GYF.Models
         public string FromDate { get; set; }
         public string ToDate { get; set; }
         public List<Admin> lstProduct { get; set; }
+        public List<Home> lstProject { get; set; }
         public string Icons { get; set; }
         public string SubMenuName { get; set; }
         public string SubMenuId { get; set; }
@@ -46,7 +47,16 @@ namespace GYF.Models
         public string PackageId { get; set; }
         public string WalletBalance { get; set; }
         public string UserId { get; set; }
-        
+        public string AddedBy { get; set; }
+
+        public string Name { get; set; }
+        public string Subject { get; set; }
+        public string Address { get; set; }
+        public string AdminName { get; set; }
+        public string Experience { get; set; }
+        public string Image { get; set; }
+
+
 
         public DataSet Login()
         {
@@ -173,8 +183,42 @@ namespace GYF.Models
             {
                  new SqlParameter("@UserId",UserId)
             };
-             DataSet ds = DBHelper.ExecuteQuery("WalletBalance", para);
+            DataSet ds = DBHelper.ExecuteQuery("WalletBalance", para);
             return ds;
         }
+
+
+        public DataSet SaveContact()
+        {
+            SqlParameter[] param = { new SqlParameter("@Name",Name),
+                                         new SqlParameter("@Email",Email),
+                                          new SqlParameter("@Subject",Subject),
+                                           new SqlParameter("@Address",Address),
+                                           new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("SaveContact", param);
+            return ds;
+        }
+
+        public DataSet SaveCareer()
+        {
+            SqlParameter[] param = { new SqlParameter("@Name",Name),
+                  new SqlParameter("@Mobile",MobileNo),
+                                         new SqlParameter("@Email",Email),
+                                          new SqlParameter("@Experience",Experience),
+                                           new SqlParameter("@Resume",Image),
+                                           new SqlParameter("@Address",Address),
+                                           new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("SaveCareer", param);
+            return ds;
+        }
+        public DataSet GetProjectDetails()
+        {
+            DataSet ds = DBHelper.ExecuteQuery("GetProjectDetails");
+            return ds;
+        }
+        
+
     }
 }
