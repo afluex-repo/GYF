@@ -1,0 +1,75 @@
+﻿@model GYF.Models.Admin
+
+@{
+    ViewBag.Title = "Project";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="loader" id="divload" style="display: none;"></div>
+
+@using (Html.BeginForm("Project", "Admin", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+    <div class="page-header page-header-light">
+        <div class="page-header-content header-elements-md-inline">
+            <div class="page-title d-flex">
+                <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Admin </span> Project Master</h4>
+                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /page header -->
+    <div class="card-header header-elements-sm-inline">
+
+        <p style="color:red">
+            @TempData["Project"]
+        </p>
+    </div>
+    <div class="content">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Marketing campaigns -->
+                <div class="card">
+                    <div class="card-header header-elements-sm-inline">
+                        <h6 class="card-title">Project Master</h6>
+                    </div>
+                    <div class="row" style="margin-left:10px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="x_panel">
+
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        Project Name
+                                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @Placeholder = "Product Name" })
+                                                    </div>
+                                                </div>
+                                             
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        Project Image
+                                                        <input type="file" class="form-control" id="postedFile" name="postedFile"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <input type="submit" style="margin-top:20px;" class="btn btn-success" value="Save" name="btnSave" onclick="return validate();" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

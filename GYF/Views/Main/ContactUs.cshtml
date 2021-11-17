@@ -1,119 +1,150 @@
-﻿
+﻿@model GYF.Models.Home
+
 @{
     ViewBag.Title = "ContactUs";
     Layout = "~/Views/Shared/WebsiteLayout.cshtml";
 }
-<section class="page-title" style="background-image:url(../../Websitecss/images/background/2.1.jpg)">
-    <div class="auto-container">
-        <div class="inner-container clearfix">
-            <div class="pull-left">
+
+<div id="carousel" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner" role="listbox">
+
+        <div class="carousel-item active" style="background-image: url('../AdminCss/assets/img/contact-banner.jpg'); background-size: cover; ">
+            <div class="caption">
                 <h1>Contact</h1>
             </div>
-            <div class="pull-right">
-                <ul class="bread-crumb clearfix">
-                    <li><a href="/Main/Index">Home</a></li>
-                    <li>Contact us</li>
-                </ul>
-            </div>
         </div>
     </div>
-</section>
-<!--End Page Title-->
-<!-- Contact Page Section -->
-<section class="contact-page-section">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <!-- Form Column -->
-            <div class="form-column col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-column">
-                    <!-- Sec Title -->
-                    @*<div class="sec-title">
-                        <div class="title">CONTACT WITH US</div>
-                        <h2>Let’s meet with Us</h2>
-                        <div class="seperater "></div>
-                    </div>*@
-                    <!-- Contact Form -->
-                    @*<div class="contact-form">
+</div>
 
-                        <div class="form-group">
-                            <input type="text" name="username" placeholder="Name" required="">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Email" required="">
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Phone" required="">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="zip" placeholder="Area Zip Code" required="">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button class="theme-btn submit-btn" type="submit" name="submit-form">Send Now</button>
-                        </div>
+<main id="main">
 
-                    </div>*@
-                </div>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
 
+            <div class="section-title">
+                <span>Contact</span>
+                <h2>Contact</h2>
             </div>
-            <!-- Map Column -->
-            <div class="map-column col-lg-6 col-md-12 col-sm-12">
 
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Contact Page Section -->
-<!-- Contact Info Section -->
-<section class="contact-info-section">
-    <div class="auto-container">
-        <div class="inner-container">
-            <div class="row clearfix">
-                <!-- Info Box -->
-                <div class="info-box col-lg-6 col-md-6 col-sm-12">
-                    <div class="box-inner">
-                        <div class="icon fa fa-map-marker"></div>
-                        <h3>Address</h3>
-                        <div class="text">
-                            Dadar, City- Mohania, Dist- Kaimur (Bhabhua), State- Bihar, Pin Code 821109
+            <div class="row">
+
+                <div class="col-lg-5 d-flex align-items-stretch">
+                    <div class="info">
+                        <div class="address">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Location:</h4>
+                            <p>
+                                1/236, Vikalp khand, Gomti nagar,<br>
+                                Lucknow 206010
+                            </p>
                         </div>
+
+                        <div class="email">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>grazieforyouventures@gmail.com</p>
+                        </div>
+
+                        <div class="phone">
+                            <i class="bi bi-phone"></i>
+                            <h4>Call:</h4>
+                            <p>7991212117</p>
+                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d115594.9200796667!2d83.6370779622831!3d25.124151235254807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDadar%2C%20City-%20Mohania%2C%20Dist-%20Kaimur%20(Bhabhua)%2C%20State-%20Bihar%2C%20Pin%20Code%20821109!5e0!3m2!1sen!2sin!4v1635857131574!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
                     </div>
+
                 </div>
-                <!-- Info Box -->
-             
-                <!-- Info Box -->
-                <div class="info-box col-lg-6 col-md-6 col-sm-12">
-                    <div class="box-inner">
-                        <div class="icon fa fa-envelope"></div>
-                        <h3>E-Mail</h3>
-                        <ul>
-                            <li>grazieforyouventures@gmail.com</li>
-                            @*<li>GYFteam@gmail.com</li>*@
-                        </ul>
-                    </div>
+
+                <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                    <p style="color:red;">
+                        @TempData["Contact"]
+                    </p>
+                 @using (Html.BeginForm("ContactUs", "Main", FormMethod.Post, new { @class = "php-email-form", @id = "signupForm", enctype = "multipart/form-data" }))
+                 {
+                   <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="name">Your Name</label>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Your Name" })
+                                @*<input type="text" name="name" class="form-control" id="name" required>*@
+                            </div>
+                            <div class="form-group col-md-6 mt-3 mt-md-0">
+                                <label for="name">Your Email</label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Your Email" })
+                                @*<input type="email" class="form-control" name="email" id="email" required>*@
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="name">Subject</label>
+                            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" })
+                            @*<input type="text" class="form-control" name="subject" id="subject" required>*@
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="name">Message</label>
+                            @Html.TextAreaFor(m => m.Address, new { @rows = "10", @class = "form-control", @placeholder = "Message" })
+                            @*<textarea class="form-control" name="message" rows="10" required></textarea>*@
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button type="submit" onclick="return validateform();">Send Message</button></div>
+                   
+                     }
                 </div>
+
             </div>
+
         </div>
-    </div>
-</section>
+    </section><!-- End Contact Section -->
+</main>
+
+<!-------==========Whatsapp==================---------->
+<a href="https://wa.me/message/TL4R5ZYK44JIM1" title="gfy" class="float" target="_blank">
+    <i class="bi bi-whatsapp my-float"></i>
+</a>
+
+
+<!-------==========Whatsapp==================---------->
+
+<script>
+    function validateform() {
+
+        $(".errortext").removeClass("errortext");
+        if ($('#Name').val() == '') {
+            $("#Name").addClass('errortext');
+            $('#Name').focus();
+            return false;
+        }
+
+        if ($('#Email').val() == '') {
+            $("#Email").addClass('errortext');
+            $('#Email').focus();
+            return false;
+        }
+    }
+</script>
 <style>
-     {
-    margin-top: 0px;
-    position: relative;
-    color: #1a232f;
-    font-size: 24px;
-    padding: 20px 36px;
-    background-color: #fda700;
-    font-family: 'Oswald', sans-serif;
-}
-    .theme-btn {
-    display: inline-block;
-    transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-}
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,212 @@
+﻿
+@{
+    ViewBag.Title = "Project";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+
+<div id="carousel" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner" role="listbox">
+
+        <div class="carousel-item active" style="background-image: url('../AdminCss/assets/img/project-banner.png'); background-size: cover; ">
+            <div class="caption">
+                <h1>Projects</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main id="main">
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Projects</span>
+                <h2>Projects</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-office">Office</li>
+                        <li data-filter=".filter-project">Project</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row portfolio-container">
+
+
+
+                @if (Model != null)
+                {
+                    if (Model.lstProject != null)
+                    {
+                        int i = 1;
+                        foreach (var item in Model.lstProject)
+                        {
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-office">
+                                <img src="@item.Image" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4>Office 1</h4>
+                                    <p>Office</p>
+                                    <a href="@item.Image" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 1"><i class="bx bx-plus"></i></a>
+                                    <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                            </div>
+                            
+                            i++;
+                        }
+                    }
+                }
+
+                
+
+
+                @*<div class="col-lg-4 col-md-6 portfolio-item filter-project">
+                    <img src="~/AdminCss/assets/img/gallery/6.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Project 1</h4>
+                        <p>Project</p>
+                        <a href="~/AdminCss/assets/img/gallery/6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Project 1"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-office">
+                    <img src="~/AdminCss/assets/img/gallery/7.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Office 2</h4>
+                        <p>Office</p>
+                        <a href="~/AdminCss/assets/img/gallery/7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 2"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+                    <img src="~/AdminCss/assets/img/gallery/15.jpeg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Project 2</h4>
+                        <p>Project</p>
+                        <a href="~/AdminCss/assets/img/gallery/15.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Project 2"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-office">
+                    <img src="~/AdminCss/assets/img/gallery/3.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Office 3</h4>
+                        <p>Office</p>
+                        <a href="~/AdminCss/assets/img/gallery/3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 3"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+                    <img src="~/AdminCss/assets/img/gallery/26.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Project 3</h4>
+                        <p>Project</p>
+                        <a href="~/AdminCss/assets/img/gallery/26.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Project 3"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-office">
+                    <img src="~/AdminCss/assets/img/gallery/10.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Office 4</h4>
+                        <p>Office</p>
+                        <a href="~/AdminCss/assets/img/gallery/10.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 4"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+                    <img src="~/AdminCss/assets/img/gallery/43.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Project 4</h4>
+                        <p>Project</p>
+                        <a href="~/AdminCss/assets/img/gallery/43.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Project 4"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-office">
+                    <img src="~/AdminCss/assets/img/gallery/2.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Office 5</h4>
+                        <p>Office</p>
+                        <a href="~/AdminCss/assets/img/gallery/2.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 5"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+                    <img src="~/AdminCss/assets/img/gallery/12.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Project 5</h4>
+                        <p>Project</p>
+                        <a href="~/AdminCss/assets/img/gallery/12.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Project 5"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-office">
+                    <img src="~/AdminCss/assets/img/gallery/9.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Office 6</h4>
+                        <p>Office</p>
+                        <a href="~/AdminCss/assets/img/gallery/9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 6"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+                    <img src="~/AdminCss/assets/img/gallery/36.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Project 6</h4>
+                        <p>Project</p>
+                        <a href="~/AdminCss/assets/img/gallery/36.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Project 6"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-office">
+                    <img src="~/AdminCss/assets/img/gallery/11.jpg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Office 7</h4>
+                        <p>Office</p>
+                        <a href="~/AdminCss/assets/img/gallery/11.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 7"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+                    <img src="~/AdminCss/assets/img/gallery/36.jpeg" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>Project 7</h4>
+                        <p>Project</p>
+                        <a href="~/AdminCss/assets/img/gallery/36.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Project 7"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>*@
+
+            </div>
+
+        </div>
+    </section><!-- End Portfolio Section -->
+</main>
+
+<!-------==========Whatsapp==================---------->
+<a href="https://wa.me/message/TL4R5ZYK44JIM1" title="gfy" class="float" target="_blank">
+    <i class="bi bi-whatsapp my-float"></i>
+</a>
+
+
+<!-------==========Whatsapp==================---------->
