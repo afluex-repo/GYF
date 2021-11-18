@@ -45,8 +45,15 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        Project Name
-                                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @Placeholder = "Product Name" })
+                                                        <input type="hidden" name="ProjectId" id="ProjectId" value="@Model.ProjectId" />
+                                                        Office/Project No
+                                                        @Html.TextBoxFor(m => m.OfficeProjectNo, new { @class = "form-control", @Placeholder = "Office/Project No" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        Office/Project
+                                                        @Html.TextBoxFor(m => m.OfficeProject, new { @class = "form-control", @Placeholder = "Office/Project" })
                                                     </div>
                                                 </div>
                                              
@@ -58,7 +65,8 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <input type="submit" style="margin-top:20px;" class="btn btn-success" value="Save" name="btnSave" onclick="return validate();" />
+                                                        <input type="submit" style="margin-top:20px;" class="btn btn-success" value="Save" id="btnSave" name="btnSave" onclick="return validate();" />
+                                                        <a style="margin-top:20px;" href="/Admin/GetProjectDetails" class="btn btn-primary">Back To List</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,3 +81,14 @@
         </div>
     </div>
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    var ProjectId = $("#ProjectId").val();
+    if (ProjectId!=0)
+    {
+        $("#btnSave").val("Update");
+    }
+
+</script>
+

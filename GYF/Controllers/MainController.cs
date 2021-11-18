@@ -17,9 +17,24 @@ namespace GYF.Controllers
         // GET: Main
 
 
-        public ActionResult Index()
+        public ActionResult Index(Home model)
         {
-            return View();
+            List<Home> lstProject = new List<Home>();
+            DataSet ds11 = model.GetProjectDetails();
+            if (ds11 != null && ds11.Tables.Count > 0 && ds11.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds11.Tables[0].Rows)
+                {
+                    Home Obj = new Home();
+                    Obj.OfficeProjectNo = r["OfficeProjectNo"].ToString();
+                    Obj.OfficeProject = r["OfficeProject"].ToString();
+                    Obj.Image = r["ImageFile"].ToString();
+                    lstProject.Add(Obj);
+                }
+                model.lstProject = lstProject;
+            }
+            return View(model);
+            
         }
         public ActionResult CompanyOverView()
         {
@@ -115,7 +130,8 @@ namespace GYF.Controllers
                 foreach (DataRow r in ds11.Tables[0].Rows)
                 {
                     Home Obj = new Home();
-                    Obj.Name = r["Name"].ToString();
+                    Obj.OfficeProjectNo = r["OfficeProjectNo"].ToString();
+                    Obj.OfficeProject = r["OfficeProject"].ToString();
                     Obj.Image = r["ImageFile"].ToString();
                     lstProject.Add(Obj);
                 }
