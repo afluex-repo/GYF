@@ -1119,6 +1119,7 @@
     <Content Include="Views\Main\Project.cshtml" />
     <Content Include="Views\Main\Career.cshtml" />
     <Content Include="Views\Admin\Project.cshtml" />
+    <Content Include="Views\Admin\GetProjectDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

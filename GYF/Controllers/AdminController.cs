@@ -1041,40 +1041,81 @@ namespace GYF.Controllers
             return RedirectToAction(FormName, Controller);
         }
 
-        public ActionResult Project()
+        public ActionResult Project(string Id)
         {
-            return View();
+            Admin model = new Admin();
+            if (Id!=null)
+            {
+                model.ProjectId = Id;
+                DataSet ds11 = model.GetProjectDetails();
+                if (ds11 != null && ds11.Tables.Count > 0 && ds11.Tables[0].Rows.Count > 0)
+                {
+                    model.ProjectId = ds11.Tables[0].Rows[0]["PK_ProjectId"].ToString();
+                    model.OfficeProjectNo = ds11.Tables[0].Rows[0]["OfficeProjectNo"].ToString();
+                    model.OfficeProject = ds11.Tables[0].Rows[0]["OfficeProject"].ToString();
+                    model.Image = "/ProjectImage/" + ds11.Tables[0].Rows[0]["ImageFile"].ToString();
+                }
+            }
+            return View(model);
         }
-        
+
         [HttpPost]
         [ActionName("Project")]
         public ActionResult Project(Admin model, HttpPostedFileBase postedFile)
         {
             try
             {
-                if (postedFile != null)
+
+                if(model.ProjectId==null)
                 {
-                    model.Image = "../ProjectImage/" + Guid.NewGuid() + Path.GetExtension(postedFile.FileName);
-                    postedFile.SaveAs(Path.Combine(Server.MapPath(model.Image)));
-                }
-                model.AddedBy = "1";
-                DataSet ds = model.SaveProject();
-                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-                {
-                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    if (postedFile != null)
                     {
-                        TempData["Project"] = "Project save successfully";
+                        model.Image = "../ProjectImage/" + Guid.NewGuid() + Path.GetExtension(postedFile.FileName);
+                        postedFile.SaveAs(Path.Combine(Server.MapPath(model.Image)));
                     }
-                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    model.AddedBy = "1";
+                    DataSet ds = model.SaveProject();
+                    if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                        {
+                            TempData["Project"] = "Project save successfully";
+                        }
+                        else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                        {
+                            TempData["Project"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        }
+                    }
+                    else
                     {
                         TempData["Project"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
                     }
                 }
                 else
                 {
-                    TempData["Project"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
-                }
-
+                    if (postedFile != null)
+                    {
+                        model.Image = "../ProjectImage/" + Guid.NewGuid() + Path.GetExtension(postedFile.FileName);
+                        postedFile.SaveAs(Path.Combine(Server.MapPath(model.Image)));
+                    }
+                    model.AddedBy = "1";
+                    DataSet ds = model.UpdateProject();
+                    if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                        {
+                            TempData["Project"] = "Project update successfully";
+                        }
+                        else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                        {
+                            TempData["Project"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        }
+                    }
+                    else
+                    {
+                        TempData["Project"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                } 
             }
             catch (Exception ex)
             {
@@ -1085,6 +1126,60 @@ namespace GYF.Controllers
         }
 
 
+        public ActionResult GetProjectDetails()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ActionName("GetProjectDetails")]
+        public ActionResult GetProjectDetails(Admin model)
+        {
+            List<Admin> lstProject = new List<Admin>();
+            DataSet ds11 = model.GetProjectDetails();
+            if (ds11 != null && ds11.Tables.Count > 0 && ds11.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds11.Tables[0].Rows)
+                {
+                    Admin Obj = new Admin();
+                    Obj.ProjectId = r["PK_ProjectId"].ToString();
+                    Obj.OfficeProjectNo = r["OfficeProjectNo"].ToString();
+                    Obj.OfficeProject = r["OfficeProject"].ToString();
+                    Obj.Image = r["ImageFile"].ToString();
+                    lstProject.Add(Obj);
+                }
+                model.lstOfficeProject = lstProject;
+            }
+            return View(model);
+        }
+
+
+
+        public ActionResult ProjectDelete(string Id)
+        {
+            Admin model = new Admin();
+            try
+            {
+                model.AddedBy = Session["Pk_AdminId"].ToString();
+                model.ProjectId = Id;
+                DataSet ds = model.DeleteProject();
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["Project"] = "Record deleted Successfully";
+                    }
+                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    {
+                        TempData["Project"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Project"] = ex.Message;
+            }
+            return RedirectToAction("GetProjectDetails", "Admin");
+        }
 
 
     }

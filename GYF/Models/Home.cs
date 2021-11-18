@@ -55,7 +55,8 @@ namespace GYF.Models
         public string AdminName { get; set; }
         public string Experience { get; set; }
         public string Image { get; set; }
-
+        public string OfficeProjectNo { get; set; }
+        public string OfficeProject { get; set; }
 
 
         public DataSet Login()

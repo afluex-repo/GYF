@@ -64,7 +64,9 @@ namespace GYF.Models
         public string DistPaymentPassword { get; set; }
         public string Image { get; set; }
 
-        
+        public string OfficeProjectNo { get; set; }
+        public string OfficeProject { get; set; }
+
 
         public List<Admin> lstassociate { get; set; }
         public List<Admin> DistributePaymentList { get; set; }
@@ -72,6 +74,10 @@ namespace GYF.Models
         public string BannerImage { get; set; }
         public HttpPostedFileBase postedFile { get; set; }
         public List<Admin> lstBanner { get; set; }
+        public List<Admin> lstOfficeProject { get; set; }
+        public string ProjectId { get; set; }
+
+
 
         public DataSet GetPaymentMode()
         {
@@ -384,11 +390,48 @@ namespace GYF.Models
 
         public DataSet SaveProject()
         {
-            SqlParameter[] param = { new SqlParameter("@Name",Name),
+            SqlParameter[] param = { new SqlParameter("@OfficeProjectNo",OfficeProjectNo),
+                new SqlParameter("@OfficeProject",OfficeProject),
                                            new SqlParameter("@PostedFile",Image),
                                            new SqlParameter("@AddedBy",AddedBy)
             };
             DataSet ds = DBHelper.ExecuteQuery("SaveProject", param);
+            return ds;
+        }
+
+
+        public DataSet GetProjectDetails()
+        {
+            SqlParameter[] param = {
+                new SqlParameter("@ProjectId",ProjectId),
+                new SqlParameter("@OfficeProjectNo",OfficeProjectNo),
+                new SqlParameter("@OfficeProject",OfficeProject),
+                new SqlParameter("@ImageFile",Image)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetProjectDetails", param);
+            return ds;
+        }
+
+        public DataSet DeleteProject()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@ProjectId",ProjectId),
+                 new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("DeleteProject", para);
+            return ds;
+        }
+        public DataSet UpdateProject()
+        {
+            SqlParameter[] param = {
+                                           new SqlParameter("@ProjectId",ProjectId),
+                                           new SqlParameter("@OfficeProjectNo",OfficeProjectNo),
+                                           new SqlParameter("@OfficeProject",OfficeProject),
+                                           new SqlParameter("@PostedFile",Image),
+                                           new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("UpdateProject", param);
             return ds;
         }
 
