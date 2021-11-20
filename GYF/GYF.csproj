@@ -1120,6 +1120,10 @@
     <Content Include="Views\Main\Career.cshtml" />
     <Content Include="Views\Admin\Project.cshtml" />
     <Content Include="Views\Admin\GetProjectDetails.cshtml" />
+    <Content Include="Views\Shared\_BankDetailsLayout.cshtml" />
+    <Content Include="Views\Associate\TopUpUser.cshtml" />
+    <Content Include="Views\Admin\GetCreerDetails.cshtml" />
+    <Content Include="Views\Admin\GetContactDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

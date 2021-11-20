@@ -38,22 +38,28 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
                             <div class="x_panel">
-
                                 <div class="x_content">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <input type="hidden" name="ProjectId" id="ProjectId" value="@Model.ProjectId" />
-                                                        Office/Project No
-                                                        @Html.TextBoxFor(m => m.OfficeProjectNo, new { @class = "form-control", @Placeholder = "Office/Project No" })
+                                                        Project Type
+                                                        <select name="ProjectType" id="ProjectType" class="form-control">
+                                                            <option value="0">Select</option>
+                                                            <option value="Office">Office</option>
+                                                            <option value="Project">Project</option>
+                                                        </select>
                                                     </div>
                                                 </div>
+
+
+
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        Office/Project
-                                                        @Html.TextBoxFor(m => m.OfficeProject, new { @class = "form-control", @Placeholder = "Office/Project" })
+                                                        <input type="hidden" name="ProjectId" id="ProjectId" value="@Model.ProjectId" />
+                                                        Project Name
+                                                        @Html.TextBoxFor(m => m.ProjectName, new { @class = "form-control", @Placeholder = "Project Name" })
                                                     </div>
                                                 </div>
                                              
@@ -63,9 +69,17 @@
                                                         <input type="file" class="form-control" id="postedFile" name="postedFile"/>
                                                     </div>
                                                 </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        Description
+                                                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @Placeholder = "Description" })
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <input type="submit" style="margin-top:20px;" class="btn btn-success" value="Save" id="btnSave" name="btnSave" onclick="return validate();" />
+                                                        <input type="submit" style="margin-top:20px;" class="btn btn-success" value="Save" id="btnSave" name="btnSave" onclick="return validateform();" />
                                                         <a style="margin-top:20px;" href="/Admin/GetProjectDetails" class="btn btn-primary">Back To List</a>
                                                     </div>
                                                 </div>
@@ -90,5 +104,41 @@
         $("#btnSave").val("Update");
     }
 
+    function validateform() {
+
+        $(".errortext").removeClass("errortext");
+
+        if ($('#ProjectType').val() == '0') {
+            $("#ProjectType").addClass('errortext');
+            $('#ProjectType').focus();
+            return false;
+        }
+        if ($('#ProjectName').val() == '') {
+            $("#ProjectName").addClass('errortext');
+            $('#ProjectName').focus();
+            return false;
+        }
+       
+
+        if ($('#postedFile').val() == '') {
+            $("#postedFile").addClass('errortext');
+            $('#postedFile').focus();
+            return false;
+        }
+        if ($('#Description').val() == '') {
+            $("#Description").addClass('errortext');
+            $('#Description').focus();
+            return false;
+
+
+        }
+    }
 </script>
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>
+
 

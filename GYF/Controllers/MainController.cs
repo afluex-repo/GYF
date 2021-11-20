@@ -26,8 +26,9 @@ namespace GYF.Controllers
                 foreach (DataRow r in ds11.Tables[0].Rows)
                 {
                     Home Obj = new Home();
-                    Obj.OfficeProjectNo = r["OfficeProjectNo"].ToString();
-                    Obj.OfficeProject = r["OfficeProject"].ToString();
+                    Obj.ProjectName = r["ProjectName"].ToString();
+                    Obj.Description = r["Description"].ToString();
+                    Obj.ProjectType = r["ProjectType"].ToString();
                     Obj.Image = r["ImageFile"].ToString();
                     lstProject.Add(Obj);
                 }
@@ -70,37 +71,37 @@ namespace GYF.Controllers
                     {
                         TempData["Contact"] = "Message send successfully";
                        
-                        if (model.Email != null)
-                        {
-                            string mailbody = "";
-                            try
-                            {
-                                mailbody = "Dear" + " " + model.Name + ", <br/> Your request message have been send successfully i will contact you soon.";
+                        //if (model.Email != null)
+                        //{
+                        //    string mailbody = "";
+                        //    try
+                        //    {
+                        //        mailbody = "Dear" + " " + model.Name + ", <br/> Your request message have been send successfully i will contact you soon.";
 
-                                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
-                                {
-                                    Host = "smtp.gmail.com",
-                                    Port = 587,
-                                    EnableSsl = true,
-                                    DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
-                                    UseDefaultCredentials = true,
-                                    Credentials = new NetworkCredential("developer2.afluex@gmail.com", "devel@486")
+                        //        System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
+                        //        {
+                        //            Host = "smtp.gmail.com",
+                        //            Port = 587,
+                        //            EnableSsl = true,
+                        //            DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                        //            UseDefaultCredentials = true,
+                        //            Credentials = new NetworkCredential("developer2.afluex@gmail.com", "devel@486")
 
-                                };
-                                using (var message = new MailMessage("developer2.afluex@gmail.com", model.Email)
-                                {
-                                    IsBodyHtml = true,
-                                    Subject = "Registration Approvel",
-                                    Body = mailbody
-                                })
-                                    smtp.Send(message);
+                        //        };
+                        //        using (var message = new MailMessage("developer2.afluex@gmail.com", model.Email)
+                        //        {
+                        //            IsBodyHtml = true,
+                        //            Subject = "Registration Approvel",
+                        //            Body = mailbody
+                        //        })
+                        //            smtp.Send(message);
 
-                            }
-                            catch (Exception ex)
-                            {
+                        //    }
+                        //    catch (Exception ex)
+                        //    {
 
-                            }
-                        }
+                        //    }
+                        //}
                     }
                     else if (ds.Tables[0].Rows[0][0].ToString() == "0")
                     {
@@ -130,8 +131,9 @@ namespace GYF.Controllers
                 foreach (DataRow r in ds11.Tables[0].Rows)
                 {
                     Home Obj = new Home();
-                    Obj.OfficeProjectNo = r["OfficeProjectNo"].ToString();
-                    Obj.OfficeProject = r["OfficeProject"].ToString();
+                    Obj.ProjectName = r["ProjectName"].ToString();
+                    Obj.Description = r["Description"].ToString();
+                    Obj.ProjectType = r["ProjectType"].ToString();
                     Obj.Image = r["ImageFile"].ToString();
                     lstProject.Add(Obj);
                 }

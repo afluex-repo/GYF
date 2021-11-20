@@ -55,8 +55,17 @@ namespace GYF.Models
         public string AdminName { get; set; }
         public string Experience { get; set; }
         public string Image { get; set; }
-        public string OfficeProjectNo { get; set; }
-        public string OfficeProject { get; set; }
+
+        public string ProjectName { get; set; }
+        public string Description { get; set; }
+        public string ProjectType { get; set; }
+        public string ProjectId { get; set; }
+
+        public string PK_ProductId { get; set; }
+        public string PinAmount { get; set; }
+
+        public string ROIAmount { get; set; }
+        
 
 
         public DataSet Login()
@@ -115,9 +124,7 @@ namespace GYF.Models
 
                     model.lstsubmenu = lstsubmenu;
 
-                }
-
-
+                } 
             }
             return model;
 
@@ -214,12 +221,56 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("SaveCareer", param);
             return ds;
         }
+        //public DataSet GetProjectDetails()
+        //{
+        //    DataSet ds = DBHelper.ExecuteQuery("GetProjectDetails");
+        //    return ds;
+        //}
+
+
         public DataSet GetProjectDetails()
         {
-            DataSet ds = DBHelper.ExecuteQuery("GetProjectDetails");
+            SqlParameter[] param = {
+                new SqlParameter("@ProjectId",ProjectId),
+                new SqlParameter("@ProjectName",ProjectName),
+                new SqlParameter("@Description",Description),
+                  new SqlParameter("@ProjectType",ProjectType),
+                new SqlParameter("@ImageFile",Image)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetProjectDetails", param);
             return ds;
         }
-        
+        public DataSet ProductNameDetails()
+        {
+            DataSet ds = DBHelper.ExecuteQuery("CreateProductMaster");
+            return ds;
+        }
 
+        public DataSet SaveTopUp()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@FK_ProductId",PK_ProductId),
+                 new SqlParameter("@PinAmount",PinAmount),
+                  new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("SaveTopUpByUser", para);
+            return ds;
+        }
+
+
+        public DataSet GetAmount()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@PK_ProductID",PK_ProductId),
+            
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetAmount", para);
+            return ds;
+        }
+
+
+        
     }
 }

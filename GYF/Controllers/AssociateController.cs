@@ -1629,11 +1629,11 @@ namespace GYF.Controllers
             ViewBag.Package = Package;
 
 
-            DataSet ds3 = model.WalletBalanceNew();
-            if (ds3 != null && ds3.Tables.Count > 0 && ds3.Tables[0].Rows.Count > 0)
-            {
-                ViewBag.WalletBalanceNew = ds3.Tables[0].Rows[0]["BalanceAmount"].ToString();
-            }
+            //DataSet ds3 = model.WalletBalanceNew();
+            //if (ds3 != null && ds3.Tables.Count > 0 && ds3.Tables[0].Rows.Count > 0)
+            //{
+            //    ViewBag.WalletBalanceNew = ds3.Tables[0].Rows[0]["BalanceAmount"].ToString();
+            //}
 
 
 
@@ -1804,6 +1804,102 @@ namespace GYF.Controllers
                 TempData["Error"] = ex.Message;
             }
             return RedirectToAction("ChangePasswordUser", "Associate");
+        }
+
+
+        public ActionResult TopUpUser( string PK_ProductId)
+        {
+            Associate model = new Associate();
+            model.PK_ProductId = PK_ProductId;
+            model.AddedBy = Session["Pk_userId"].ToString();
+            int count1 = 0;
+            List<SelectListItem> ddlProduct = new List<SelectListItem>();
+            DataSet ds = model.ProductNameDetails();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    if (count1 == 0)
+                    {
+                        ddlProduct.Add(new SelectListItem { Text = "--Select--", Value = "" });
+                    }
+                    ddlProduct.Add(new SelectListItem { Text = r["ProductName"].ToString(), Value = r["PK_ProductId"].ToString() });
+                    count1 = count1 + 1;
+                }
+            }
+
+            ViewBag.ddlProduct = ddlProduct;
+            DataSet ds3 = model.WalletBalanceNew();
+            if (ds3 != null && ds3.Tables.Count > 0 && ds3.Tables[0].Rows.Count > 0)
+            {
+                ViewBag.WalletBalanceNew = ds3.Tables[0].Rows[0]["BalanceAmount"].ToString();
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("TopUpUser")]
+        [OnAction(ButtonName = "topup")]
+        public ActionResult SaveTopUp(Associate model)
+        {
+            try
+            {
+                int count1 = 0;
+                List<SelectListItem> ddlProduct = new List<SelectListItem>();
+                DataSet dsproduct = model.ProductNameDetails();
+                if (dsproduct != null && dsproduct.Tables.Count > 0 && dsproduct.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow r in dsproduct.Tables[0].Rows)
+                    {
+                        if (count1 == 0)
+                        {
+                            ddlProduct.Add(new SelectListItem { Text = "--Select--", Value = "" });
+                        }
+                        ddlProduct.Add(new SelectListItem { Text = r["ProductName"].ToString(), Value = r["PK_ProductId"].ToString() });
+                        count1 = count1 + 1;
+                    }
+                }
+
+                ViewBag.ddlProduct = ddlProduct;
+                model.AddedBy = Session["Pk_userId"].ToString();
+                DataSet ds = model.SaveTopUp();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["TopUp"] = "TopUp Save Successfully";
+                    }
+                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    {
+                        TempData["TopUp"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["TopUp"] = ex.Message;
+            }
+            return View(model);
+        }
+
+        
+        public ActionResult GetAmount(string PK_ProductId)
+        {
+            Home model = new Home();
+            model.PK_ProductId = PK_ProductId;
+            model.AddedBy = Session["Pk_userId"].ToString();
+            DataSet ds = model.GetAmount();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                model.Result = "Yes";
+                model.ROIAmount = ds.Tables[0].Rows[0]["ProductPrice"].ToString();
+
+            }
+            else
+            {
+                model.Result = "no";
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
         }
 
     }

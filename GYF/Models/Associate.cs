@@ -106,6 +106,7 @@ namespace GYF.Models
         public string TokenId { get; set; }
         public string Reply { get; set; }
         public string SupportTokenId { get; set; }
+        public string PK_ProductId { get; set; }
 
         public string ReplyDate { get; set; }
         public List<Associate> SupportListM { get; set; }
@@ -157,7 +158,20 @@ namespace GYF.Models
             return ds;
 
         }
-
+        public DataSet ProductNameDetails()
+        {
+            DataSet ds = DBHelper.ExecuteQuery("CreateProductMaster");
+            return ds;
+        }
+        public DataSet WalletBalanceNew()
+        {
+            SqlParameter[] para =
+            {
+                 new SqlParameter("@UserId",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("WalletBalance", para);
+            return ds;
+        }
         public DataSet GettingProfile()
         {
             SqlParameter[] para =
@@ -186,7 +200,17 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("UpdateProfile", para);
             return ds;
         }
-
+        public DataSet SaveTopUp()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@FK_ProductId",PK_ProductId),
+                 new SqlParameter("@PinAmount",PinAmount),
+                  new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("SaveTopUpByUser", para);
+            return ds;
+        }
         public DataSet UpdatePassword()
         {
             SqlParameter[] para ={
