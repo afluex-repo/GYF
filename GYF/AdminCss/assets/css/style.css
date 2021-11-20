@@ -1335,3 +1335,48 @@ a.view-demo:hover {
     .my-float{
       margin-top:16px;
     }
+
+.phpdfsdg {
+  width: 100%;
+  border-top: 3px solid #5ca47a;
+  border-bottom: 3px solid #5ca47a;
+  padding: 30px;
+  background-color: #f9f9fa;
+}
+
+
+.bbbb{
+    background: #5ca47a;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+}
+
+
+#btnnn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 30px 10px 30px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #5ca47a;
+    box-shadow: 0 8px 28px rgb(22 223 126 / 45%);
+}
+
+
+
+.fgdfgfdgf{
+    background: #5ca47a;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+}
+

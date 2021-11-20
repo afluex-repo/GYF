@@ -89,24 +89,27 @@
                 </div>
 
                 <div class="col-lg-8 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <p style="color:red;">
-                        @TempData["Career"]
-                    </p>
+                    
                     @*<form action="forms/contact.php" method="post" role="form" class="php-email-form">*@
-                    @using (Html.BeginForm("Career", "Main", FormMethod.Post, new { @class = "php-email-form", @id = "signupForm", enctype = "multipart/form-data" }))
+
+                    @using (Html.BeginForm("Career", "Main", FormMethod.Post, new { @class = "phpdfsdg", @role = "form", @id = "signupForm", enctype = "multipart/form-data" }))
                     {
                         <div class="row">
-
+                        <p style="color:red;">
+                            @TempData["Career"]
+                        </p>
+                       </div>
+                        <div class="row">
                             <div class="col-md-12 form-group">
-                                <label>Full Name</label>
+                                <label>Full Name@*<span style="color: red">*</span>*@</label>
                                 @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Full Name" })
                                 @*<input type="text" name="name" class="form-control" id="name" placeholder="Enter Your Name" required>*@
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6 form-group">
-                                <label>Mobile Number</label>
-                                @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", @placeholder = "Mobile Number" })
+                                <label>Mobile Number<span style="color: red">*</span></label>
+                                @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", @placeholder = "Mobile Number", @onkeypress = "return isNumberKey(event);",@maxlength="10" })
                                 @*<input type="text" name="phone" class="form-control" id="phone" placeholder="Mobile Number" required>*@
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
@@ -122,22 +125,26 @@
                                 @*<input class="form-control" name="experience" id="experience" placeholder="Year Of Experience" required>*@
                             </div>
                             <div class="col-md-6 form-group">
-                                <label>Submit Your Resume</label>
-                                <input type="file" class="form-control" style="line-height: 2.2;" name="postedFile" id="postedFile" placeholder="Submit Your Cover Letter or Resume">
+                                <label>Submit Your Resume<span style="color: red">*</span></label>
+                                <input type="file" accept = "application/pdf" class="form-control" style="line-height: 2.2;" name="postedFile" id="postedFile" placeholder="Submit Your Cover Letter or Resume">
                             </div>
                         </div>
                         <div class="form-group mt-3">
                             <label>Address</label>
-                            @Html.TextBoxFor(m => m.Address, new { @rows = "5", @class = "form-control", @placeholder = "Enter Your Address" })
+                            @Html.TextAreaFor(m => m.Address, new { @rows = "5", @class = "form-control", @placeholder = "Enter Your Address" })
                             @*<textarea class="form-control" name="address" rows="5" placeholder="Enter Your Address" required></textarea>*@
                         </div>
-                        <div class="my-3">
+                        @*<div class="my-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="container">
-                            <div class="text-center "><button type="submit" onclick="return validateform();">Submit Form</button></div>
+                        </div>*@
+                        <div class="container" style="text-align:center;">
+
+
+                            <input type="submit" id="btnnn" value="Submit Form" onclick="return validateform();" class="text-center fgdfgfdgf" />
+
+                            @*<div class="text-center fgdfgfdgf"><button type="submit" onclick="return validateform();">Submit Form</button></div>*@
                         </div>
                     @*</form>*@
                     }
@@ -160,25 +167,61 @@
     function validateform() {
 
         $(".errortext").removeClass("errortext");
-        if ($('#Name').val() == '') {
-            $("#Name").addClass('errortext');
-            $('#Name').focus();
-            return false;
-        }
+        //if ($('#Name').val() == '') {
+        //    $("#Name").addClass('errortext');
+        //    $('#Name').focus();
+        //    return false;
+        //}
         if ($('#MobileNo').val() == '') {
             $("#MobileNo").addClass('errortext');
             $('#MobileNo').focus();
             return false;
         }
 
-        if ($('#Email').val() == '') {
-            $("#Email").addClass('errortext');
-            $('#Email').focus();
+        if ($('#postedFile').val() == '') {
+            $("#postedFile").addClass('errortext');
+            $('#postedFile').focus();
             return false;
 
             
         }
     }
+
+
+
+    function onlyAlphabets(e, t) {
+        try {
+            if (window.event) {
+                var charCode = window.event.keyCode;
+            }
+            else if (e) {
+                var charCode = e.which;
+            }
+            else { return true; }
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode == 32))
+                return true;
+            else
+                return false;
+        }
+        catch (err) {
+            alert(err.Description);
+        }
+    }
+
+    function isNumberKey(evt) {
+
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+
+
+
+
+
 </script>
 <style>
     .errortext {

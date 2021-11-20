@@ -76,6 +76,24 @@ namespace GYF.Models
         public List<Admin> lstBanner { get; set; }
         public List<Admin> lstOfficeProject { get; set; }
         public string ProjectId { get; set; }
+        public string ProjectName { get; set; }
+        public string ProjectType { get; set; }
+
+        public List<Admin> lstCreer { get; set; }
+        public List<Admin> lstContact { get; set; }
+
+        public string Mobile { get; set; }
+        public string Email { get; set; }
+        public string Experience { get; set; }
+        public string Resume { get; set; }
+        public string CareerId { get; set; }
+        public string Subject { get; set; }
+        public string ContactId { get; set; }
+        public string AddedOn { get; set; }
+
+        
+
+
 
 
 
@@ -390,8 +408,9 @@ namespace GYF.Models
 
         public DataSet SaveProject()
         {
-            SqlParameter[] param = { new SqlParameter("@OfficeProjectNo",OfficeProjectNo),
-                new SqlParameter("@OfficeProject",OfficeProject),
+            SqlParameter[] param = { new SqlParameter("@ProjectNname",ProjectName),
+                new SqlParameter("@Description",Description),
+                   new SqlParameter("@ProjectType",ProjectType),
                                            new SqlParameter("@PostedFile",Image),
                                            new SqlParameter("@AddedBy",AddedBy)
             };
@@ -404,8 +423,9 @@ namespace GYF.Models
         {
             SqlParameter[] param = {
                 new SqlParameter("@ProjectId",ProjectId),
-                new SqlParameter("@OfficeProjectNo",OfficeProjectNo),
-                new SqlParameter("@OfficeProject",OfficeProject),
+                new SqlParameter("@ProjectName",ProjectName),
+                new SqlParameter("@Description",Description),
+                  new SqlParameter("@ProjectType",ProjectType),
                 new SqlParameter("@ImageFile",Image)
             };
             DataSet ds = DBHelper.ExecuteQuery("GetProjectDetails", param);
@@ -425,13 +445,43 @@ namespace GYF.Models
         public DataSet UpdateProject()
         {
             SqlParameter[] param = {
-                                           new SqlParameter("@ProjectId",ProjectId),
-                                           new SqlParameter("@OfficeProjectNo",OfficeProjectNo),
-                                           new SqlParameter("@OfficeProject",OfficeProject),
+                 new SqlParameter("@ProjectId",ProjectId),
+                new SqlParameter("@ProjectNname",ProjectName),
+                new SqlParameter("@Description",Description),
+                   new SqlParameter("@ProjectType",ProjectType),
                                            new SqlParameter("@PostedFile",Image),
                                            new SqlParameter("@AddedBy",AddedBy)
             };
             DataSet ds = DBHelper.ExecuteQuery("UpdateProject", param);
+            return ds;
+        }
+
+
+
+        public DataSet GetCreerDetails()
+        {
+            SqlParameter[] param = {
+                 new SqlParameter("@FromDate",FromDate),
+                new SqlParameter("@ToDate",ToDate)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetCareerDetails",param);
+            return ds;
+        }
+
+
+        public DataSet GetContactDetails()
+        {
+            SqlParameter[] param = {
+                  new SqlParameter("@PK_ContactId",ContactId),
+                 new SqlParameter("@Name",Name),
+                new SqlParameter("@Email",Email),
+                 new SqlParameter("@Subject",Subject),
+                new SqlParameter("@Address",Address),
+                 new SqlParameter("@FromDate",FromDate),
+                new SqlParameter("@ToDate",ToDate)
+                
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetContactDetails",param);
             return ds;
         }
 

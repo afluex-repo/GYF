@@ -153,22 +153,37 @@
                         int i = 1;
                         foreach (var item in Model.lstProject)
                         {
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-office">
-                                <img src="@item.Image" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>@item.OfficeProjectNo</h4>
-                                    <p>@item.OfficeProject</p>
-                                    <a href="@item.Image" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            if (item.ProjectType == "Office")
+                            {
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-office">
+                                    <img src="@item.Image" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>@item.ProjectName</h4>
+                                        <p>@item.ProjectType</p>
+                                        <a href="@item.Image" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Office 2"><i class="bx bx-plus"></i></a>
+                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                    </div>
                                 </div>
-                            </div>
+                            }
+                            else
+                            {
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-project">
+                                    <img src="@item.Image" class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>@item.ProjectName</h4>
+                                        <p>@item.ProjectType</p>
+                                        <a href="@item.Image" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Project 1"><i class="bx bx-plus"></i></a>
+                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                    </div>
+                                </div>
+                            }
 
                             i++;
                         }
                     }
                 }
 
-                
+
                 @*<div class="col-lg-4 col-md-6 portfolio-item filter-office">
                     <img src="~/AdminCss/assets/img/gallery/1.jpeg" class="img-fluid" alt="">
                     <div class="portfolio-info">

@@ -1051,8 +1051,9 @@ namespace GYF.Controllers
                 if (ds11 != null && ds11.Tables.Count > 0 && ds11.Tables[0].Rows.Count > 0)
                 {
                     model.ProjectId = ds11.Tables[0].Rows[0]["PK_ProjectId"].ToString();
-                    model.OfficeProjectNo = ds11.Tables[0].Rows[0]["OfficeProjectNo"].ToString();
-                    model.OfficeProject = ds11.Tables[0].Rows[0]["OfficeProject"].ToString();
+                    model.ProjectName = ds11.Tables[0].Rows[0]["ProjectName"].ToString();
+                    model.Description = ds11.Tables[0].Rows[0]["Description"].ToString();
+                    model.ProjectType = ds11.Tables[0].Rows[0]["ProjectType"].ToString();
                     model.Image = "/ProjectImage/" + ds11.Tables[0].Rows[0]["ImageFile"].ToString();
                 }
             }
@@ -1065,7 +1066,6 @@ namespace GYF.Controllers
         {
             try
             {
-
                 if(model.ProjectId==null)
                 {
                     if (postedFile != null)
@@ -1142,8 +1142,9 @@ namespace GYF.Controllers
                 {
                     Admin Obj = new Admin();
                     Obj.ProjectId = r["PK_ProjectId"].ToString();
-                    Obj.OfficeProjectNo = r["OfficeProjectNo"].ToString();
-                    Obj.OfficeProject = r["OfficeProject"].ToString();
+                    Obj.ProjectName = r["ProjectName"].ToString();
+                    Obj.Description = r["Description"].ToString();
+                    Obj.ProjectType = r["ProjectType"].ToString();
                     Obj.Image = r["ImageFile"].ToString();
                     lstProject.Add(Obj);
                 }
@@ -1181,6 +1182,73 @@ namespace GYF.Controllers
             return RedirectToAction("GetProjectDetails", "Admin");
         }
 
+        public ActionResult GetCreerDetails()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("GetCreerDetails")]
+        public ActionResult GetCreerDetails(Admin model)
+        {
+            List<Admin> lstCareer = new List<Admin>();
+            DataSet ds11 = model.GetCreerDetails();
+            if (ds11 != null && ds11.Tables.Count > 0 && ds11.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds11.Tables[0].Rows)
+                {
+                    Admin Obj = new Admin();
+                    Obj.CareerId = r["PK_CareerId"].ToString();
+                    Obj.Name = r["Name"].ToString();
+                    Obj.Email = r["Email"].ToString();
+                    Obj.Mobile = r["Mobile"].ToString();
+                    Obj.Experience = r["Experience"].ToString();
+                    Obj.Image = r["Resume"].ToString();
+                    Obj.Address = r["Address"].ToString();
+                    Obj.AddedOn = r["AddedOn"].ToString();
+                    lstCareer.Add(Obj);
+                }
+                model.lstCreer = lstCareer;
+            }
+            return View(model);
+        }
+
+        public ActionResult GetContactDetails()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("GetContactDetails")]
+        public ActionResult GetContactDetails(Admin model)
+        {
+            List<Admin> lstContact = new List<Admin>();
+
+            model.ContactId = model.ContactId == "0" ? null : model.ContactId;
+            model.Name = model.Name == "0" ? null : model.Name;
+            model.Email = model.Email == "0" ? null : model.Email;
+            model.Subject = model.Subject == "0" ? null : model.Subject;
+            model.Address = model.Address == "0" ? null : model.Address;
+            model.FromDate = string.IsNullOrEmpty(model.FromDate) ? null : Common.ConvertToSystemDate(model.FromDate, "dd/MM/yyyy");
+            model.ToDate = string.IsNullOrEmpty(model.ToDate) ? null : Common.ConvertToSystemDate(model.ToDate, "dd/MM/yyyy");
+            DataSet ds11 = model.GetContactDetails();
+            if (ds11 != null && ds11.Tables.Count > 0 && ds11.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds11.Tables[0].Rows)
+                {
+                    Admin Obj = new Admin();
+                    Obj.ContactId = r["PK_ContactId"].ToString();
+                    Obj.Name = r["Name"].ToString();
+                    Obj.Email = r["Email"].ToString();
+                    Obj.Subject = r["Subject"].ToString();
+                    Obj.Address = r["Address"].ToString();
+                    Obj.AddedOn = r["AddedOn"].ToString();
+                    lstContact.Add(Obj);
+                }
+                model.lstContact = lstContact;
+            }
+            return View(model);
+        }
 
     }
 }

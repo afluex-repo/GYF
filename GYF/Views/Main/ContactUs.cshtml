@@ -56,21 +56,24 @@
                     </div>
 
                 </div>
-
+              
                 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <p style="color:red;">
-                        @TempData["Contact"]
-                    </p>
-                 @using (Html.BeginForm("ContactUs", "Main", FormMethod.Post, new { @class = "php-email-form", @id = "signupForm", enctype = "multipart/form-data" }))
+                   
+                 @using (Html.BeginForm("ContactUs", "Main", FormMethod.Post, new { @class = "phpdfsdg", @role = "form",enctype = "multipart/form-data" }))
                  {
+                    <div class="row">
+                        <p style="color:red;">
+                            @TempData["Contact"]
+                        </p>
+                    </div>
                    <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name">Your Name</label>
-                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Your Name" })
+                                <label for="name">Your Name<span style="color: red">*</span></label>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Your Name", @onkeypress = "return onlyAlphabets(event);" })
                                 @*<input type="text" name="name" class="form-control" id="name" required>*@
                             </div>
                             <div class="form-group col-md-6 mt-3 mt-md-0">
-                                <label for="name">Your Email</label>
+                                <label for="name">Your Email<span style="color: red">*</span></label>
                                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Your Email" })
                                 @*<input type="email" class="form-control" name="email" id="email" required>*@
                             </div>
@@ -85,15 +88,18 @@
                             @Html.TextAreaFor(m => m.Address, new { @rows = "10", @class = "form-control", @placeholder = "Message" })
                             @*<textarea class="form-control" name="message" rows="10" required></textarea>*@
                         </div>
-                        <div class="my-3">
+                        @*<div class="my-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button type="submit" onclick="return validateform();">Send Message</button></div>
-                   
-                     }
-                </div>
+                        </div>*@
+                    <div class="container" style="text-align:center;">
+                        <input type="submit" id="btnnn" value="Send Message" onclick="return validateform();" class="text-center fgdfgfdgf" />
+
+                        @*<div class="text-center bbbb"><button type="submit" onclick="return validateform();">Send Message</button></div>*@
+                    </div>
+                 }
+                    </div>
 
             </div>
 
@@ -125,6 +131,30 @@
             return false;
         }
     }
+
+
+    function onlyAlphabets(e, t) {
+        try {
+            if (window.event) {
+                var charCode = window.event.keyCode;
+            }
+            else if (e) {
+                var charCode = e.which;
+            }
+            else { return true; }
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode == 32))
+                return true;
+            else
+                return false;
+        }
+        catch (err) {
+            alert(err.Description);
+        }
+    }
+
+
+
+
 </script>
 <style>
     .errortext {
