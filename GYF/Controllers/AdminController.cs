@@ -1198,7 +1198,7 @@ namespace GYF.Controllers
                 foreach (DataRow r in ds11.Tables[0].Rows)
                 {
                     Admin Obj = new Admin();
-                    Obj.CareerId = r["PK_CareerId"].ToString();
+                    //Obj.CareerId = r["PK_CareerId"].ToString();
                     Obj.Name = r["Name"].ToString();
                     Obj.Email = r["Email"].ToString();
                     Obj.Mobile = r["Mobile"].ToString();

@@ -35,7 +35,7 @@ namespace GYF.Controllers
                 model.lstProject = lstProject;
             }
             return View(model);
-            
+
         }
         public ActionResult CompanyOverView()
         {
@@ -70,7 +70,7 @@ namespace GYF.Controllers
                     if (ds.Tables[0].Rows[0][0].ToString() == "1")
                     {
                         TempData["Contact"] = "Message send successfully";
-                       
+
                         //if (model.Email != null)
                         //{
                         //    string mailbody = "";
@@ -119,7 +119,7 @@ namespace GYF.Controllers
                 TempData["Contact"] = ex.Message;
             }
 
-            return RedirectToAction("ContactUs","Main");
+            return RedirectToAction("ContactUs", "Main");
         }
 
         public ActionResult Project(Home model)
@@ -141,7 +141,7 @@ namespace GYF.Controllers
             }
             return View(model);
         }
-       
+
 
         public ActionResult Career()
         {
@@ -555,12 +555,81 @@ namespace GYF.Controllers
                 foreach (DataRow r in ds.Tables[0].Rows)
                 {
                     Admin model = new Admin();
-                    model.BannerImage = "/BannerImage/"+r["BannerImage"].ToString();
+                    model.BannerImage = "/BannerImage/" + r["BannerImage"].ToString();
                     lst.Add(model);
                 }
                 obj.lstBanner = lst;
             }
             return View(obj);
+        }
+
+        public ActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("ForgetPassword")]
+        public ActionResult ForgetPassword(Home model)
+        {
+            try
+            {
+                DataSet ds = model.ForgetPassword();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["Login"] = "Your Password change successfully.";
+                        model.Email = ds.Tables[0].Rows[0]["Email"].ToString();
+                        if (model.Email != null)
+                        {
+                            string mailbody = "";
+                            try
+                            {
+                                model.Name = ds.Tables[0].Rows[0]["Name"].ToString();
+                                model.Password =Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
+                                mailbody = " &nbsp;&nbsp;&nbsp; Dear  " + model.Name + ",<br/>&nbsp;&nbsp;&nbsp; Your Password Is : " + model.Password;
+                                    
+                                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
+                                {
+                                    Host = "smtp.gmail.com",
+                                    Port = 587,
+                                    EnableSsl = true,
+                                    DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                                    UseDefaultCredentials = true,
+                                    Credentials = new NetworkCredential("grazieforyouventure@gmail.com", "Grazieforyou@9795")
+                                };
+                                using (var message = new MailMessage("grazieforyouventure@gmail.com", model.Email)
+                                {
+                                    IsBodyHtml = true,
+                                    Subject = "Forget Password",
+                                    Body = mailbody
+                                })
+                                    smtp.Send(message);
+
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        }
+                    }
+                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    {
+                        TempData["Login"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+                else
+                {
+                    TempData["Login"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Login"] = ex.Message;
+            }
+            return RedirectToAction("Login", "Main");
+
         }
     }
 }
