@@ -270,7 +270,15 @@ namespace GYF.Models
             return ds;
         }
 
-
+        public DataSet ForgetPassword()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@LoginId",LoginId)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("CheckLoginDetails", para);
+            return ds;
+        }
         
     }
 }

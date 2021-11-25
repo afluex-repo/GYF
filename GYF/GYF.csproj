@@ -1124,6 +1124,7 @@
     <Content Include="Views\Associate\TopUpUser.cshtml" />
     <Content Include="Views\Admin\GetCreerDetails.cshtml" />
     <Content Include="Views\Admin\GetContactDetails.cshtml" />
+    <Content Include="Views\Main\ForgetPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
