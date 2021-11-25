@@ -1,4 +1,5 @@
-﻿
+﻿@model GYF.Models.Home
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/WebsiteLayout.cshtml";
@@ -449,32 +450,46 @@
                 </div>
 
                 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    @using (Html.BeginForm("ContactUs", "Main", FormMethod.Post, new { @class = "phpdfsdg", @role = "form", enctype = "multipart/form-data" }))
+                    {
+                        <div class="row">
+                            <p style="color:red;">
+                                @TempData["Contact"]
+                            </p>
+                        </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name">Your Name</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
+                                <label for="name">Your Name<span style="color: red">*</span></label>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Your Name", @onkeypress = "return onlyAlphabets(event);" })
+                                @*<input type="text" name="name" class="form-control" id="name" required>*@
                             </div>
                             <div class="form-group col-md-6 mt-3 mt-md-0">
-                                <label for="name">Your Email</label>
-                                <input type="email" class="form-control" name="email" id="email" required>
+                                <label for="name">Your Email<span style="color: red">*</span></label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Your Email" })
+                                @*<input type="email" class="form-control" name="email" id="email" required>*@
                             </div>
                         </div>
                         <div class="form-group mt-3">
                             <label for="name">Subject</label>
-                            <input type="text" class="form-control" name="subject" id="subject" required>
+                            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" })
+                            @*<input type="text" class="form-control" name="subject" id="subject" required>*@
                         </div>
                         <div class="form-group mt-3">
                             <label for="name">Message</label>
-                            <textarea class="form-control" name="message" rows="10" required></textarea>
+                            @Html.TextAreaFor(m => m.Address, new { @rows = "10", @class = "form-control", @placeholder = "Message" })
+                            @*<textarea class="form-control" name="message" rows="10" required></textarea>*@
                         </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        @*<div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>*@
+                        <div class="container" style="text-align:center;">
+                            <input type="submit" id="btnnn" value="Send Message" onclick="return validateform();" class="text-center fgdfgfdgf" />
+
+                            @*<div class="text-center bbbb"><button type="submit" onclick="return validateform();">Send Message</button></div>*@
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form>
+                    }
                 </div>
 
             </div>
@@ -487,6 +502,53 @@
 <a href="https://wa.me/message/TL4R5ZYK44JIM1" title="gfy" class="float" target="_blank">
     <i class="bi bi-whatsapp my-float"></i>
 </a>
+<script>
+    function validateform() {
+
+        $(".errortext").removeClass("errortext");
+        if ($('#Name').val() == '') {
+            $("#Name").addClass('errortext');
+            $('#Name').focus();
+            return false;
+        }
+
+        if ($('#Email').val() == '') {
+            $("#Email").addClass('errortext');
+            $('#Email').focus();
+            return false;
+        }
+    }
+
+
+    function onlyAlphabets(e, t) {
+        try {
+            if (window.event) {
+                var charCode = window.event.keyCode;
+            }
+            else if (e) {
+                var charCode = e.which;
+            }
+            else { return true; }
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode == 32))
+                return true;
+            else
+                return false;
+        }
+        catch (err) {
+            alert(err.Description);
+        }
+    }
+
+
+
+
+</script>
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>
 
 
 
