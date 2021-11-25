@@ -5,6 +5,7 @@
 }
 
 
+
 <div id="carousel" class="carousel slide" data-ride="carousel">
 
     <div class="carousel-inner" role="listbox">
@@ -40,29 +41,6 @@
 
             <div class="row portfolio-container">
 
-                @*@if (Model != null)
-                    {
-                        if (Model.lstProject != null)
-                        {
-                            int i = 1;
-                            foreach (var item in Model.lstProject)
-                            {
-
-                                <div class="col-lg-4 col-md-6 portfolio-item filter-office">
-                                    <img src="@item.Image" class="img-fluid" alt="">
-                                    <div class="portfolio-info">
-                                        <h4>@item.OfficeProjectNo</h4>
-                                        <p>@item.OfficeProject</p>
-                                        <a href="@item.Image" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="@item.OfficeProjectNo"><i class="bx bx-plus"></i></a>
-                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                                i++;
-                            }
-                        }
-                    }*@
-
-
                 @if (Model != null)
                 {
                     if (Model.lstProject != null)
@@ -70,12 +48,10 @@
                         int i = 1;
                         foreach (var item in Model.lstProject)
                         {
-
-
                             if (item.ProjectType == "Office")
                             {
                                 <div class="col-lg-4 col-md-6 portfolio-item filter-office">
-                                    <img src="@item.Image" class="img-fluid" alt="">
+                                    <img src="@item.image" class="img-fluid" alt="">
                                     <div class="portfolio-info">
                                         <h4>@item.ProjectName</h4>
                                         <p>@item.ProjectType</p>
@@ -96,21 +72,11 @@
                                     </div>
                                 </div>
                             }
-
-
-
-
-
-
-
-
                             i++;
                         }
                     }
                 }
-
-
-
+                
                 @*@if (Model != null)
                 {
                     if (Model.lstProject != null)
@@ -141,3 +107,4 @@
 
 
 <!-------==========Whatsapp==================---------->
+
