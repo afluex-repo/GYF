@@ -41,42 +41,45 @@
                                         <div class="col-lg-12 digi_list_layout">
 
                                             <!-- /.panel-heading -->
-                                            <table id="example23" class="display table table-bordered" cellspacing="0" width="100%" style="width:100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Sr No.</th>
-                                                        <th>Transaction Date</th>
-                                                        <th>Narration</th>
-                                                        <th>CrAmount</th>
-                                                        <th>DrAMount</th>
-                                                        <th>Balance</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @if (Model != null)
-                                                    {
-                                                        if (Model.lstewalletledger != null)
+                                            <div class="table table-responsive">
+
+                                                <table id="example23" class="display table table-bordered" cellspacing="0" width="100%" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Sr No.</th>
+                                                            <th>Transaction Date</th>
+                                                            <th>Narration</th>
+                                                            <th>CrAmount</th>
+                                                            <th>DrAMount</th>
+                                                            <th>Balance</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model != null)
                                                         {
-                                                            int i = 1;
-                                                            foreach (var Item in Model.lstewalletledger)
+                                                            if (Model.lstewalletledger != null)
                                                             {
-                                                                <tr class="text-left">
-                                                                    <td>@i</td>
+                                                                int i = 1;
+                                                                foreach (var Item in Model.lstewalletledger)
+                                                                {
+                                                                    <tr class="text-left">
+                                                                        <td>@i</td>
 
-                                                                    <td>@Item.AddedOn</td>
-                                                                    <td>@Item.Narration</td>
-                                                                    <td>@Item.CrAmount</td>
-                                                                    <td>@Item.DrAmount</td>
-                                                                    <td>@Item.EwalletBalance</td>
+                                                                        <td>@Item.AddedOn</td>
+                                                                        <td>@Item.Narration</td>
+                                                                        <td>@Item.CrAmount</td>
+                                                                        <td>@Item.DrAmount</td>
+                                                                        <td>@Item.EwalletBalance</td>
 
-                                                                </tr>
-                                                                i++;
+                                                                    </tr>
+                                                                    i++;
+                                                                }
+
                                                             }
-
                                                         }
-                                                    }
-                                                </tbody>
-                                            </table>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                             <!-- /.panel-body -->
                                             <!-- /.panel -->
                                         </div>

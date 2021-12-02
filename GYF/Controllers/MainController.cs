@@ -579,7 +579,6 @@ namespace GYF.Controllers
                 {
                     if (ds.Tables[0].Rows[0][0].ToString() == "1")
                     {
-                        TempData["Login"] = "Your Password change successfully.";
                         model.Email = ds.Tables[0].Rows[0]["Email"].ToString();
                         if (model.Email != null)
                         {
@@ -592,6 +591,7 @@ namespace GYF.Controllers
                                     
                                 System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
                                 {
+
                                     Host = "smtp.gmail.com",
                                     Port = 587,
                                     EnableSsl = true,
@@ -606,11 +606,11 @@ namespace GYF.Controllers
                                     Body = mailbody
                                 })
                                     smtp.Send(message);
-
+                                TempData["Login"] = "password sent your email-id successfully.";
                             }
                             catch (Exception ex)
                             {
-
+                                TempData["Login"] = ex.Message;
                             }
                         }
                     }
