@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -586,22 +588,22 @@ namespace GYF.Controllers
                             try
                             {
                                 model.Name = ds.Tables[0].Rows[0]["Name"].ToString();
-                                model.Password =Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
+                                model.Password = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
                                 mailbody = " &nbsp;&nbsp;&nbsp; Dear  " + model.Name + ",<br/>&nbsp;&nbsp;&nbsp; Your Password Is : " + model.Password;
-                                    
-                                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
-                                {
 
-                                    Host = "smtp.gmail.com",
+                                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
+                                {   
+                                Host = "smtp.gmail.com",
                                     Port = 587,
                                     EnableSsl = true,
                                     DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
                                     UseDefaultCredentials = true,
-                                    Credentials = new NetworkCredential("grazieforyouventure@gmail.com", "Grazieforyou@9795")
+                                    Credentials = new NetworkCredential("developer2.afluex@gmail.com", "deve@486")
                                 };
-                                using (var message = new MailMessage("grazieforyouventure@gmail.com", model.Email)
+                                using (var message = new MailMessage("developer2.afluex@gmail.com", model.Email)
                                 {
-                                    IsBodyHtml = true,
+                                    
+                                IsBodyHtml = true,
                                     Subject = "Forget Password",
                                     Body = mailbody
                                 })

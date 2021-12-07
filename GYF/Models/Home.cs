@@ -67,7 +67,6 @@ namespace GYF.Models
         public string ROIAmount { get; set; }
         
 
-
         public DataSet Login()
         {
             SqlParameter[] param = { new SqlParameter("@LoginID",LoginId),
