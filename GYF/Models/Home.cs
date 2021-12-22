@@ -65,8 +65,7 @@ namespace GYF.Models
         public string PinAmount { get; set; }
 
         public string ROIAmount { get; set; }
-        
-
+        public string EmailBodyHTML { get; set; }
 
         public DataSet Login()
         {
