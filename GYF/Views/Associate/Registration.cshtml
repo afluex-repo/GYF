@@ -38,12 +38,12 @@
                     <div class="card-body">
                         <div class="row justify-content-center">
                             <div class="col-md-12 mx-auto">
-                                @*<div class="row">
+                                <div class="row">
                                     <label><b style="color:red;">Wallet Balance</b> :@ViewBag.WalletBalanceNew</label>
-                                </div>*@
+                                </div>
 
                                 <div class="row ">
-                                    <div class="col-lg-4 col-md-4" style="display:none">
+                                    <div class="col-lg-4 col-md-4">
                                         <div class="form-group ">
                                             <label>Subscription<span style="color:red;font-size: 21px;">*</span></label>
                                             @Html.DropDownListFor(m => m.PackageId, new SelectList(ViewBag.Package, "Value", "Text"), new { @class = "form-control", @Placeholder = "Package Id", })
@@ -174,16 +174,15 @@
         if (charCode != 46 && charCode > 31
           && (charCode < 48 || charCode > 57))
             return false;
-
         return true;
     }
     function ValidateForm() {
         $(".errortext").removeClass("errortext");
-        //if ($('#PackageId').val() == '0') {
-        //    $("#PackageId").addClass('errortext');
-        //    $('#PackageId').focus();
-        //    return false;
-        //}
+        if ($('#PackageId').val() == '0') {
+            $("#PackageId").addClass('errortext');
+            $('#PackageId').focus();
+            return false;
+        }
         if ($('#SponsorId').val() == '') {
             $("#SponsorId").addClass('errortext');
             $('#SponsorId').focus();
@@ -270,11 +269,11 @@
     }
     function confirmregistration() {
         $(".errortext").removeClass("errortext");
-        //if ($('#PackageId').val() == '0') {
-        //    $("#PackageId").addClass('errortext');
-        //    $('#PackageId').focus();
-        //    return false;
-        //}
+        if ($('#PackageId').val() == '0') {
+            $("#PackageId").addClass('errortext');
+            $('#PackageId').focus();
+            return false;
+        }
         if ($('#SponsorId').val() == '') {
             $("#SponsorId").addClass('errortext');
             $('#SponsorId').focus();
