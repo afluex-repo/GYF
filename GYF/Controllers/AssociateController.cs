@@ -1629,15 +1629,11 @@ namespace GYF.Controllers
             ViewBag.Package = Package;
 
 
-            //DataSet ds3 = model.WalletBalanceNew();
-            //if (ds3 != null && ds3.Tables.Count > 0 && ds3.Tables[0].Rows.Count > 0)
-            //{
-            //    ViewBag.WalletBalanceNew = ds3.Tables[0].Rows[0]["BalanceAmount"].ToString();
-            //}
-
-
-
-
+            DataSet ds3 = model.WalletBalanceNew();
+            if (ds3 != null && ds3.Tables.Count > 0 && ds3.Tables[0].Rows.Count > 0)
+            {
+                ViewBag.WalletBalanceNew = ds3.Tables[0].Rows[0]["BalanceAmount"].ToString();
+            }
             return View(model);
         }
         public ActionResult ConfirmRegistration()
