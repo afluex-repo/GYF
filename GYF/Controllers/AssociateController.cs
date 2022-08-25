@@ -277,6 +277,7 @@ namespace GYF.Controllers
                 model.PAYTMNo = ds.Tables[0].Rows[0]["PAYTMNo"].ToString();
                 model.Phonepay = ds.Tables[0].Rows[0]["Phonepay"].ToString();
                 model.GooglePay = ds.Tables[0].Rows[0]["GooglePay"].ToString();
+                model.UPINo = ds.Tables[0].Rows[0]["UPINo"].ToString();
             }
             return View(model);
         }
@@ -1426,7 +1427,7 @@ namespace GYF.Controllers
         [HttpPost]
         [ActionName("UploadKYC")]
         [OnAction(ButtonName = "btnUpdateAdhar")]
-        public ActionResult KYCDocuments(IEnumerable<HttpPostedFileBase> postedFile, Associate obj)
+        public ActionResult KYCDocuments(IEnumerable<HttpPostedFileBase> postedFile, IEnumerable<HttpPostedFileBase> postedPan, IEnumerable<HttpPostedFileBase> postedDoc, Associate obj)
         {
             string FormName = "";
             string Controller = "";
@@ -1441,6 +1442,31 @@ namespace GYF.Controllers
 
                         obj.AdharImage = "/KYCDocuments/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
                         file.SaveAs(Path.Combine(Server.MapPath(obj.AdharImage)));
+
+                    }
+
+                }
+
+                foreach (var file in postedPan)
+                {
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        //E:\BitBucket\TejInfraZone\TejInfra\files\assets\images\
+
+                        obj.PanImage = "/KYCDocuments/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
+                        file.SaveAs(Path.Combine(Server.MapPath(obj.PanImage)));
+
+                    }
+
+                }
+                foreach (var file in postedDoc)
+                {
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        //E:\BitBucket\TejInfraZone\TejInfra\files\assets\images\
+
+                        obj.DocumentImage = "/KYCDocuments/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
+                        file.SaveAs(Path.Combine(Server.MapPath(obj.DocumentImage)));
 
                     }
 
@@ -1608,10 +1634,6 @@ namespace GYF.Controllers
             {
                 ViewBag.WalletBalanceNew = ds3.Tables[0].Rows[0]["BalanceAmount"].ToString();
             }
-
-
-
-
             return View(model);
         }
         public ActionResult ConfirmRegistration()
@@ -1745,7 +1767,138 @@ namespace GYF.Controllers
             }
             return RedirectToAction("PayoutRequest", "Associate");
         }
+
+        public ActionResult ChangePasswordUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("ChangePasswordUser")]
+        public ActionResult ChangePasswordUser(Associate model)
+        {
+            try
+            {
+                model.UpdatedBy = Session["Pk_userId"].ToString();
+                model.Password = Crypto.Encrypt(model.Password);
+                model.NewPassword = Crypto.Encrypt(model.NewPassword);
+                DataSet ds = model.ChangePassword();
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["Error"] = "Password Changed  Successfully";
+                    }
+                    else
+                    {
+                        TempData["Error"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+            }
+            return RedirectToAction("ChangePasswordUser", "Associate");
+        }
+
+
+        public ActionResult TopUpUser( string PK_ProductId)
+        {
+            Associate model = new Associate();
+            model.PK_ProductId = PK_ProductId;
+            model.AddedBy = Session["Pk_userId"].ToString();
+            int count1 = 0;
+            List<SelectListItem> ddlProduct = new List<SelectListItem>();
+            DataSet ds = model.ProductNameDetails();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    if (count1 == 0)
+                    {
+                        ddlProduct.Add(new SelectListItem { Text = "--Select--", Value = "" });
+                    }
+                    ddlProduct.Add(new SelectListItem { Text = r["ProductName"].ToString(), Value = r["PK_ProductId"].ToString() });
+                    count1 = count1 + 1;
+                }
+            }
+
+            ViewBag.ddlProduct = ddlProduct;
+            DataSet ds3 = model.WalletBalanceNew();
+            if (ds3 != null && ds3.Tables.Count > 0 && ds3.Tables[0].Rows.Count > 0)
+            {
+                ViewBag.WalletBalanceNew = ds3.Tables[0].Rows[0]["BalanceAmount"].ToString();
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("TopUpUser")]
+        [OnAction(ButtonName = "topup")]
+        public ActionResult SaveTopUp(Associate model)
+        {
+            try
+            {
+                int count1 = 0;
+                List<SelectListItem> ddlProduct = new List<SelectListItem>();
+                DataSet dsproduct = model.ProductNameDetails();
+                if (dsproduct != null && dsproduct.Tables.Count > 0 && dsproduct.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow r in dsproduct.Tables[0].Rows)
+                    {
+                        if (count1 == 0)
+                        {
+                            ddlProduct.Add(new SelectListItem { Text = "--Select--", Value = "" });
+                        }
+                        ddlProduct.Add(new SelectListItem { Text = r["ProductName"].ToString(), Value = r["PK_ProductId"].ToString() });
+                        count1 = count1 + 1;
+                    }
+                }
+
+                ViewBag.ddlProduct = ddlProduct;
+                model.AddedBy = Session["Pk_userId"].ToString();
+                DataSet ds = model.SaveTopUp();
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                    {
+                        TempData["TopUp"] = "TopUp Save Successfully";
+                    }
+                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                    {
+                        TempData["TopUp"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["TopUp"] = ex.Message;
+            }
+            return View(model);
+        }
+
         
+        public ActionResult GetAmount(string PK_ProductId)
+        {
+            Home model = new Home();
+            model.PK_ProductId = PK_ProductId;
+            model.AddedBy = Session["Pk_userId"].ToString();
+            DataSet ds = model.GetAmount();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                model.Result = "Yes";
+                model.ROIAmount = ds.Tables[0].Rows[0]["ProductPrice"].ToString();
+
+            }
+            else
+            {
+                model.Result = "no";
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 
 }

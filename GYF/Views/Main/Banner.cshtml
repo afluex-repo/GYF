@@ -1,0 +1,56 @@
+﻿@model GYF.Models.Admin
+
+@{
+    ViewBag.Title = "Banner";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+<section class="page-title" style="background-image:url(../../Websitecss/images/background/2.1.jpg)">
+    <div class="auto-container">
+        <div class="inner-container clearfix">
+            <div class="pull-left">
+                <h1>Banner</h1>
+            </div>
+            <div class="pull-right">
+                <ul class="bread-crumb clearfix">
+                    <li><a href="/Main/Index">Home</a></li>
+                    <li>Our RealEstate-Banner</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+<!-- Gallery Section -->
+<section class="projects-section project-page-section inngallery">
+    <div class="auto-container">
+        <!--MixitUp Galery-->
+        <div class="mixitup-gallery">
+            <div class="filter-list row clearfix">
+                <!-- Project Block -->
+                @if (Model != null)
+                {
+                    if (Model.lstBanner != null)
+                    {
+                        foreach (var item in Model.lstBanner)
+                        {
+                            <div class="project-block mix manufacture mechanical col-lg-4 col-md-4 col-sm-12">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="@item.BannerImage" alt=""/>
+                                        <div class="overlay-box">
+                                            <a href="@item.BannerImage" class="plus-icon lightbox-image"
+                                               data-fancybox-group="gallery-one"><span class="icon fa fa-plus"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+
+            </div>
+
+        </div>
+    </div>
+</section>

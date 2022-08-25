@@ -47,82 +47,91 @@
                                                         @Html.TextBoxFor(m => m.DOB, new { @class = "form-control", @readonly = "readonly" })
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-1">
                                                     <div class="form-group">
                                                         Profile Pic
-                                                        <input type="file" name="Image" class="bg-default form-control" id="Image" />
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        Address <span style="color: red">*</span>
-                                                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @Placeholder = "Address" })
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        Mobile <span style="color: red">*</span>
-                                                        @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @Placeholder = "Mobile", @onkeypress = "return isNumberKey(event);", @maxlength = "10", @minlength = "10" })
+                                                        <input type="file" name="Image" class="bg-default" id="Image" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        Pincode<span style="color: red">*</span>
-                                                        @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control", @Placeholder = "PinCode", @onkeypress = "return isNumberKey(event);", @maxlength = "6", @onchange = "return GetstateCity();" })
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        City
-                                                        @Html.TextBoxFor(m => m.City, new { @class = "form-control", @Placeholder = "City", @readonly = "readonly" })
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        State
-                                                        @Html.TextBoxFor(m => m.State, new { @class = "form-control", @Placeholder = "State", @readonly = "readonly" })
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        Email
-                                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @Placeholder = "Email" })
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        NomineName<span style="color: red">*</span>
-                                                        @Html.TextBoxFor(m => m.NomineName, new { @class = "form-control", @Placeholder = "Nominee Name" })
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        Nominee Relation<span style="color: red">*</span>
-                                                        @Html.TextBoxFor(m => m.NomineRealation, new { @class = "form-control", @Placeholder = "Nominee Relation" })
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="row">
-
-                                                <input type="submit" class="btn btn-success" value="Update" name="btnUpdateProfile" onclick="return validate();" />
+                                                 <div class="form-group">
+                                                     <button type="reset" id="pseudoCancel" class="btn btn-danger btn-sm" style="margin-top:15px;">
+                                                         Cancel
+                                                     </button>
                                             </div>
                                         </div>
-                                    </div>
+
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                Address <span style="color: red">*</span>
+                                                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @Placeholder = "Address" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                Mobile <span style="color: red">*</span>
+                                                                @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @Placeholder = "Mobile", @onkeypress = "return isNumberKey(event);", @maxlength = "10", @minlength = "10" })
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                Pincode<span style="color: red">*</span>
+                                                                @Html.TextBoxFor(m => m.PinCode, new { @class = "form-control", @Placeholder = "PinCode", @onkeypress = "return isNumberKey(event);", @maxlength = "6", @onchange = "return GetstateCity();" })
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                City
+                                                                @Html.TextBoxFor(m => m.City, new { @class = "form-control", @Placeholder = "City", @readonly = "readonly" })
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                State
+                                                                @Html.TextBoxFor(m => m.State, new { @class = "form-control", @Placeholder = "State", @readonly = "readonly" })
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                Email
+                                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @Placeholder = "Email" })
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                NomineName<span style="color: red">*</span>
+                                                                @Html.TextBoxFor(m => m.NomineName, new { @class = "form-control", @Placeholder = "Nominee Name" })
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                Nominee Relation<span style="color: red">*</span>
+                                                                @Html.TextBoxFor(m => m.NomineRealation, new { @class = "form-control", @Placeholder = "Nominee Relation" })
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+
+                                                        <input type="submit" class="btn btn-success" value="Update" name="btnUpdateProfile" onclick="return validate();" />
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                 </div>
                             </div>
@@ -227,6 +236,78 @@
         });
 
     }
+
+
+
+
+
+  //  <form>
+  //Select File:
+  //  <input type="file" name="test1" id="testFile" />
+  //  <button type="reset" id="pseudoCancel">
+  //    Cancel
+  //  </button>
+  //</form>
+
+
+
+
+    var inputElement = document.getElementById("Image");
+    var cancelButton = document.getElementById("pseudoCancel");
+    var numFiles = 0;
+
+    inputElement.onclick = function (event) {
+        var target = event.target || event.srcElement;
+        console.log(target, "clicked.");
+        console.log(event);
+        if (target.value.length == 0) {
+            console.log("Suspect Cancel was hit, no files selected.");
+            cancelButton.onclick();
+        } else {
+            console.log("File selected: ", target.value);
+            numFiles = target.files.length;
+        }
+    }
+
+    inputElement.onchange = function (event) {
+        var target = event.target || event.srcElement;
+        console.log(target, "changed.");
+        console.log(event);
+        if (target.value.length == 0) {
+            console.log("Suspect Cancel was hit, no files selected.");
+            if (numFiles == target.files.length) {
+                cancelButton.onclick();
+            }
+        } else {
+            console.log("File selected: ", target.value);
+            numFiles = target.files.length;
+        }
+    }
+
+    inputElement.onblur = function (event) {
+        var target = event.target || event.srcElement;
+        console.log(target, "changed.");
+        console.log(event);
+        if (target.value.length == 0) {
+            console.log("Suspect Cancel was hit, no files selected.");
+            if (numFiles == target.files.length) {
+                cancelButton.onclick();
+            }
+        } else {
+            console.log("File selected: ", target.value);
+            numFiles = target.files.length;
+        }
+    }
+
+
+    cancelButton.onclick = function (event) {
+        console.log("Pseudo Cancel button clicked.");
+    }
+
+
+
+
+
 
 
 </script>

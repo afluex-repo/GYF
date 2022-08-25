@@ -234,6 +234,8 @@
             <span class="navbar-text ml-md-3">
                 <span class="badge badge-mark border-orange-300 mr-1"></span>
                 Welcome , @Session["FullName"] (@Session["LoginId"])
+                &nbsp; &nbsp;
+                <a href="/Associate/ChangePasswordUser">Change Password</a>
             </span>
         </div>
     </div>
@@ -303,6 +305,7 @@
                         <li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="fas fa-bezier-curve"></i> <span>Wallet</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                                <li class="nav-item"><a href="/Associate/TopupUser" class="nav-link">Topup</a></li>
                                 <li class="nav-item"><a href="/Wallet/EWalletRequest" class="nav-link">E-Wallet Request</a></li>
                                 <li class="nav-item"><a href="/Wallet/EwalletLedger" class="nav-link">E-Wallet Ledger</a></li>
                                 <li class="nav-item"><a href="/Wallet/ShoppingWalletLedger" class="nav-link">Shopping-Wallet Ledger</a></li>
@@ -342,6 +345,17 @@
                                
                               </ul>
                         </li>
+
+
+
+                        @*<li class="nav-item nav-item-submenu">
+                            <a href="/Associate/TopUpUser" class="nav-link"><i class="fab fa-cc-visa"></i> <span>TopUp</span></a>
+                        </li>*@
+
+
+
+
+
                         @*<li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="far fa-money-bill-alt"></i> <span>Payout Wallet</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Themes">

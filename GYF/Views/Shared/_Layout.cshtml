@@ -238,6 +238,9 @@
             <span class="navbar-text ml-md-3">
                 <span class="badge badge-mark border-orange-300 mr-2"></span>
                 Welcome, @Session["Name"],@Session["FullName"]
+                &nbsp; &nbsp;
+                <a href="/Main/ChangePassword">Change Password</a>
+
             </span>
         </div>
     </div>
@@ -290,12 +293,48 @@
                                 <li class="nav-item"><a href="/Admin/ProductList" class="nav-link">Product List</a></li>
                             </ul>
                         </li>
+
+
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-print"></i> <span>Project Master</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/Admin/project" class="nav-link">Add Project</a></li>
+                                <li class="nav-item"><a href="/Admin/GetProjectDetails" class="nav-link">Project List</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-print"></i> <span>Contact List</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/Admin/GetContactDetails" class="nav-link">Contact Details</a></li>
+                               
+                            </ul>
+                        </li>
+
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-print"></i> <span>Career List</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/Admin/GetCreerDetails" class="nav-link">Creer Details</a></li>
+                   
+                            </ul>
+                        </li>
+
+
+
                         <li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="fas fa-users"></i> <span>News Master</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                                 <li class="nav-item"><a href="/Admin/NewsMaster" class="nav-link">Add News</a></li>
 
                                 <li class="nav-item"><a href="/Admin/NewsMasterList" class="nav-link">News List</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="fas fa-users"></i> <span>Banner Master</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="/Admin/UploadBanner" class="nav-link">Upload Banner</a></li>
                             </ul>
                         </li>
                         <li class="nav-item nav-item-submenu">
@@ -315,10 +354,10 @@
                                 @*<li class="nav-item"><a href="/AdminReports/AutoPoolStructure" class="nav-link">Auto Pool Structure</a></li>*@
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a href="/AdminReports/TopUp" class="nav-link"><i class="fas fa-users"></i> <span>TopUp</span></a>
                             
-                        </li>
+                        </li>*@
 
                         @*<li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="fa fa-thumbtack"></i> <span>Pin Management</span></a>
@@ -351,6 +390,7 @@
                                 <li class="nav-item"><a href="/AdminReports/PayoutDetails" class="nav-link">Payout Details</a></li>
                                 <li class="nav-item"><a href="/AdminReports/PaidPayoutDetails" class="nav-link">Paid Payout Details</a></li>
                                 <li class="nav-item"><a href="/AdminReports/GetPayoutRequestList" class="nav-link">Get Payout Request List</a></li>
+                                <li class="nav-item"><a href="/Admin/DistributePayment" class="nav-link">Distribute Payment</a></li>
                             </ul>
                         </li>
                         @*<li class="nav-item nav-item-submenu">

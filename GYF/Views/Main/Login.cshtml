@@ -7,7 +7,7 @@
 
 @using (Html.BeginForm("LoginAction", "Main", FormMethod.Post, new { @id = "signupForm", @class = "md-float-material form-material" }))
 {
-    <div class="row">
+    <div class="row" style="margin-top:150px;margin-bottom:50px;">
 
         <div class="col-lg-4"></div>
         <div class="col-lg-4 logindesign" style="float:left;background-color:#57a695">
@@ -40,9 +40,11 @@
                     <div class="form-group col-md-1 col-sm-12">
                     </div>
                     <div class="form-group col-md-10 col-sm-12">
-                        <span style="color:red">@TempData["Login"]</span>
+                      
                         <input type="submit" id="Login" class="btn btn-info btn-block btn-flat margin-top-10" name="Login"
-                               value="Sign In" onclick="return validateform();">
+                               value="Sign In"  onclick="return validateform();">
+                       <u><a href="/main/ForgetPassword" style="color:white;text-align:left;">Forget Password</a>
+                           </u> <span style="color:red">@TempData["Login"]</span>
                     </div>
                     <div class="form-group col-md-1 col-sm-12">
                     </div>
@@ -65,15 +67,15 @@
         $(".errortext").removeClass("errortext");
 
 
-        if ($('#txtLoginID').val() == '') {
-            $("#txtLoginID").addClass('errortext');
-            $('#txtLoginID').focus();
+        if ($('#LoginId').val() == '') {
+            $("#LoginId").addClass('errortext');
+            $('#LoginId').focus();
             return false;
         }
 
-        if ($('#txtPassword').val() == '') {
-            $("#txtPassword").addClass('errortext');
-            $('#txtPassword').focus();
+        if ($('#Password').val() == '') {
+            $("#Password").addClass('errortext');
+            $('#Password').focus();
             return false;
         }
         $("#divload").css({ 'display': '' });
@@ -94,15 +96,15 @@
 
         $(".errortext").removeClass("errortext");
 
-        if ($('#txtLoginID').val() == '') {
-            $("#txtLoginID").addClass('errortext');
-            $('#txtLoginID').focus();
+        if ($('#LoginId').val() == '') {
+            $("#LoginId").addClass('errortext');
+            $('#LoginId').focus();
 
             return false;
         }
-        if ($('#txtPassword').val() == '') {
-            $("#txtPassword").addClass('errortext');
-            $('#txtPassword').focus();
+        if ($('#Password').val() == '') {
+            $("#Password").addClass('errortext');
+            $('#Password').focus();
 
             return false;
         }

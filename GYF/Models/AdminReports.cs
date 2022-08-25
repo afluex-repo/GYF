@@ -139,6 +139,12 @@ namespace GYF.Models
         public List<AdminReports> GetPayoutRequestList { get; set; }
         public string PK_ProductId { get; set; }
         public List<SelectListItem> ProductLst { get; set; }
+        public string ROIAmount { get; set; }
+        
+
+
+
+
         #endregion
 
         public DataSet GetStateCityByPincode()
@@ -537,5 +543,18 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("SaveTopUp", para);
             return ds;
         }
+
+        public DataSet GetAmount()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@PK_ProductID",PK_ProductId),
+
+            };
+            DataSet ds = DBHelper.ExecuteQuery("GetAmount", para);
+            return ds;
+        }
+
+
     }
 }

@@ -24,6 +24,7 @@ namespace GYF.Models
         public string PAYTMNo { get; set; }
         public string Phonepay { get; set; }
         public string GooglePay { get; set; }
+        public string UPINo { get; set; }
         public string NomineName { get; set; }
         public string NomineRealation { get; set; }
         public string DOB { get; set; }
@@ -105,6 +106,7 @@ namespace GYF.Models
         public string TokenId { get; set; }
         public string Reply { get; set; }
         public string SupportTokenId { get; set; }
+        public string PK_ProductId { get; set; }
 
         public string ReplyDate { get; set; }
         public List<Associate> SupportListM { get; set; }
@@ -142,7 +144,10 @@ namespace GYF.Models
 
         public string PK_PayoutId { get; set; }
         public string PayoutWallet { get; set; }
-        
+
+
+        public string Password { get; set; }
+        public string ConfirmNewPassword { get; set; }
 
         public DataSet GetStateCityByPincode()
         {
@@ -153,7 +158,20 @@ namespace GYF.Models
             return ds;
 
         }
-
+        public DataSet ProductNameDetails()
+        {
+            DataSet ds = DBHelper.ExecuteQuery("CreateProductMaster");
+            return ds;
+        }
+        public DataSet WalletBalanceNew()
+        {
+            SqlParameter[] para =
+            {
+                 new SqlParameter("@UserId",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("WalletBalance", para);
+            return ds;
+        }
         public DataSet GettingProfile()
         {
             SqlParameter[] para =
@@ -182,7 +200,17 @@ namespace GYF.Models
             DataSet ds = DBHelper.ExecuteQuery("UpdateProfile", para);
             return ds;
         }
-
+        public DataSet SaveTopUp()
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@FK_ProductId",PK_ProductId),
+                 new SqlParameter("@PinAmount",PinAmount),
+                  new SqlParameter("@AddedBy",AddedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("SaveTopUpByUser", para);
+            return ds;
+        }
         public DataSet UpdatePassword()
         {
             SqlParameter[] para ={
@@ -208,7 +236,8 @@ namespace GYF.Models
                 new SqlParameter("@AccountNo",AccountNo),
                 new SqlParameter("@PAYTMNo",PAYTMNo),
                 new SqlParameter("@Phonepay",Phonepay),
-                new SqlParameter("@GooglePay",GooglePay)
+                new SqlParameter("@GooglePay",GooglePay),
+                 new SqlParameter("@UPINo",UPINo)
             };
             DataSet ds = DBHelper.ExecuteQuery("UpdateBankdetails", para);
             return ds;
@@ -540,6 +569,17 @@ namespace GYF.Models
             };
             DataSet ds = DBHelper.ExecuteQuery("PayoutWallet", para);
             return ds;
+        }
+
+        public DataSet ChangePassword()
+        {
+            SqlParameter[] para = {new SqlParameter("@OldPassword",Password),
+                                   new SqlParameter("@NewPassword",NewPassword),
+                                   new SqlParameter("@UpdatedBy",UpdatedBy)
+            };
+            DataSet ds = DBHelper.ExecuteQuery("ChangePasswordForUser", para);
+            return ds;
+
         }
     }
 }
