@@ -33,7 +33,7 @@ namespace BusinessLayer
             //string strUrl = "http://smsw.co.in/API/WebSMS/Http/v1.0a/index.php?username=GYF&password=star123&sender=STARST&to=" + Mobile_Number + "&message=" + Message + "& reqid = 1 & format ={ json}&route_id = 39 & callback =#&unique=0&sendondate='" + DateTime.Now.ToString() + " '";
 
             string strUrl = "http://smsw.co.in/API/WebSMS/Http/v1.0a/index.php?username=capitalmax&password=KQiSFS-nmOC&sender=CMRETL&to=" + Mobile_Number + "&message=" + Message + "& reqid = 1 & format ={ json}&route_id = 39 & callback =#&unique=0&sendondate='" + DateTime.Now.ToString() + " '";
-
+             
             WebRequest request = HttpWebRequest.Create(strUrl);
             // Get the response back  
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
