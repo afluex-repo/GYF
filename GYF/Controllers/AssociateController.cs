@@ -8,6 +8,8 @@ using GYF.Filter;
 using System.Data;
 using System.IO;
 using BusinessLayer;
+using System.Net.Mail;
+using System.Net;
 
 namespace GYF.Controllers
 {
@@ -1643,6 +1645,9 @@ namespace GYF.Controllers
 
         public ActionResult RegistrationAction(string SponsorId, string FirstName, string LastName, string Email, string MobileNo,  string Gender, string PinCode, string Password,string PackageId)
         {
+            SmtpClient smtpClient = new SmtpClient();
+            MailMessage message = new MailMessage();
+
             Home obj = new Home();
             #region ddlgender
             List<SelectListItem> ddlgender = Common.BindGender();
@@ -1687,13 +1692,41 @@ namespace GYF.Controllers
                         Session["PassWord"] = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
                         Session["Transpassword"] = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
 
-                        obj.Response = "1";
-                        try
+
+                        //obj.LoginId = ds.Tables[0].Rows[0]["LoginId"].ToString();
+                        //obj.Name = ds.Tables[0].Rows[0]["Name"].ToString();
+                        //obj.Password = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
+                        obj.Email = ds.Tables[0].Rows[0]["Email"].ToString();
+                        
+                        string signature = "Congratulations on joining our ventures ! <br/>GRAZIE FOR YOU <br/>We look forward to sharing many success<br/><br/>Dear  " + Session["DisplayName"].ToString() + ",<br/>Your LoginId Is : " + Session["Login_Id"].ToString() + "<br/>Your Password Is :"+ Session["PassWord"].ToString()+"<br/><br/>Team<br/>Grazie for you";
+
+                        using (MailMessage mail = new MailMessage())
                         {
-                            string str2 = BLSMS.Registration(ds.Tables[0].Rows[0]["Name"].ToString(), ds.Tables[0].Rows[0]["LoginId"].ToString(), Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString()));
-                            BLSMS.SendSMSNew(MobileNo, str2);
+                            mail.From = new MailAddress("email@gmail.com");
+                            //mail.To.Add("somebody@domain.com");
+                            mail.To.Add(obj.Email);
+                            mail.Subject = "Registration";
+                            mail.Body = signature;
+                            mail.IsBodyHtml = true;
+                            //mail.Attachments.Add(new Attachment("C:\\file.zip"));
+
+                            using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                            {
+                                smtp.Credentials = new NetworkCredential("grazieforyouventure@gmail.com", "Grazieforyou@9795");
+                                //smtp.Credentials = new NetworkCredential("developer2.afluex@gmail.com", "deve@486");
+                                smtp.EnableSsl = true;
+                                smtp.Send(mail);
+                            }
                         }
-                        catch (Exception ex) { }
+
+                        
+                        obj.Response = "1";
+                        //try
+                        //{
+                        //    string str2 = BLSMS.Registration(ds.Tables[0].Rows[0]["Name"].ToString(), ds.Tables[0].Rows[0]["LoginId"].ToString(), Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString()));
+                        //    BLSMS.SendSMSNew(MobileNo, str2);
+                        //}
+                        //catch (Exception ex) { }
 
                     }
                     else
