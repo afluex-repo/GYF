@@ -1712,8 +1712,8 @@ namespace GYF.Controllers
 
                             using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                             {
-                                smtp.Credentials = new NetworkCredential("grazieforyouventure@gmail.com", "Grazieforyou@9795");
-                                //smtp.Credentials = new NetworkCredential("developer2.afluex@gmail.com", "deve@486");
+                                //smtp.Credentials = new NetworkCredential("grazieforyouventure@gmail.com", "Grazieforyou@9795");
+                               smtp.Credentials = new NetworkCredential("developer2.afluex@gmail.com", "devel@#12345");
                                 smtp.EnableSsl = true;
                                 smtp.Send(mail);
                             }
