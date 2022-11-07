@@ -78,6 +78,38 @@ namespace BusinessLayer
             return Message;
         }
 
+
+
+
+        static public string CustomerRegistration(string Name, string LoginId, string Password)
+        {
+            string Message = ConfigurationSettings.AppSettings["Registration"].ToString();
+
+            Message = Message.Replace("[LoginId]", LoginId);
+            Message = Message.Replace("[Name]", Name);
+            Message = Message.Replace("[Password]", Password);
+            return Message;
+        }
         
+        static public void SendSMS(string Mobile, string Message, string TempId)
+        {
+            try
+            {
+                string SMSAPI = ConfigurationSettings.AppSettings["SMSAPI"].ToString();
+                SMSAPI = SMSAPI.Replace("[AND]", "&");
+                SMSAPI = SMSAPI.Replace("[MOBILE]", Mobile);
+                SMSAPI = SMSAPI.Replace("[MESSAGE]", Message);
+                SMSAPI = SMSAPI.Replace("[TempId]", TempId);
+                SMSAPI = SMSAPI.Replace("[Date]", DateTime.Now.ToString());
+                HttpWebRequest httpReq = (HttpWebRequest)WebRequest.Create(new Uri(SMSAPI, false));
+                HttpWebResponse httpResponse = (HttpWebResponse)(httpReq.GetResponse());
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+
+
     }
 }
