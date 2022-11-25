@@ -138,18 +138,16 @@ namespace GYF.Models
                                    new SqlParameter("@MobileNo",MobileNo),
                                    new SqlParameter("@FirstName",FirstName),
                                    new SqlParameter("@LastName",LastName),
-
                                     new SqlParameter("@RegisterBy",RegistrationBy),
-
                                      new SqlParameter("@PinCode",PinCode),
-
                                      new SqlParameter("@Password",Password),
                                      new SqlParameter("@PackageId",PackageId)
                                    };
-            DataSet ds = DBHelper.ExecuteQuery("Registration", para);
+            DataSet ds = DBHelper.ExecuteQuery("FreeRegistration", para);
             return ds;
         }
-        public DataSet GetProductList()
+
+    public DataSet GetProductList()
         {
             DataSet ds = DBHelper.ExecuteQuery("ProductListNew");
             return ds;

@@ -5,8 +5,6 @@
     Layout = "";
 }
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <style>
    @@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     *{
@@ -169,7 +167,7 @@ a.logo_text {
         border: 1px solid red !important;
     }
 </style>
-<div class="loader" id="divload" style="display: none;"></div>
+<div class="loader" id="divloadd" style="display: none;"></div>
 <!-- Login page -->
 <div class="login_wrapper">
     <div class="login_box">
@@ -186,7 +184,7 @@ a.logo_text {
                          </div>
                         <div class="col-md-6 form-group">
                             <div class="field-label">Sponsor Name </div>
-                            @Html.TextBoxFor(m => m.SponsorName, new { @class = "input-text", @Disabled = "true" })
+                            @Html.TextBoxFor(m => m.SponsorName, new { @class = "input-text", @ReadOnly = "true" })
                         </div>
                         <div class="col-md-6 form-group">
                             <div class="field-label">First Name <sup style="color:red;font-size: 21px;">*</sup></div>
@@ -222,11 +220,11 @@ a.logo_text {
                         </div>
                         <div class="col-md-6 form-group">
                             <div class="field-label">State </div>
-                            @Html.TextBoxFor(m => m.State, new { @class = "input-text", @Placeholder = "State", @Disabled = "disabled" })
+                            @Html.TextBoxFor(m => m.State, new { @class = "input-text", @Placeholder = "State", @ReadOnly = "true" })
                         </div>
                         <div class="col-md-12 form-group">
                             <div class="field-label">City </div>
-                            @Html.TextBoxFor(m => m.City, new { @class = "input-text", @Placeholder = "City", @Disabled = "disabled" })
+                            @Html.TextBoxFor(m => m.City, new { @class = "input-text", @Placeholder = "City", @ReadOnly = "true" })
                         </div>
                         <div class="form-group col-md-12">
                             <input type="button" id="Confirm" onclick="return confirmregistration();" class="btn-md btn-theme btn-block" name="Confirm" value="Confirm" />
@@ -320,7 +318,8 @@ a.logo_text {
 </div>*@
 
 
-<script src="http://dharaworld.com/AssociatePanelcss/bower_components/jquery/dist/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 
 
@@ -374,6 +373,7 @@ a.logo_text {
         }
     }
     function getstatecity() {
+        debugger;
         $(".errortext").removeClass("errortext");
         $("#divload").css({ 'display': '' });
         $.ajax({

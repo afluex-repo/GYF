@@ -118,6 +118,21 @@ namespace GYF.Models
 
             return ds;
         }
+
+
+        public DataSet GetUserNameDetails()
+        {
+            SqlParameter[] para = {
+                                      new SqlParameter("@PK_UserId", ReferBy),
+
+                                  };
+            DataSet ds = DBHelper.ExecuteQuery("GetUserNameDetails", para);
+
+            return ds;
+        }
+
+        
+
         public DataSet GetMemberDetailsForSale()
         {
             SqlParameter[] para = { new SqlParameter("@LoginId", ReferBy), };

@@ -30,9 +30,9 @@ namespace BusinessLayer
             // use the API URL here  
             //string strUrl = "http://smsw.co.in/API/WebSMS/Http/v1.0a/index.php?username=dharaworld&password=123456&sender=DHARAW&to=8052949381&message=" + 
             //    User + "&password=" + password + "&senderid=" + senderid + "&route=2&number=" + Mobile_Number + "&message=" + Message;        // Create a request object  
-            //string strUrl = "http://smsw.co.in/API/WebSMS/Http/v1.0a/index.php?username=GYF&password=star123&sender=STARST&to=" + Mobile_Number + "&message=" + Message + "& reqid = 1 & format ={ json}&route_id = 39 & callback =#&unique=0&sendondate='" + DateTime.Now.ToString() + " '";
+            string strUrl = "http://smsw.co.in/API/WebSMS/Http/v1.0a/index.php?username=GYF&password=star123&sender=STARST&to=" + Mobile_Number + "&message=" + Message + "& reqid = 1 & format ={ json}&route_id = 39 & callback =#&unique=0&sendondate='" + DateTime.Now.ToString() + " '";
 
-            string strUrl = "http://smsw.co.in/API/WebSMS/Http/v1.0a/index.php?username=capitalmax&password=KQiSFS-nmOC&sender=CMRETL&to=" + Mobile_Number + "&message=" + Message + "& reqid = 1 & format ={ json}&route_id = 39 & callback =#&unique=0&sendondate='" + DateTime.Now.ToString() + " '";
+            //string strUrl = "http://smsw.co.in/API/WebSMS/Http/v1.0a/index.php?username=capitalmax&password=KQiSFS-nmOC&sender=CMRETL&to=" + Mobile_Number + "&message=" + Message + "& reqid = 1 & format ={ json}&route_id = 39 & callback =#&unique=0&sendondate='" + DateTime.Now.ToString() + " '";
              
             WebRequest request = HttpWebRequest.Create(strUrl);
             // Get the response back  
