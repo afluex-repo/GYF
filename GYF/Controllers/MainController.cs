@@ -653,35 +653,52 @@ namespace GYF.Controllers
                 {
                     if (ds.Tables[0].Rows[0][0].ToString() == "1")
                     {
-                        model.Email = ds.Tables[0].Rows[0]["Email"].ToString();
-                        model.Name = ds.Tables[0].Rows[0]["Name"].ToString();
-                        model.Password = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
+                        //model.MobileNo = ds.Tables[0].Rows[0]["Mobile"].ToString();
+                        //model.Email = ds.Tables[0].Rows[0]["Email"].ToString();
+                        //model.Name = ds.Tables[0].Rows[0]["Name"].ToString();
+                        //model.Password = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
 
                         string signature = " &nbsp;&nbsp;&nbsp; Dear  " + model.Name + ",<br/>&nbsp;&nbsp;&nbsp; Your Password Is : " + model.Password;
+                        
+                        /////
 
-                        using (MailMessage mail = new MailMessage())
-                        {
-                            mail.From = new MailAddress("email@gmail.com");
-                            //mail.To.Add("somebody@domain.com");
-                            mail.To.Add(model.Email);
-                            mail.Subject = "Forget Password";
-                            mail.Body = signature;
-                            mail.IsBodyHtml = true;
-                            //mail.Attachments.Add(new Attachment("C:\\file.zip"));
+                        //using (MailMessage mail = new MailMessage())
+                        //{
+                        //    mail.From = new MailAddress("email@gmail.com");
+                        //    //mail.To.Add("somebody@domain.com");
+                        //    mail.To.Add(model.Email);
+                        //    mail.Subject = "Forget Password";
+                        //    mail.Body = signature;
+                        //    mail.IsBodyHtml = true;
+                        //    //mail.Attachments.Add(new Attachment("C:\\file.zip"));
 
-                            using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
-                            {
-                                smtp.Credentials = new NetworkCredential("grazieforyouventure@gmail.com", "Grazieforyou@9795");
-                                //smtp.Credentials = new NetworkCredential("developer2.afluex@gmail.com", "deve@486");
-                                smtp.EnableSsl = true;
-                                smtp.Send(mail);
-                            }
-                        }
+                        //    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                        //    {
+                        //        smtp.Credentials = new NetworkCredential("grazieforyouventure@gmail.com", "Grazieforyou@9795");
+                        //        //smtp.Credentials = new NetworkCredential("developer2.afluex@gmail.com", "deve@486");
+                        //        smtp.EnableSsl = true;
+                        //        smtp.Send(mail);
+                        //    }
+                        //}
 
+                        /////
+                        
                         //TempData["Class"] = "alert alert-success";
                         //TempData["SendEmail"] = "Email sent successfully";
+                        
+                        try
+                        {
+                            string Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
+                            string Name = ds.Tables[0].Rows[0]["Name"].ToString();
+                            string Password = Crypto.Decrypt(ds.Tables[0].Rows[0]["Password"].ToString());
+                            string TempId = "1707166218546344510";
+                            BLSMS.SendSMS(Mobile, "Dear " + Name + ",Your Password is : " + Password + ". GRAZIEFORYOU", TempId);
 
+                        }
+                        catch { }
+                        
                         TempData["Login"] = "password sent your email-id successfully.";
+                        
                     }
 
                     else if (ds.Tables[0].Rows[0][0].ToString() == "0")
