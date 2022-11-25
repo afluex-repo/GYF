@@ -244,10 +244,41 @@
                             </div>
                         </div>*@
                 </div>
+
+
+          
+                <!---------------PopUp Start-------------------->
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    @*<div class="modal-dialog">*@
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Share Link</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <span class="s-icon"><a href="mailto:?subject= Referral Link &amp;body=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString(). Thanks." target="_blank" style="background:#871505"><i class="fa fa-envelope fa-adjust"></i></a></span>
+                                <span class="s-icon"><a href="https://api.whatsapp.com/send?text=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString()" target="_blank" style="background:#42f560" data-action="share/whatsapp/share"><i class="fa fa-whatsapp fa-lg"></i></a></span>
+                                <span class="s-icon"><a href="https://www.facebook.com/sharer.php?u=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString()" target="_blank" style="background:#4267B2"><i class="fa fa-facebook fa-lg"></i></a></span>
+                                <span class="s-icon"><a href="https://www.instagram.com/?url=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString()" target="_blank" style="background:#E1306C"><i class="fa fa-instagram fa-lg"></i></a></span>
+                                <span class="s-icon"><a href="https://twitter.com/intent/tweet?text=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString()" target="_blank" style="background:#1DA1F2"><i class="fa fa-twitter fa-lg"></i></a></span>
+
+                            </div>
+                            @*<div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+
+                <!---------------PopUp End-------------------->
+
                 @*<div class="row">
-
-
-
                     <div class="col-12 col-md-6 col-lg-6 col-xl-4">
                         <div class="card border-0 shadow-sm overflow-hidden mb-4">
                             <div class="card-body py-0">
