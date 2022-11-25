@@ -696,9 +696,10 @@ namespace GYF.Controllers
 
                         }
                         catch { }
-                        
-                        TempData["Login"] = "password sent your email-id successfully.";
-                        
+                        TempData["Login"] = "password sent your registerd mobile no successfully.";
+
+                        //TempData["Login"] = "password sent your email-id successfully.";
+
                     }
 
                     else if (ds.Tables[0].Rows[0][0].ToString() == "0")
