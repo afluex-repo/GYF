@@ -4,7 +4,7 @@
     ViewBag.Title = "AssociateDashBoard";
     Layout = "~/Views/Shared/AssociateLayout.cshtml";
 }
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     thead.assoicidab {
         background-color: #00796a;
@@ -45,6 +45,51 @@
         background-color: #493411;
         color: #fff;
     }
+    .fa {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-envelope {
+  background: #ea4335;
+  color: white;
+}
+.fa-instagram {
+  background: #f72327;
+  color: white;
+}
+
+.fa-whatsapp {
+  background: #47c357;
+  color: white;
+}
+
+.fa-twitter {
+  background: #1da1f2;
+  color: white;
+}
 </style>
 @using (Html.BeginForm("AssociateDashBoard", "Associate", FormMethod.Post, new { @id = "form3", enctype = "multipart/form-data" }))
 {
@@ -255,18 +300,18 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Share Link</h5>
+                                <h5 class="modal-title" id="exampleModalLabel"><span  style="color:#00796a">Share Link</span></h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <span class="s-icon"><a href="mailto:?subject= Referral Link &amp;body=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString(). Thanks." target="_blank" style="background:#871505"><i class="fa fa-envelope fa-adjust"></i></a></span>
-                                <span class="s-icon"><a href="https://api.whatsapp.com/send?text=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString()" target="_blank" style="background:#42f560" data-action="share/whatsapp/share"><i class="fa fa-whatsapp fa-lg"></i></a></span>
-                                <span class="s-icon"><a href="https://www.facebook.com/sharer.php?u=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString()" target="_blank" style="background:#4267B2"><i class="fa fa-facebook fa-lg"></i></a></span>
-                                <span class="s-icon"><a href="https://www.instagram.com/?url=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString()" target="_blank" style="background:#E1306C"><i class="fa fa-instagram fa-lg"></i></a></span>
-                                <span class="s-icon"><a href="https://twitter.com/intent/tweet?text=http://grazieforyou.in//Main/registration?Pid=@Session["Pk_userId"].ToString()" target="_blank" style="background:#1DA1F2"><i class="fa fa-twitter fa-lg"></i></a></span>
-
+                                <a href="mailto:?subject= Referral Link &amp;body=http://grazieforyou.in//Main/registration?Pid=@Session["LoginId"].ToString(). Thanks." target="_blank" class="fa fa-envelope"></a>
+                                <a href="https://api.whatsapp.com/send?text=http://grazieforyou.in//Main/registration?Pid=@Session["LoginId"].ToString()" target="_blank" class="fa fa-whatsapp"></a>
+                                <a href="https://www.facebook.com/sharer.php?u=http://grazieforyou.in//Main/registration?Pid=@Session["LoginId"].ToString()" target="_blank" class="fa fa-facebook"></a>
+                                <a href="https://twitter.com/intent/tweet?text=http://grazieforyou.in//Main/registration?Pid=@Session["LoginId"].ToString()" target="_blank" class="fa fa-twitter"></a>
+                                <a href="https://www.instagram.com/?url=http://grazieforyou.in//Main/registration?Pid=@Session["LoginId"].ToString()" target="_blank" class="fa fa-instagram"></a>
+                             
                             </div>
                             @*<div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -364,9 +364,7 @@ namespace GYF.Controllers
                 obj.LastName = LastName;
                 obj.Email = Email;
                 obj.MobileNo = MobileNo;
-
-                obj.RegistrationBy = "Web";
-
+                obj.RegistrationBy = Session["Pk_userId"].ToString();
                 obj.PinCode = PinCode;
                 obj.Leg = Leg;
 
